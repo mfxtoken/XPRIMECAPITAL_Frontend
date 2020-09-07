@@ -1,0 +1,24 @@
+// Site Color Set
+$site-default-colors: ();
+$site-default-colors: map-merge(
+                (
+                        "white":            $global-clr-white,
+                        "black":            $global-clr-black,
+                        "softblack":        $global-clr-soft-black,
+                        "darkblack":        $global-clr-dark-black,
+                        "softblue":         $global-clr-soft-blue,
+                        "darkblue":         $global-clr-dark-blue,
+                        "red":              $global-clr-red,
+                        "green":            $global-clr-green,
+                        "orange":           $global-clr-orange,
+                        "softgray":         $global-clr-soft-gray,
+                        "darkgray":         $global-clr-dark-gray
+                ),
+                $site-default-colors
+);
+
+
+@each $color, $value in $site-default-colors {
+  .sitecolor#{$color}{color: $value !important;}
+  .sitebg#{$color}{background-color: $value !important;}
+}

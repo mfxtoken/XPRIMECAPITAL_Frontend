@@ -1,0 +1,13 @@
+.sitemodal{}
+
+.modal-open{
+  padding: 0 !important;
+  overflow: inherit !important;
+}
+
+.modal-backdrop{
+  @include background-linear(darken($global-grdint-darkblue01, 1%), darken($global-grdint-darkblue02, 1%), -45);
+  &.show{
+    opacity: 0.99;
+  }
+}

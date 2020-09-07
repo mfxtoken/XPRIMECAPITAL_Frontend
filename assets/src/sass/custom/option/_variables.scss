@@ -1,0 +1,49 @@
+/* General Color Settings */
+$global-clr-white: #FFFFFF;
+$global-clr-black: #000000;
+$global-clr-green: #70a800;
+$global-clr-red: #b82c0d;
+$global-clr-orange: #ff9900;
+$global-clr-cyan: #6397be;
+$global-clr-dark-black: $global-clr-black;
+$global-clr-soft-black: #111927;
+$global-clr-dark-blue: #446084;
+$global-clr-soft-blue: #098cdf;
+$global-clr-dark-gray: #111927;
+$global-clr-soft-gray: #758ca3;
+$global-clr-light-gray: #f2f5f6;
+/* General Color Settings */
+
+/* Site Main Settings */
+$global-font-family-cocogothic-heavy:     'CocoGothicHeavy';
+$global-font-family-default:              'Semplicita-Light', sans-serif;
+$global-font-size:                        16px;
+$global-clr-text-dark:                    #505050;
+$global-clr-text-light:                   #303f56;
+$global-border-light-gray:                #e0e5ec;
+$global-border-light-gray-opacity:        #F2F5F9;
+$global-border-light-gray-focus:          darken($global-border-light-gray, 15%);
+$global-input-border-light:               $global-border-light-gray;
+$global-input-border-light-focus:         $global-border-light-gray-focus;
+$global-input-disabled-light:             lighten($global-border-light-gray, 10%);
+/* Site Main Color Settings */
+
+/* Site Section Background Color */
+$site-section-bgclr-black: #393939;
+/* Site Section Background Color */
+
+/* Site Main Path Settings */
+$path-assets-url: "../../";
+$path-fonts-url : "../../fonts";
+$path-img-url: "../../img";
+$path-img-url-icons: "../../img/icons";
+/* Site Main Path Settings */
+
+/* Site Main Class Settings */
+$headerclassname: ".header";
+$footerclassname: ".footer";
+$formclassname: ".form";
+$forminputclassname: ".input";
+$formcustomclassname: ".custom";
+$btnclassname: ".btn";
+/* Site Main Class Settings */

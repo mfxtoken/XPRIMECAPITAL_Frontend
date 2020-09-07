@@ -1,0 +1,104 @@
+.sitetitle{
+  margin-left: auto;
+  margin-right: auto;
+  $sitetitleclassname: &;
+
+  h1,h2,h3,h4,h5,h6{
+    margin: 0;
+  }
+  h1,h2,h3,h4,h5,h6,p{
+    position: relative;
+  }
+  p{
+    margin-bottom: 15px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &-xl{
+    h1,h2,h3{font-size: 2.5rem; line-height: 1.2;}
+    h4,h5,h6{font-size: 2.0rem; line-height: 1.2;}
+    p{font-size: 20px;}
+    h1+p,h2+p,h3+p,p+h1,p+h2,p+h3{margin-top: 10px;}
+    h4+p,h5+p,h6+p,p+h4,p+h5,p+h6{margin-top: 10px;}
+  }
+
+  &-md{
+    h1,h2,h3{font-size: 2.0rem;}
+    p{font-size: 18px;}
+    h1+p,h2+p,h3+p,p+h1,p+h2,p+h3{margin-top: 10px;}
+  }
+
+  &-sm{
+    h3,h4,h5{font-size: 24px;}
+    p{font-size: 16px;}
+    h3+p,h4+p,h5+p,p+h3,p+h4,p+h5{margin-top: 10px;}
+  }
+
+  &-dark{
+    h1,h2,h3,h4,h5,h6{color: $global-clr-text-dark;}
+    p{color: $global-clr-text-light;}
+
+    h1,h2,h3,h4,h5,h6{
+      &::before{
+        background-color: $global-border-light-gray-opacity;
+      }
+      &::after{
+        background-color: $global-clr-green;
+      }
+    }
+  }
+
+  &-soft{
+    h1,h2,h3,h4,h5,h6{color: $global-clr-white;}
+    p{color: $global-clr-white;}
+
+    h1,h2,h3,h4,h5,h6{
+      &::before{
+        background-color: transparentize($global-clr-white, 0.85);
+      }
+      &::after{
+        background-color: $global-clr-white;
+      }
+    }
+  }
+
+  &-left{text-align: left;}
+  &-center{text-align: center;}
+  &-right{text-align: right;}
+
+  &-flex{
+    @include flexbox-display-flex();
+    @include flexbox-justify-content(space-between);
+    @include flexbox-align-items(flex-end);
+  }
+
+  &-width500{max-width: 500px;}
+  &-width600{max-width: 600px;}
+  &-width700{max-width: 700px;}
+  &-width800{max-width: 800px;}
+  &-width900{max-width: 900px;}
+  &-width1000{max-width: 1000px;}
+  &-width1100{max-width: 1100px;}
+  &-width1200{max-width: 1200px;}
+
+  @include BootstrapMaxWidthResponsive(1k){
+    &-width900{max-width: 750px;}
+    &-width1100{max-width: 960px;}
+  }
+  @include BootstrapMaxWidthResponsive(xl){
+    &-width900{max-width: 660px;}
+    &-width1100{max-width: 780px;}
+  }
+  @include BootstrapMaxWidthResponsive(lg){
+    &-width900{max-width: 580px;}
+    &-width1100{max-width: 640px;}
+  }
+
+}
+
+@media print{
+  .sitetitle *{color: $global-clr-text-dark !important;}
+}

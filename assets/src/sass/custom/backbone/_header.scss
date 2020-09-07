@@ -1,0 +1,101 @@
+.header{
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 10;
+  @include transition-multiple(background 0.15s ease-in-out);
+
+  &-top{
+    padding: 20px 0;
+    @include transition-multiple(padding 0.3s ease-in-out);
+
+    &-logoarea{
+      @include flexbox-flex-order(2);
+      width: 220px;
+      text-align: center;
+      @include transition-multiple(width 0.3s ease-in-out);
+
+      a{
+        display: block;
+        height: 140px;
+        overflow: hidden;
+        @include transition-multiple(height 0.3s ease-in-out);
+
+        svg{
+          width: 100%;
+          height: auto;
+
+          path.signature{
+            fill: $global-clr-white;
+            stroke: transparent;
+            @include translateY(5px);
+            @include transition-multiple(transform 0.3s ease-in-out);
+          }
+          path.title{
+            fill: $global-clr-white;
+            stroke: $global-clr-white;
+            @include translate(7px, 110px);
+            @include transition-multiple(transform 0.3s ease-in-out);
+          }
+        }
+      }
+    }
+
+    &-leftarea{
+      @include flexbox-flex-order(1);
+      text-align: left;
+    }
+    &-rightarea{
+      @include flexbox-flex-order(3);
+      text-align: right;
+    }
+
+    .headersocial{
+      @include flexbox-display-flex();
+      margin-left: -2px;
+      margin-right: -2px;
+
+      li{
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+
+      a{
+        width: 24px;
+        height: 24px;
+        display: block;
+
+        i[class*="icons-sprite"]{
+          @include svg-filter(0%, 1, 0, 100%);
+        }
+      }
+    }
+  }
+
+  &-navigation{}
+
+  &.headscroll{
+    background-color: $site-section-bgclr-black;
+
+    #{$headerclassname}-top{
+      padding: 10px 0;
+
+      &-logoarea{
+        //width: 140px;
+
+        a{
+          height: 40px;
+
+          svg{
+            path.signature{
+              @include translateY(50px);
+            }
+            path.title{
+              @include translate(6px, 6px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

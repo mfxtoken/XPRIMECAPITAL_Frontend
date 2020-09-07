@@ -1,0 +1,135 @@
+/* Form UI New */
+.siteformui{
+
+  form{}
+
+  .autofill{
+    &.disabled,
+    &:disabled,
+    &[readonly] {
+      color: $global-clr-text-dark;
+      background-color: transparent;
+      border-color: $global-input-border-light;
+    }
+  }
+
+  @include placeholder{
+    //color: transparentize($global-clr-text-dark, 0.50);
+    //opacity: 1;
+  }
+
+  @include webkit-autofill{
+    -webkit-box-shadow: 0 0 0 30px $global-clr-white inset !important;
+    -webkit-text-fill-color: $global-clr-text-dark !important;
+    border-color: $global-border-light-gray !important;
+  }
+
+  label{
+    font-weight: $var-custom-font-weight-bold;
+  }
+
+  #{$formclassname}-control{
+    background-clip: inherit;
+
+    &[rows]{min-height: 100px;}
+  }
+
+  select#{$formclassname}-control:not(.custom-select){
+    height: 40px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  select#{$formclassname}-control-sm:not(.custom-select){
+    height: 34px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  select#{$formclassname}-control-lg:not(.custom-select){
+    height: 46px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  #{$formcustomclassname}{
+
+    &-select{
+      &:focus{}
+    }
+
+    &-control{
+      &-label{
+        font-weight: $var-custom-font-weight-normal;
+
+        &::before{}
+        &::before,
+        &::after{}
+      }
+
+      &-input{
+        &:checked{
+          ~ #{$formcustomclassname}-control-label{
+            &::after{}
+          }
+        }
+      }
+
+      &-group{
+        &-vertical{
+          #{$formcustomclassname}-control{}
+        }
+        &-horizontal{}
+      }
+    }
+
+    &-checkbox{
+      #{$formcustomclassname}-control-input{
+        &:checked{
+          ~ #{$formcustomclassname}-control-label{
+            &::after{}
+          }
+        }
+      }
+    }
+
+    &-radio{
+      #{$formcustomclassname}-control-input{
+        &:checked{
+          ~ #{$formcustomclassname}-control-label{
+            &::after{}
+          }
+        }
+      }
+    }
+
+  }
+
+  .recaptcha{
+    &-area{
+      @include flexbox-display-flex();
+      @include flexbox-align-items(center);
+    }
+
+    &-check{
+      position:relative;
+      width: 1.4rem;
+      height: 1.4rem;
+      overflow: hidden;
+      margin-right: 8px;
+      border: 1px solid $global-input-border-light;
+      @include border-radius(2px);
+
+      .g-recaptcha{
+        position:absolute;
+        top: -26px;
+        left: -36px;
+        @include scale(0.85);
+      }
+    }
+
+    label{
+      &::before,
+      &::after{display: none;}
+    }
+  }
+}
+/* Form UI New */

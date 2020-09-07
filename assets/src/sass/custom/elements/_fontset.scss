@@ -1,0 +1,37 @@
+// Site Font Family Set
+$site-custom-font-family: ();
+$site-custom-font-family: map-merge(
+                (
+                        "default":              $global-font-family-default,
+                        "cocogothicheavy":      $global-font-family-cocogothic-heavy
+                ),
+                $site-custom-font-family
+);
+
+@each $fontfamily, $value in $site-custom-font-family {
+  .sitefontfamily#{$fontfamily}{font-family: $value !important;}
+}
+
+
+// Site Font Size Set
+$site-default-font-size: ();
+$site-default-font-size: map-merge(
+                (
+                        "10": 10px,
+                        "11": 11px,
+                        "12": 12px,
+                        "13": 13px,
+                        "14": 14px,
+                        "15": 15px,
+                        "16": 16px,
+                        "17": 17px,
+                        "18": 18px,
+                        "19": 19px,
+                        "20": 20px
+                ),
+                $site-default-font-size
+);
+
+@each $fontsize, $value in $site-default-font-size {
+  .sitefontsize#{$fontsize}{font-size: $value !important;}
+}
