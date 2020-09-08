@@ -1,20 +1,22 @@
 
 /* Components Variables Settings */
-$navmenu-clr:                     $site-clr-white;
+$navmenu-clr:                     $site-clr-text-dark-pri;
 $navmenu-headfontsize:            1rem;
+$navmenu-headlineheight:          1;
 $navmenu-headfontweight:          $var-custom-font-weight-bold;
-$navmenu-headborderclr:           $site-clr-white;
-$navmenu-headbgclr:               $navmenu-headborderclr;
+$navmenu-headborderclr:           transparent;
+$navmenu-headbgclr:               transparent;
 /* Components Variables Settings */
 
 .headnavigation{
 
   &-navmenu{
-    @include flexbox-justify-content(center);
-    background-color: transparentize($navmenu-headbgclr, 0.9);
+    //@include flexbox-justify-content(center);
+    background-color: $navmenu-headbgclr;
     color: $navmenu-clr;
     font-size: $navmenu-headfontsize;
     font-weight: $navmenu-headfontweight;
+    line-height: $navmenu-headlineheight;
     padding: 0;
     border-top: 1px solid transparentize($navmenu-headborderclr, 0.5);
     border-bottom: 1px solid transparentize($navmenu-headborderclr, 0.5);
@@ -31,7 +33,7 @@ $navmenu-headbgclr:               $navmenu-headborderclr;
 
         &-link{
           color: $navmenu-clr;
-          padding: 10px 15px;
+          padding: 10px 10px 2px;
         }
       }
 

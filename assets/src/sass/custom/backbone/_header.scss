@@ -1,101 +1,56 @@
 .header{
   width: 100%;
   background-color: transparent;
+  padding: 40px 0;
   position: fixed;
-  z-index: 10;
+  left: 0;
+  top: 0;
+  z-index: 1;
   @include transition-multiple(background 0.15s ease-in-out);
 
-  &-top{
-    padding: 20px 0;
-    @include transition-multiple(padding 0.3s ease-in-out);
+  &-logoarea{
 
-    &-logoarea{
-      @include flexbox-flex-order(2);
-      width: 220px;
-      text-align: center;
-      @include transition-multiple(width 0.3s ease-in-out);
+    .headlogo{
+      display: block;
+      margin-right: 50px;
 
-      a{
-        display: block;
-        height: 140px;
-        overflow: hidden;
-        @include transition-multiple(height 0.3s ease-in-out);
+      &-svg{
+        width: 200px;
+        height: auto;
 
-        svg{
-          width: 100%;
-          height: auto;
-
-          path.signature{
-            fill: $site-clr-white;
-            stroke: transparent;
-            @include translateY(5px);
-            @include transition-multiple(transform 0.3s ease-in-out);
-          }
-          path.title{
-            fill: $site-clr-white;
-            stroke: $site-clr-white;
-            @include translate(7px, 110px);
-            @include transition-multiple(transform 0.3s ease-in-out);
-          }
+        &-text{
+          &-title{fill: transparentize($site-clr-black, 0.15);}
         }
-      }
-    }
 
-    &-leftarea{
-      @include flexbox-flex-order(1);
-      text-align: left;
-    }
-    &-rightarea{
-      @include flexbox-flex-order(3);
-      text-align: right;
-    }
-
-    .headersocial{
-      @include flexbox-display-flex();
-      margin-left: -2px;
-      margin-right: -2px;
-
-      li{
-        padding-left: 2px;
-        padding-right: 2px;
-      }
-
-      a{
-        width: 24px;
-        height: 24px;
-        display: block;
-
-        i[class*="icons-sprite"]{
-          @include svg-filter(0%, 1, 0, 100%);
+        &-icon{
+          &-black{fill: transparentize($site-clr-black, 0.15);}
+          &-red{fill: $site-clr-red;}
         }
       }
     }
   }
 
-  &-navigation{}
+  &-navarea{}
 
-  &.headscroll{
-    background-color: $site-section-bgclr-black;
-
-    #{$headerclassname}-top{
-      padding: 10px 0;
-
-      &-logoarea{
-        //width: 140px;
-
-        a{
-          height: 40px;
-
-          svg{
-            path.signature{
-              @include translateY(50px);
-            }
-            path.title{
-              @include translate(6px, 6px);
-            }
-          }
-        }
+  &-userarea{
+    &-btns{
+      > .btn{
+        line-height: 1.4;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
       }
     }
+  }
+
+  &-desktop{
+    > .row{
+      @include flexbox-align-items(flex-end);
+    }
+  }
+
+  &-mobile{}
+
+  &.headscroll{
+    #{$headerclassname}-top{}
   }
 }

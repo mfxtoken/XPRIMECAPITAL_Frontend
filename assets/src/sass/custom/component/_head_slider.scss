@@ -1,4 +1,19 @@
 
+.headslid{
+  background-image: url(#{$path-img-url}/header/headchartmountains.svg);
+  background-repeat: repeat-x;
+  background-position: bottom 0 left 50%;
+  background-size: 200% auto;
+  height: 750px;
+  @include animation-multi(HeadChartMountains 40s linear infinite);
+
+  @include keyframes(HeadChartMountains){
+    0%  {background-position-x: 0%;}
+    to  {background-position-x: 200%;}
+  }
+}
+
+
 .headslider{
   @include flexbox-display-flex();
   @include flexbox-align-items(center);
