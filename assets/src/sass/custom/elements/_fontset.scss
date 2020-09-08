@@ -1,4 +1,4 @@
-// Site Font Family Set
+/* Site Font Family Set */
 $site-custom-font-family: ();
 $site-custom-font-family: map-merge(
                 (
@@ -11,9 +11,26 @@ $site-custom-font-family: map-merge(
 @each $fontfamily, $value in $site-custom-font-family {
   .sitefontfamily#{$fontfamily}{font-family: $value !important;}
 }
+/* Site Font Family Set */
 
+/* Site Font Weight Set */
+$site-custom-font-weight: ();
+$site-custom-font-weight: map-merge(
+                (
+                        "light":        $var-custom-font-weight-light,
+                        "normal":       $var-custom-font-weight-normal,
+                        "bold":         $var-custom-font-weight-bold,
+                        "bolder":       $var-custom-font-weight-bolder
+                ),
+                $site-custom-font-weight
+);
 
-// Site Font Size Set
+@each $fontweight, $value in $site-custom-font-weight {
+  .sitefontweight#{$fontweight}{font-weight: $value !important;}
+}
+/* Site Font Weight Set */
+
+/* Site Font Size Set */
 $site-default-font-size: ();
 $site-default-font-size: map-merge(
                 (
@@ -35,3 +52,4 @@ $site-default-font-size: map-merge(
 @each $fontsize, $value in $site-default-font-size {
   .sitefontsize#{$fontsize}{font-size: $value !important;}
 }
+/* Site Font Size Set */

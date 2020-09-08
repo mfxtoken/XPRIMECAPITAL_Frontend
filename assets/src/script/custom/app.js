@@ -1,16 +1,16 @@
 
 /* Head Home Slider */
-$('.headsliderowl').owlCarousel({
+$('.headsliderowlx').owlCarousel({
     loop: true,
     nav: false,
-    dots: false,
+    dots: true,
     autoplay: true,
     autoplayTimeout: 5000,
     autoplayHoverPause: false,
     items: 1,
-    margin: 0,
+    margin: 30,
     autoWidth: false,
-    mouseDrag: true,
+    mouseDrag: false,
     responsiveClass: true,
     responsive:{
         0:{},
