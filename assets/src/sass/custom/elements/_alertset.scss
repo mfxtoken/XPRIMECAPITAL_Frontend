@@ -87,7 +87,7 @@
     #{$alertclassname}-heading{text-transform: uppercase;}
 
     #{$alertclassname}-desc{
-      p{color: $global-clr-text-dark;}
+      p{color: $site-clr-text-dark-pri;}
     }
 
     &-big{
@@ -103,11 +103,7 @@
   }
 
   &-bgdark{
-    background-color: transparentize($global-clr-soft-blue, 0.95);
-    border-color: transparentize($global-clr-soft-blue, 0.50);
-
     #{$alertclassname}-desc{
-      p{color: $global-clr-white;}
     }
   }
 

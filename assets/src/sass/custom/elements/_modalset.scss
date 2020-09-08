@@ -6,7 +6,7 @@
 }
 
 .modal-backdrop{
-  @include background-linear(darken($global-grdint-darkblue01, 1%), darken($global-grdint-darkblue02, 1%), -45);
+  @include background-linear(darken($site-clr-black, 1%), darken($site-clr-black, 10%), -45);
   &.show{
     opacity: 0.99;
   }

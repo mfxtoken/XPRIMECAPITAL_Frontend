@@ -7,21 +7,21 @@
     &.disabled,
     &:disabled,
     &[readonly] {
-      color: $global-clr-text-dark;
+      color: $site-clr-text-dark-pri;
       background-color: transparent;
-      border-color: $global-input-border-light;
+      border-color: $site-brdr-light-input;
     }
   }
 
   @include placeholder{
-    //color: transparentize($global-clr-text-dark, 0.50);
+    //color: transparentize($site-clr-text-dark-pri, 0.50);
     //opacity: 1;
   }
 
   @include webkit-autofill{
-    -webkit-box-shadow: 0 0 0 30px $global-clr-white inset !important;
-    -webkit-text-fill-color: $global-clr-text-dark !important;
-    border-color: $global-border-light-gray !important;
+    -webkit-box-shadow: 0 0 0 30px $site-clr-white inset !important;
+    -webkit-text-fill-color: $site-clr-text-dark-pri !important;
+    border-color: $site-brdr-light !important;
   }
 
   label{
@@ -115,7 +115,7 @@
       height: 1.4rem;
       overflow: hidden;
       margin-right: 8px;
-      border: 1px solid $global-input-border-light;
+      border: 1px solid $site-brdr-light-input;
       @include border-radius(2px);
 
       .g-recaptcha{

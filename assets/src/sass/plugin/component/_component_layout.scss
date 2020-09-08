@@ -1,14 +1,14 @@
 
 /* Components Variables Settings */
-$componentlayout-clr-white:                     $global-clr-white;
+$componentlayout-clr-white:                     $site-clr-white;
 
-$componentlayout-softbg-text-clr:               $global-clr-text-dark;
-$componentlayout-softbg-bg-clr:                 $global-clr-white;
-$componentlayout-softbg-border-clr:             $global-border-light-gray;
+$componentlayout-softbg-text-clr:               $site-clr-text-dark-pri;
+$componentlayout-softbg-bg-clr:                 $site-clr-white;
+$componentlayout-softbg-border-clr:             $site-brdr-light;
 
-$componentlayout-darkbg-text-clr:               $global-clr-text-light;
-$componentlayout-darkbg-bg-clr:                 $global-clr-dark-black;
-$componentlayout-darkbg-border-clr:             $global-clr-soft-blue;
+$componentlayout-darkbg-text-clr:               $site-clr-text-soft-pri;
+$componentlayout-darkbg-bg-clr:                 $site-clr-black;
+$componentlayout-darkbg-border-clr:             $site-brdr-dark;
 /* Components Variables Settings */
 
 

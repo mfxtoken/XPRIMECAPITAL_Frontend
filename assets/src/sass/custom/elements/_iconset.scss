@@ -53,7 +53,7 @@
     padding: 0;
     width: 24px;
     height: 24px;
-    border: 1px solid $global-input-border-light;
+    border: 1px solid $site-brdr-light-input;
     position: relative;
 
     &::after{
@@ -66,8 +66,8 @@
       width: 9px;
       height: 9px;
       padding: 0;
-      border-top: 2px solid $global-clr-red;
-      border-right: 2px solid $global-clr-red;
+      border-top: 2px solid $site-clr-red;
+      border-right: 2px solid $site-clr-red;
     }
 
     &.updirection{

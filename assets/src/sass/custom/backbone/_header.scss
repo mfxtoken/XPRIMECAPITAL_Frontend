@@ -26,14 +26,14 @@
           height: auto;
 
           path.signature{
-            fill: $global-clr-white;
+            fill: $site-clr-white;
             stroke: transparent;
             @include translateY(5px);
             @include transition-multiple(transform 0.3s ease-in-out);
           }
           path.title{
-            fill: $global-clr-white;
-            stroke: $global-clr-white;
+            fill: $site-clr-white;
+            stroke: $site-clr-white;
             @include translate(7px, 110px);
             @include transition-multiple(transform 0.3s ease-in-out);
           }

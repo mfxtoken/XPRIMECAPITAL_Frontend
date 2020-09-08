@@ -3,29 +3,29 @@
 /* Site Custom Variables Settings */
 
 /* Site Custom Color Variables Settings */
-$var-custom-clr-white:            $global-clr-white;
-$var-custom-clr-gray-100:         #f8f9fa;
-$var-custom-clr-gray-200:         #e9ecef;
-$var-custom-clr-gray-300:         #dee2e6;
-$var-custom-clr-gray-400:         #ced4da;
-$var-custom-clr-gray-500:         #adb5bd;
-$var-custom-clr-gray-600:         #6c757d;
-$var-custom-clr-gray-700:         #495057;
-$var-custom-clr-gray-800:         #343a40;
-$var-custom-clr-gray-900:         #212529;
-$var-custom-clr-black:            $global-clr-black;
-$var-custom-clr-blue:             $global-clr-dark-blue;
-$var-custom-clr-indigo:           #6610f2;
-$var-custom-clr-purple:           #6f42c1;
-$var-custom-clr-pink:             #e83e8c;
-$var-custom-clr-red:              $global-clr-red;
-$var-custom-clr-orange:           $global-clr-orange;
-$var-custom-clr-yellow:           #ffc107;
-$var-custom-clr-green:            $global-clr-green;
-$var-custom-clr-teal:             #20c997;
-$var-custom-clr-cyan:             $global-clr-soft-blue;
-$var-custom-body-bg:              $var-custom-clr-white;
-$var-custom-body-color:           $var-custom-clr-gray-900;
+$var-custom-clr-white:                            $global-clr-white;
+$var-custom-clr-gray-100:                         $global-clr-gray-100;
+$var-custom-clr-gray-200:                         $global-clr-gray-200;
+$var-custom-clr-gray-300:                         $global-clr-gray-300;
+$var-custom-clr-gray-400:                         $global-clr-gray-400;
+$var-custom-clr-gray-500:                         $global-clr-gray-500;
+$var-custom-clr-gray-600:                         $global-clr-gray-600;
+$var-custom-clr-gray-700:                         $global-clr-gray-700;
+$var-custom-clr-gray-800:                         $global-clr-gray-800;
+$var-custom-clr-gray-900:                         $global-clr-gray-900;
+$var-custom-clr-black:                            $global-clr-black;
+$var-custom-clr-blue:                             $global-clr-blue;
+$var-custom-clr-indigo:                           $global-clr-indigo;
+$var-custom-clr-purple:                           $global-clr-purple;
+$var-custom-clr-pink:                             $global-clr-pink;
+$var-custom-clr-red:                              $global-clr-red;
+$var-custom-clr-orange:                           $global-clr-orange;
+$var-custom-clr-yellow:                           $global-clr-yellow;
+$var-custom-clr-green:                            $global-clr-green;
+$var-custom-clr-teal:                             $global-clr-teal;
+$var-custom-clr-cyan:                             $global-clr-cyan;
+$var-custom-body-bg:                              $var-custom-clr-white;
+$var-custom-body-color:                           $var-custom-clr-gray-900;
 /* Site Custom Color Variables Settings */
 
 /* Site Custom Common Padding and Border Radius Sizes Settings */
@@ -44,7 +44,7 @@ $var-custom-box-shadow-lg:                        0 1rem 3rem rgba($var-custom-c
 /* Site Custom Common Padding and Border Radius Sizes Settings */
 
 /* Site Custom Typography Settings */
-$var-custom-font-family-base:                     $global-font-family-default;
+$var-custom-font-family-base:                     $site-font-family-default;
 $var-custom-font-size-base:                       1rem; // Assumes the browser default, typically `16px`
 $var-custom-font-size-lg:                         $var-custom-font-size-base * 1.1;
 $var-custom-font-size-sm:                         $var-custom-font-size-base * .9;
@@ -80,7 +80,7 @@ $var-custom-small-font-size:                      80%;
 /* Site Custom Typography Settings */
 
 /* Site Custom Button Settings */
-$var-custom-input-btn-font-family:                $global-font-family-default;
+$var-custom-input-btn-font-family:                $site-font-family-default;
 $var-custom-input-btn-line-height:                1.65;
 $var-custom-input-btn-line-height-sm:             1.67;
 $var-custom-input-btn-line-height-lg:             1.59;

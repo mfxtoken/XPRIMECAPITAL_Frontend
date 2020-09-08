@@ -8,7 +8,7 @@
 
   #{$formcustomclassname}-select{
     background-color: transparent;
-    color: $global-clr-soft-gray !important;
+    color: $site-clr-text-dark-pri !important;
   }
 
   .labelanimation{
@@ -16,7 +16,7 @@
     z-index: 0;
 
     label{
-      color: $global-clr-soft-gray !important;
+      color: $site-clr-text-dark-pri !important;
       position:absolute;
       top: 10px;
       left: 0.80rem;
@@ -89,8 +89,7 @@
       &:valid ~ label,
       &:invalid ~ label{
         top: -6px;
-        font-size: $global-font-size * 0.750;
-        color: $global-clr-red;
+        color: $site-clr-red;
       }
 
       &:focus-within ~ label{
@@ -104,23 +103,22 @@
 
       &:focus ~ .inputbottombar:before,
       &:focus ~ .inputbottombar:after{
-        background: $global-clr-red;
+        background: $site-clr-red;
       }
 
       &:valid ~ .inputbottombar:before,
       &:valid ~ .inputbottombar:after{
-        background: $global-clr-green;
+        background: $site-clr-green;
       }
 
       &:focus ~ .msginput,
       &:valid ~ .msginput{
         top: -10px;
-        font-size: $global-font-size * 0.750;
         display: block;
       }
 
       &:valid ~ label{
-        color: $global-clr-green;
+        color: $site-clr-green;
         z-index: 0;
       }
 
@@ -133,9 +131,9 @@
     textarea#{$formclassname}-control[readonly="readonly"]{
       padding-left: 15px;
       padding-right: 15px;
-      border-top-color: transparentize($global-clr-soft-blue, 0.75) !important;
-      border-left-color: transparentize($global-clr-soft-blue, 0.75) !important;
-      border-right-color: transparentize($global-clr-soft-blue, 0.75) !important;
+      border-top-color: $site-brdr-light !important;
+      border-left-color: $site-brdr-light !important;
+      border-right-color: $site-brdr-light !important;
 
       ~ label{
         top: 11px;
@@ -165,10 +163,10 @@
 
   #{$formcustomclassname}-control-input{
     &:valid{
-      ~ #{$formcustomclassname}-control-label::before{border-color: $global-clr-green;}
+      ~ #{$formcustomclassname}-control-label::before{border-color: $site-clr-green;}
     }
     &:invalid{
-      ~ #{$formcustomclassname}-control-label::before{border-color: $global-clr-red;}
+      ~ #{$formcustomclassname}-control-label::before{border-color: $site-clr-red;}
     }
   }
 
@@ -185,24 +183,24 @@
   &.formuidarkbg{
 
     #{$formclassname}-control{
-      border-bottom-color: $global-clr-soft-blue !important;
+      border-bottom-color: $site-brdr-dark !important;
 
       &:focus ~ label,
       &:valid ~ label,
-      &:invalid ~ label{color: lighten($global-clr-red, 25%);}
+      &:invalid ~ label{color: lighten($site-clr-red, 25%);}
       &:focus ~ .inputbottombar:before,
-      &:focus ~ .inputbottombar:after{background: lighten($global-clr-red, 25%);}
+      &:focus ~ .inputbottombar:after{background: lighten($site-clr-red, 25%);}
       &:valid ~ .inputbottombar:before,
-      &:valid ~ .inputbottombar:after{background: lighten($global-clr-green, 15%);}
-      &:valid ~ label{color: lighten($global-clr-green, 15%);}
+      &:valid ~ .inputbottombar:after{background: lighten($site-clr-green, 15%);}
+      &:valid ~ label{color: lighten($site-clr-green, 15%);}
     }
 
     #{$formcustomclassname}-control-input{
       &:valid{
-        ~ #{$formcustomclassname}-control-label::before{border-color: lighten($global-clr-green, 15%);}
+        ~ #{$formcustomclassname}-control-label::before{border-color: lighten($site-clr-green, 15%);}
       }
       &:invalid{
-        ~ #{$formcustomclassname}-control-label::before{border-color: lighten($global-clr-red, 25%);}
+        ~ #{$formcustomclassname}-control-label::before{border-color: lighten($site-clr-red, 25%);}
       }
     }
 
@@ -231,7 +229,7 @@
       }
 
       #{$formclassname}-control{
-        border-color: $global-border-light-gray !important;
+        border-color: $site-brdr-light !important;
         padding-left: 0.75rem;
         padding-bottom: 0;
         padding-top: 12px;

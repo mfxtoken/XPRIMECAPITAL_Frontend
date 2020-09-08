@@ -2,17 +2,12 @@
 $site-default-colors: ();
 $site-default-colors: map-merge(
                 (
-                        "white":            $global-clr-white,
-                        "black":            $global-clr-black,
-                        "softblack":        $global-clr-soft-black,
-                        "darkblack":        $global-clr-dark-black,
-                        "softblue":         $global-clr-soft-blue,
-                        "darkblue":         $global-clr-dark-blue,
-                        "red":              $global-clr-red,
-                        "green":            $global-clr-green,
-                        "orange":           $global-clr-orange,
-                        "softgray":         $global-clr-soft-gray,
-                        "darkgray":         $global-clr-dark-gray
+                        "white":            $site-clr-white,
+                        "black":            $site-clr-black,
+                        "blue":             $site-clr-blue,
+                        "green":            $site-clr-green,
+                        "red":              $site-clr-red,
+                        "orange":           $site-clr-orange
                 ),
                 $site-default-colors
 );
