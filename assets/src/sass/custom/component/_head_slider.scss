@@ -111,6 +111,40 @@ $headslider-bgclr:                transparent;
   }
 
   &-banner{
+    position: relative;
 
+    &::after{
+      content: "";
+      background-color: #9eb2c5;
+      width: 15%;
+      height: 20px;
+      opacity: 0.30;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include translateX(-50%);
+      @include border-radius(50%);
+      @include filter-multiple(blur(5px));
+      @include animation-multi(HeadSliderImageShadow 1s ease-in-out infinite alternate);
+
+      @include keyframes(HeadSliderImageShadow){
+        0%  {width: 15%; opacity: 0.30;}
+        to  {width: 5%; opacity: 0.05;}
+      }
+    }
+
+    img{
+      display: block;
+      margin: auto;
+      padding-bottom: 10px;
+      position: relative;
+      bottom: 0;
+      @include animation-multi(HeadSliderImageUpDown 1s ease-in-out infinite alternate);
+
+      @include keyframes(HeadSliderImageUpDown){
+        0%  {bottom: 0;}
+        to  {bottom: 5px;}
+      }
+    }
   }
 }

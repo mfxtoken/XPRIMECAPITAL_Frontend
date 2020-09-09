@@ -2,10 +2,11 @@
 $site-clr-white:                #FFFFFF;
 $site-clr-black:                #000000;
 $site-clr-blue:                 #5598EA;
+$site-clr-cyan:                 #53B6AC;
 $site-clr-green:                #70a800;
 $site-clr-red:                  #DE0000;
 $site-clr-orange:               #FF9300;
-$site-clr-yellow:               #FBB31B;
+$site-clr-yellow:               #FFD83A;
 /* Site General Color Settings */
 
 /* Site Main Settings */
@@ -77,7 +78,7 @@ $global-clr-cyan:         #17a2b8;
 $global-btn-primary:      $global-clr-blue;
 $global-btn-secondary:    $global-clr-gray-600;
 $global-btn-success:      $global-clr-green;
-$global-btn-info:         $global-clr-cyan;
+$global-btn-info:         $site-clr-cyan;
 $global-btn-warning:      $global-clr-yellow;
 $global-btn-danger:       $global-clr-red;
 $global-btn-light:        $global-clr-gray-100;
