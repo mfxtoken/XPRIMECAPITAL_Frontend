@@ -17,7 +17,7 @@ $headlogo-clr-red:                $site-clr-red;
 
     .headlogo{
       display: block;
-      margin-right: 50px;
+      margin-right: 1rem;
 
       &-svg{
         width: 200px;
@@ -40,7 +40,7 @@ $headlogo-clr-red:                $site-clr-red;
   &-userarea{
     &-btns{
       > .btn{
-        line-height: 1.4;
+        line-height: 1.2;
         padding-left: 1rem;
         padding-right: 1rem;
       }
