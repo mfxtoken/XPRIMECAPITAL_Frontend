@@ -7,7 +7,8 @@ $site-default-colors: map-merge(
                         "blue":             $site-clr-blue,
                         "green":            $site-clr-green,
                         "red":              $site-clr-red,
-                        "orange":           $site-clr-orange
+                        "orange":           $site-clr-orange,
+                        "yellow":           $site-clr-yellow
                 ),
                 $site-default-colors
 );

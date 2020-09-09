@@ -1,3 +1,8 @@
+/* Components Variables Settings */
+$headlogo-clr-black:              $site-clr-text-dark-pri;
+$headlogo-clr-red:                $site-clr-red;
+/* Components Variables Settings */
+
 .header{
   width: 100%;
   background-color: transparent;
@@ -19,12 +24,12 @@
         height: auto;
 
         &-text{
-          &-title{fill: transparentize($site-clr-black, 0.15);}
+          &-title{fill: $headlogo-clr-black;}
         }
 
         &-icon{
-          &-black{fill: transparentize($site-clr-black, 0.15);}
-          &-red{fill: $site-clr-red;}
+          &-black{fill: $headlogo-clr-black;}
+          &-red{fill: $headlogo-clr-red;}
         }
       }
     }

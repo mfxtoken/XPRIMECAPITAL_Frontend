@@ -1,6 +1,6 @@
 
 /* Head Home Slider */
-$('.headsliderowlx').owlCarousel({
+$('.headsliderowl').owlCarousel({
     loop: true,
     nav: false,
     dots: true,

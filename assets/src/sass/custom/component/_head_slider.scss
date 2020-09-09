@@ -49,6 +49,25 @@ $headslider-bgclr:                transparent;
     position: relative;
     height: 100%;
     z-index: 2;
+
+    &-row{
+      @include flexbox-display-flex();
+      @include flexbox-justify-content(space-between);
+
+      &-left{
+        @include flexbox-flex-basis(0);
+        @include flexbox-flex-grow(1);
+        min-width: 0;
+        max-width: 100%;
+        padding-right: 100px;
+      }
+
+      &-right{
+        @include flexbox-flex(0 0 auto);
+        width: 700px;
+        max-width: 100%;
+      }
+    }
   }
 
   &-bottom{
@@ -64,14 +83,13 @@ $headslider-bgclr:                transparent;
 
       &-content{
         h1,h2,h3,h4,h5,h6{
-          font-size: 2.25rem;
+          font-size: 2.75rem;
           line-height: 1.2;
           position: relative;
         }
 
         p{
-          font-size: 1.25rem;
-          line-height: 1.2;
+          font-size: 1.5rem;
           margin-top: 15px;
         }
 
