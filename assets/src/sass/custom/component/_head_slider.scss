@@ -8,10 +8,11 @@ $headslider-bgclr:                transparent;
   @include flexbox-display-flex();
   @include flexbox-align-items(center);
   @include flexbox-flex-direction(column);
+  @include flexbox-flex(inherit);
   color: $headslider-clr;
   background-color: $headslider-bgclr;
   height: 750px;
-  padding-top: 110px;
+  padding-top: 130px;
   position: relative;
   overflow: hidden;
 
@@ -47,7 +48,7 @@ $headslider-bgclr:                transparent;
 
   &-top{
     height: 100%;
-    padding-top: 80px;
+    padding-top: 50px;
     position: relative;
     z-index: 2;
 
@@ -61,7 +62,7 @@ $headslider-bgclr:                transparent;
         @include flexbox-flex-grow(1);
         min-width: 0;
         max-width: 100%;
-        padding-right: 50px;
+        padding-right: 140px;
       }
 
       &-right{
@@ -91,13 +92,13 @@ $headslider-bgclr:                transparent;
 
       &-content{
         h1,h2,h3,h4,h5,h6{
-          font-size: 2.75rem;
+          font-size: 2.5rem;
           line-height: 1.2;
           position: relative;
         }
 
         p{
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           margin-top: 15px;
         }
       }
@@ -162,16 +163,15 @@ $headslider-bgclr:                transparent;
 
     &::after{
       content: "";
-      background-color: #9eb2c5;
+      background-color: #c2c9d6;
       width: 15%;
-      height: 20px;
+      height: 10px;
       opacity: 0.30;
       position: absolute;
       bottom: 0;
       left: 50%;
       @include translateX(-50%);
       @include border-radius(50%);
-      @include filter-multiple(blur(5px));
       @include animation-multi(HeadSliderImageShadow 1s ease-in-out infinite alternate);
 
       @include keyframes(HeadSliderImageShadow){
@@ -183,6 +183,7 @@ $headslider-bgclr:                transparent;
     img{
       display: block;
       margin: auto;
+      padding-top: 20px;
       padding-bottom: 10px;
       position: relative;
       bottom: 0;
