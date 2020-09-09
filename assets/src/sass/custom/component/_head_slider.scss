@@ -61,10 +61,17 @@ $headslider-bgclr:                transparent;
         @include flexbox-flex-grow(1);
         min-width: 0;
         max-width: 100%;
-        padding-right: 100px;
+        padding-right: 50px;
       }
 
       &-right{
+        @include flexbox-flex-basis(0);
+        @include flexbox-flex-grow(1);
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      &-auto{
         @include flexbox-flex(0 0 auto);
         width: 700px;
         max-width: 100%;
@@ -93,19 +100,59 @@ $headslider-bgclr:                transparent;
           font-size: 1.5rem;
           margin-top: 15px;
         }
+      }
 
-        .sdrtitlevbig{
-          display: block;
-          font-size: 180%;
-          line-height: 1;
+      .owl{
+
+        &-stage{
+          &-outer{}
         }
-        .sdrtitlebig{
-          display: block;
-          font-size: 140%;
+
+        &-item{}
+
+        &-nav{
+          &.disabled + .owl-dots{
+            margin-top: 20px;
+          }
         }
-        .sdrtitlesmall{
-          display: block;
+
+        &-dots{
+          margin-top: 20px;
+          text-align: left;
         }
+
+        &-dot{
+          span{
+            background-color: $site-clr-grylight;
+            width: 20px;
+            height: 5px;
+            margin: 5px;
+          }
+
+          &.active,
+          &:hover{
+            span{
+              background-color: $site-clr-cyan;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-buttons{
+    font-size: $var-custom-font-size-lg;
+    margin-top: 20px;
+
+    .openaccountbtns{
+      .rounded-pill{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+      .btn-link{
+        margin-left: 5px;
       }
     }
   }
