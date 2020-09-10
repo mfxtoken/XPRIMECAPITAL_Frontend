@@ -124,7 +124,7 @@ $headslider-bgclr:                transparent;
 
         &-dot{
           span{
-            background-color: $site-clr-grylight;
+            background-color: darken($site-clr-grylight, 5%);
             width: 20px;
             height: 5px;
             margin: 5px;

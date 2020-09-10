@@ -7,7 +7,7 @@ $site-clr-green:                #72B34D;
 $site-clr-red:                  #DE0000;
 $site-clr-orange:               #FF9300;
 $site-clr-yellow:               #FFD83A;
-$site-clr-grylight:             #D3D8DD;
+$site-clr-grylight:             #F1F6FE;
 /* Site General Color Settings */
 
 /* Site Main Settings */
@@ -34,7 +34,7 @@ $site-brdr-dark-input-focus:            $site-brdr-dark-focus;
 /* Site Border Color Settings */
 
 /* Site Section Background Color */
-$site-section-bgclr-grylight:           #F1F6FE;
+$site-section-bgclr-grylight:           $site-clr-grylight;
 /* Site Section Background Color */
 
 /* Site Main Path Settings */

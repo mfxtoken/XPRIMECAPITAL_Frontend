@@ -34,7 +34,7 @@
     }
 
     .sitetitle-xl{
-      padding-bottom: 40px;
+      padding-bottom: 30px;
     }
 
     .component-siteaccounttypes{
@@ -115,6 +115,18 @@
         }
       }
     }
+  }
+
+  &-summarytable{
+    background-color: $var-custom-body-bg;
+    padding: 40px 0;
+
+    .sitetitle-xl{
+      padding-bottom: 30px;
+    }
+
+    .component-summarytable{}
+
   }
 
 }
