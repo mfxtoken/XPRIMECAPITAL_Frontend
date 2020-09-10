@@ -60,6 +60,7 @@
 
       &:hover{
         color: $site-clr-text-dark-pri;
+        background-color: transparentize($site-clr-white, 0.75);
       }
 
       &.active{
