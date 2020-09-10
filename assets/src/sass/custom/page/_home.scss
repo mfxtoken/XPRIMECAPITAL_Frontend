@@ -56,11 +56,15 @@
 
               &-content::before{
                 opacity: 1;
-                top: -100px;
+                top: -105px;
               }
 
               &-head{
                 top: -15px;
+
+                .accounttypes-icons{
+                  margin-top: 2px;
+                }
               }
 
               &-list{
@@ -79,6 +83,10 @@
           z-index: 1;
           top: 0;
           @include transition-multiple(top 0.3s ease-in-out);
+
+          .accounttypes-icons{
+            @include transition-multiple(margin 0.3s ease-in-out);
+          }
         }
 
         &-content{
@@ -127,6 +135,36 @@
 
     .component-summarytable{}
 
+  }
+
+  &-platforms{
+    padding: 100px 0 50px;
+    position: relative;
+    overflow: hidden;
+
+    &::after{
+      content: "";
+      width: 0;
+      height: 0;
+      background-color: $var-custom-body-bg;
+      background-clip: border-box;
+      border-style: solid;
+      border-width: 0 0 200px 100vw;
+      border-color: transparent transparent $site-section-bgclr-grylight transparent;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .container{
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &-news{
+    background-color: $site-section-bgclr-grylight;
+    padding: 50px 0;
   }
 
 }

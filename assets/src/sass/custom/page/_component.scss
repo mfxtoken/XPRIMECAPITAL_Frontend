@@ -244,4 +244,52 @@
       }
     }
   }
+
+  &-platforms{
+
+    &-row{
+      @include flexbox-align-items(center);
+    }
+
+    &-cont{
+
+      .sitetitle-xl{
+        padding-right: 100px;
+
+        .platreqbtns{
+          margin-top: 30px;
+
+          .btn{
+            margin: 0 7px;
+            min-width: 200px;
+
+            &:first-child{margin-left: 0;}
+            &:last-child{margin-right: 0;}
+          }
+
+          .rounded-pill{
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+
+          .btn-outline-info{
+            @include box-shadow(0 0 20px 0 transparentize($global-clr-cyan, 0.75));
+          }
+        }
+      }
+    }
+
+    &-spec{
+
+      .platspecbox{
+        background-color: transparentize($var-custom-body-bg, 0.5);
+        padding: 40px;
+        min-height: 500px;
+        @include box-shadow(0 0 50px 0 #e3e9f2);
+        position: relative;
+      }
+
+    }
+
+  }
 }

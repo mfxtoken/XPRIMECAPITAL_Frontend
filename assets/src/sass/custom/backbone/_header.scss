@@ -11,7 +11,8 @@ $headlogo-clr-red:                $site-clr-red;
   left: 0;
   top: 0;
   z-index: 2;
-  @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out);
+  @include box-shadow(0 0 0 0 transparent);
+  @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 
   &-logoarea{
 
@@ -58,6 +59,7 @@ $headlogo-clr-red:                $site-clr-red;
   &.headscroll{
     background-color: $var-custom-body-bg;
     padding: 30px 0;
+    @include box-shadow(0 0 50px 0 #e3e9f2);
 
     #{$headerclassname}-top{}
   }
