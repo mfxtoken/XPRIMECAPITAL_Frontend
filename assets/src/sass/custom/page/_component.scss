@@ -1,2 +1,165 @@
 
-.component{}
+.component{
+
+  &-siteaccounttypes{
+
+    .accounttypes{
+
+      &-icons{
+        color: $site-clr-text-dark-pri;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: $var-custom-font-weight-bolder;
+        line-height: 1;
+        display: block;
+        margin-top: 10px;
+      }
+
+      &-title{
+        color: $site-clr-text-dark-pri;
+        font-size: 1.25rem;
+        font-weight: $var-custom-font-weight-bold;
+        line-height: 1;
+        padding: 0;
+        margin: 0;
+        position: relative;
+      }
+
+    }
+
+    .accounttypesboxowl{
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+
+      > li{
+        @include flexbox-flex-basis(0);
+        @include flexbox-flex-grow(1);
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      &-content{
+        padding: 50px;
+      }
+
+      &-head{}
+
+      &-list{
+        font-size: 18px;
+        line-height: 1.2;
+        text-align: left;
+        margin-top: 25px;
+        min-height: 320px;
+
+        li{
+          position: relative;
+          padding-left: 15px;
+          margin: 10px 0;
+
+          &:first-child{margin-top: 0;}
+          &:last-child{margin-bottom: 0;}
+
+          &::before{
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: $site-clr-cyan;
+            top: 5px;
+            left: 0;
+            @include border-radius(50%);
+          }
+        }
+      }
+
+      &-btn{
+        @include BootstrapMaxWidthResponsive(hd){
+          height: 36px;
+          font-size: 15px;
+          line-height: 1.5;
+        }
+      }
+
+    }
+
+    .accounttypestable{
+      margin: 0;
+
+      thead tr th,
+      tbody tr td{
+        padding: 15px;
+        line-height: 1.25;
+
+        &:first-child{
+          border-left: none;
+          font-weight: 500;
+        }
+      }
+
+      thead{
+        tr{
+          th{
+            vertical-align: top;
+
+            .accounttypes-title{
+              margin-top: 10px;
+
+              @include BootstrapMaxWidthResponsive(lg){
+                margin-top: 5px;
+              }
+            }
+
+            &.firsttitle{
+              .accounttypes-title{
+                font-size: 22px;
+                font-weight: 700;
+                margin-top: 5px;
+
+                span{
+                  font-size: 28px;
+                  display: block;
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      tbody{
+        tr{
+
+          &:nth-of-type(odd){
+            @include border-radius(6px);
+
+            td{
+              &:first-child{
+                @include border-radii(6px,0,0,6px);
+              }
+              &:last-child{
+                @include border-radii(0,6px,6px,0);
+              }
+            }
+          }
+
+          @include BootstrapMaxWidthResponsive(xl){
+            &:nth-of-type(odd){
+              @include border-radius(3px);
+
+              td{
+                &:first-child{
+                  @include border-radii(3px,0,0,3px);
+                }
+                &:last-child{
+                  @include border-radii(0,3px,3px,0);
+                }
+              }
+            }
+          }
+
+          td{}
+        }
+      }
+    }
+  }
+}

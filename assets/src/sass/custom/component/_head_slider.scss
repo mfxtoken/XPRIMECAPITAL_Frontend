@@ -151,6 +151,7 @@ $headslider-bgclr:                transparent;
         padding-right: 1.5rem;
         margin-right: 5px;
         margin-bottom: 5px;
+        @include box-shadow(0 0 30px 0 transparentize($global-clr-green, 0.5));
       }
       .btn-link{
         margin-left: 5px;

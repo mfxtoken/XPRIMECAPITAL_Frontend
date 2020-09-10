@@ -2,20 +2,61 @@
 .home{
 
   &-accounttypes{
-    background-color: $var-custom-body-bg;
+    background-color: $site-section-bgclr-grylight;
+    padding: 200px 0 86px;
+    margin-top: -200px;
     position: relative;
+    overflow: hidden;
 
-    &::before{
+    &::before,
+    &::after{
       content: "";
       width: 0;
       height: 0;
-      background-color: $var-custom-body-bg;
+      background-clip: border-box;
       border-style: solid;
+      position: absolute;
+      right: 0;
+    }
+
+    &::before{
+      background-color: $site-section-bgclr-grylight;
       border-width: 0 0 200px 100vw;
       border-color: transparent transparent transparent #f6f9ff;
-      position: absolute;
-      top: -200px;
-      left: 0;
+      top: 0;
+    }
+
+    &::after{
+      background-color: $var-custom-body-bg;
+      border-width: 0 0 200px 100vw;
+      border-color: transparent transparent transparent $site-section-bgclr-grylight;
+      bottom: 0;
+    }
+
+    .sitetitle-xl{
+      padding-bottom: 40px;
+    }
+
+    .component-siteaccounttypes{
+      position: relative;
+      z-index: 1;
+
+      .accounttypesboxowl{
+
+        > li{
+          position: relative;
+
+          &.active{
+            background-color: $var-custom-body-bg;
+            z-index: 1;
+          }
+        }
+
+        &-content{
+          background-color: transparentize($var-custom-body-bg, 0.5);
+          @include box-shadow(0 0 50px 0 #e3e9f2);
+        }
+      }
     }
   }
 
