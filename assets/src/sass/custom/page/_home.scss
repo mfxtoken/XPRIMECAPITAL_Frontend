@@ -137,7 +137,7 @@
 
   }
 
-  &-platforms{
+  &-platformsxxx{
     padding: 100px 0 50px;
     position: relative;
     overflow: hidden;
@@ -165,6 +165,78 @@
   &-news{
     background-color: $site-section-bgclr-grylight;
     padding: 50px 0;
+  }
+
+  // Irfan
+
+  &-features{
+    background-color: $site-section-bgclr-grylight;
+    padding: 200px 0 100px;
+    margin-top: -185px;
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after{
+      content: "";
+      width: 0;
+      height: 0;
+      background-clip: border-box;
+      border-style: solid;
+      position: absolute;
+      right: 0;
+    }
+
+    &::before{
+      background-color: $site-section-bgclr-grylight;
+      border-width: 0 0 200px 100vw;
+      border-color: transparent transparent transparent #f6f9ff;
+      top: 0;
+    }
+
+    &::after{
+      background-color: $var-custom-body-bg;
+      border-width: 0 0 200px 100vw;
+      border-color: transparent transparent transparent $site-section-bgclr-grylight;
+      bottom: 0;
+    }
+
+    .sitetitle-xl{
+      padding-bottom: 30px;
+    }
+
+    .component-featuresbox{
+      position: relative;
+      z-index: 1;
+
+      .sitefeaturesv1{}
+    }
+  }
+
+  &-platforms{
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::after{
+      content: "";
+      width: 0;
+      height: 0;
+      background-color: $var-custom-body-bg;
+      background-clip: border-box;
+      border-style: solid;
+      border-width: 0 0 200px 100vw;
+      border-color: transparent transparent $site-section-bgclr-grylight transparent;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: none;
+    }
+
+    .container{
+      position: relative;
+      z-index: 1;
+    }
   }
 
 }

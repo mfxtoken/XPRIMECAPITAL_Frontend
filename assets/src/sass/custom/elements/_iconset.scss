@@ -32,6 +32,18 @@
     display: inline-block;
     position: relative;
 
+    &.sprite-60-sitefeatures{
+      background-image: url(#{$path-img-url-icons}/icons_spite_60_sitefeatures.svg);
+      background-position: 0 0;
+      width: 60px;
+      height: 60px;
+
+      &.icons01{background-position: calc(-60px*0) 0;}
+      &.icons02{background-position: calc(-60px*1) 0;}
+      &.icons03{background-position: calc(-60px*2) 0;}
+      &.icons04{background-position: calc(-60px*3) 0;}
+    }
+
     &.sprite-24-socialmedia{
       background-image: url(#{$path-img-url-icons}/icons_spite_24_socialmedia.svg);
       background-position: 0 0;
