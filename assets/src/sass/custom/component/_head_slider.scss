@@ -16,7 +16,6 @@ $headslider-bgclr:                transparent;
   position: relative;
   overflow: hidden;
 
-
   &::after{
     content: "";
     background-image: url(#{$path-img-url}/header/headchartmountains.svg);

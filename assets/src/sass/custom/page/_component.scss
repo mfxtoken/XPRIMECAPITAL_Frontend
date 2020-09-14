@@ -410,7 +410,7 @@
 
   &-aboutus{
     @include flexbox-flex(0);
-    padding-bottom: 50px;
+    padding-bottom: 80px;
 
     @include BootstrapMaxWidthResponsive(lg){
       padding-top: 15px;
@@ -458,7 +458,7 @@
     }
 
     .aboutusimg{
-      max-width: 740px;
+      max-width: 700px;
     }
   }
 
