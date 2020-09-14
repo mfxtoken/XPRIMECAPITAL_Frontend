@@ -3,13 +3,16 @@
   @include flexbox-display-flex();
 
   .btn{
-    margin: 0 5px;
+    margin: 0 7px;
 
     &-platdown{
       @include flexbox-display-flex();
       @include flexbox-align-items(center);
+      min-width: 200px;
       height: auto;
       @include transition-multiple(none);
+      padding-left: 1rem;
+      padding-right: 1rem;
 
       i.platdownicon{
         width: 34px;
@@ -71,6 +74,12 @@
             color: $site-clr-white;
           }
         }
+      }
+    }
+
+    &[class*="info"]{
+      &.active{
+        @include box-shadow(0 0 30px 0 transparentize($global-clr-cyan, 0.75));
       }
     }
   }
