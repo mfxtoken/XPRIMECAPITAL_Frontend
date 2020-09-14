@@ -275,4 +275,55 @@
     }
   }
 
+  &-trademobile{
+    padding: 50px 0;
+
+    &-row{
+      @include flexbox-align-items(center);
+    }
+
+    &-cont{
+      max-width: 680px;
+
+      .sitetitle-xl{
+        padding-right: 100px;
+        padding-bottom: 50px;
+
+        .platappdownbtns{
+          margin-top: 30px;
+
+          .btn{
+            margin: 0 7px;
+            min-width: 200px;
+
+            &:first-child{margin-left: 0;}
+            &:last-child{margin-right: 0;}
+          }
+
+          .rounded-pill{
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+
+          .btn-outline-info{
+            &.active{
+              @include box-shadow(0 0 30px 0 transparentize($global-clr-cyan, 0.75));
+            }
+          }
+        }
+      }
+    }
+
+    &-spec{
+
+      .trademobilebox{
+
+        &-img{
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+  }
+
 }

@@ -1,0 +1,77 @@
+
+.platappdownbtns{
+  @include flexbox-display-flex();
+
+  .btn{
+    margin: 0 5px;
+
+    &-platdown{
+      @include flexbox-display-flex();
+      @include flexbox-align-items(center);
+      height: auto;
+      @include transition-multiple(none);
+
+      i.platdownicon{
+        width: 34px;
+        height: 34px;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          width: 30px;
+          height: 30px;
+        }
+        @include BootstrapMaxWidthResponsive(xl){
+          width: 28px;
+          height: 28px;
+          position: relative;
+          right: -1px;
+        }
+
+        svg{
+          fill: $site-clr-cyan;
+        }
+      }
+
+      .platdowntext{
+        line-height: 1.2;
+        text-align: left;
+        padding: 0 5px;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          line-height: 1.1;
+        }
+
+        small, strong{
+          display: block;
+        }
+
+        small{
+          font-size: 0.75rem;
+          font-weight: $var-custom-font-weight-normal;
+          position: relative;
+          bottom: -2px;
+        }
+
+        strong{
+          font-size: 1rem;
+        }
+
+      }
+
+      &:hover,
+      &.active{
+
+        i.platdownicon{
+          svg{
+            fill: $site-clr-white;
+          }
+        }
+
+        p{
+          small, strong{
+            color: $site-clr-white;
+          }
+        }
+      }
+    }
+  }
+}
