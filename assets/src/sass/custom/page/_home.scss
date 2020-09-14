@@ -283,6 +283,7 @@
     }
 
     &-cont{
+      @include flexbox-flex-order(1);
       max-width: 680px;
 
       .sitetitle-xl{
@@ -296,6 +297,7 @@
     }
 
     &-spec{
+      @include flexbox-flex-order(2);
 
       .trademobilebox{
 

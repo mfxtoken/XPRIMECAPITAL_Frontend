@@ -142,19 +142,7 @@ $headslider-bgclr:                transparent;
   }
 
   &-buttons{
-    font-size: $var-custom-font-size-lg;
     margin-top: 20px;
-
-    .openaccountbtns{
-      .rounded-pill{
-        margin-right: 5px;
-        margin-bottom: 5px;
-        @include box-shadow(0 0 30px 0 transparentize($global-clr-green, 0.5));
-      }
-      .btn-link{
-        margin-left: 5px;
-      }
-    }
   }
 
   &-banner{

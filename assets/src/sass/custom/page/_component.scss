@@ -408,4 +408,58 @@
     }
   }
 
+  &-aboutus{
+    @include flexbox-flex(0);
+    padding-bottom: 50px;
+
+    @include BootstrapMaxWidthResponsive(lg){
+      padding-top: 15px;
+    }
+
+    > .container .row{
+      @include flexbox-align-items(center);
+
+      @include BootstrapMaxWidthResponsive(lg){
+        @include flexbox-flex-direction(column);
+      }
+    }
+
+    .aboutustxt{
+
+      .sitetitle-xl{
+        height: 100%;
+        padding-right: 50px;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          padding-right: 20px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          padding-right: 0;
+          text-align: center;
+        }
+      }
+
+      .openaccountbtns{
+        max-width: 600px;
+        margin-top: 50px;
+        padding-right: 50px;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          margin-top: 20px;
+          padding-right: 20px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          max-width: 420px;
+          padding-right: 0;
+          margin: 15px auto;
+          text-align: center;
+        }
+      }
+    }
+
+    .aboutusimg{
+      max-width: 740px;
+    }
+  }
+
 }

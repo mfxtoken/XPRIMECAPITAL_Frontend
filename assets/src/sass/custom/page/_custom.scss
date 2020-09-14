@@ -1,4 +1,33 @@
 
+.openaccountbtns{
+  @include flexbox-display-flex();
+  @include flexbox-align-items(center);
+  font-size: $var-custom-font-size-lg;
+
+  > *{
+    margin: 0 5px;
+
+    &:first-child{
+      margin-left: 0;
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  .btn{
+
+    &-link{}
+
+    &[class*="success"]{
+      @include box-shadow(0 0 30px 0 transparentize($global-clr-green, 0.5));
+    }
+  }
+
+  .rounded-pill{}
+}
+
 .platappdownbtns{
   @include flexbox-display-flex();
 
