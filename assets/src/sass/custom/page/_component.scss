@@ -293,55 +293,12 @@
 
   }
 
-  &-platforms{
-
-    &-row{
-      @include flexbox-align-items(center);
-    }
-
-    &-cont{
-      max-width: 600px;
-
-      .sitetitle-xl{
-        padding-right: 100px;
-
-        .platreqbtns{
-          margin-top: 30px;
-
-          .btn{
-            margin: 0 7px;
-            min-width: 200px;
-
-            &:first-child{margin-left: 0;}
-            &:last-child{margin-right: 0;}
-          }
-
-          .rounded-pill{
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-          }
-
-          .btn-outline-info{
-            @include box-shadow(0 0 20px 0 transparentize($global-clr-cyan, 0.75));
-          }
-        }
-      }
-    }
-
-    &-spec{
-
-      .platspecbox{
-        min-height: 500px;
-      }
-
-    }
-
-  }
+  &-platforms{}
 
   &-featuresbox{
 
     .sitefeaturesv1{
-      padding: 0 5%;
+      margin: 0 5%;
 
       @include flexbox-display-flex();
       @include flexbox-flex-wrap(wrap);
@@ -359,6 +316,10 @@
             width: calc(50% - 20px);
             height: calc(50% - 20px);
             position: absolute;
+            border-width: 0;
+            border-style: solid;
+            //border-color: darken($site-clr-grylight, 5%);
+            border-color: $site-clr-cyan;
           }
 
         }
@@ -366,8 +327,8 @@
         &:nth-child(1){
 
           > div::before{
-            border-right: 2px solid $site-clr-cyan;
-            border-bottom: 2px solid $site-clr-cyan;
+            border-right-width: 2px;
+            border-bottom-width: 2px;
             right: 0;
             bottom: 0;
           }
@@ -377,8 +338,8 @@
         &:nth-child(4){
 
           > div::before{
-            border-top: 2px solid $site-clr-cyan;
-            border-left: 2px solid $site-clr-cyan;
+            border-top-width: 2px;
+            border-left-width: 2px;
             left: 0;
             top: 0;
           }
@@ -386,25 +347,24 @@
       }
 
       &-box{
-        //background-color: transparentize($var-custom-body-bg, 0.25);
         padding: 45px 50px;
         height: 100%;
         position: relative;
-        //@include box-shadow(0 0 50px 0 #e3e9f2);
 
         i[class*="icon"]{
           display: block;
-          margin-bottom: 25px;
+          margin-bottom: 1rem;
         }
 
         h3,h4,h5{
           color: $site-clr-text-dark-pri;
-          font-size: 1.5rem;
+          font-size: 1.4rem;
         }
 
         p{
           color: $site-clr-text-dark-sec;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
+          margin-top: 0.25rem;
         }
 
       }
