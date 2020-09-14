@@ -206,7 +206,7 @@
       content: "";
       width: 100%;
       height: 35px;
-      background-color: $site-section-bgclr-grylight;
+      background-color: lighten($site-section-bgclr-grylight, 1%);
       position: absolute;
       right: 0;
       bottom: 0;
@@ -260,10 +260,18 @@
   }
 
   &-news{
-    background-color: $site-section-bgclr-grylight;
+    background-color: lighten($site-section-bgclr-grylight, 1%);
     padding: 100px 0;
+  }
 
+  &-tradingtools{
+    background-color: $var-custom-body-bg;
+    padding: 100px 0;
+    position: relative;
 
+    .sitetitle-xl{
+      padding-bottom: 40px;
+    }
   }
 
 }

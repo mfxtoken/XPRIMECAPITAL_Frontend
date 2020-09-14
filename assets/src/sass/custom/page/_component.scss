@@ -318,8 +318,8 @@
             position: absolute;
             border-width: 0;
             border-style: solid;
-            //border-color: darken($site-clr-grylight, 5%);
-            border-color: $site-clr-cyan;
+            border-color: darken($site-clr-grylight, 5%);
+            //border-color: $site-clr-cyan;
           }
 
         }
@@ -370,6 +370,42 @@
       }
     }
 
+    .sitefeaturesv2{
+      margin: 0;
+
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+
+      > li{
+        @include flexbox-flex(0 0 calc(100%/3));
+        max-width: calc(100%/3);
+        padding: 15px;
+      }
+
+      &-box{
+        padding: 0 40px;
+        height: 100%;
+        text-align: center;
+        position: relative;
+
+        i[class*="icon"]{
+          display: block;
+          margin: 0 auto 1rem;
+        }
+
+        h3,h4,h5{
+          color: $site-clr-text-dark-pri;
+          font-size: 1.4rem;
+        }
+
+        p{
+          color: $site-clr-text-dark-sec;
+          font-size: 1.1rem;
+          margin-top: 0.25rem;
+        }
+
+      }
+    }
   }
 
 }

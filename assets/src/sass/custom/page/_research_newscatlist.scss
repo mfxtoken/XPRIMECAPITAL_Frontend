@@ -176,7 +176,7 @@
     &-owlbox{
       padding-top: 30px;
       margin-top: 30px;
-      border-top: 2px solid transparentize($site-clr-cyan, 0.5);
+      border-top: 2px solid darken($site-clr-grylight, 5%);
 
       @include BootstrapMaxWidthResponsive(hd){
         padding-top: 10px;
