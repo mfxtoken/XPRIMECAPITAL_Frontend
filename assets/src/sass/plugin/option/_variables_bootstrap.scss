@@ -163,7 +163,7 @@ $bootstrap-nested-kbd-font-weight:      $bootstrap-font-weight-bold;
 $bootstrap-list-inline-padding:         .5rem;
 $bootstrap-mark-bg:                     #fcf8e3;
 $bootstrap-hr-margin-y:                 $bootstrap-spacer;
-$bootstrap-link-color:                  $bootstrap-primary;
+$bootstrap-link-color:                  $var-custom-link-color;
 $bootstrap-link-decoration:             none;
 $bootstrap-link-hover-color:            darken($bootstrap-link-color, 15%);
 $bootstrap-link-hover-decoration:       none;

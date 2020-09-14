@@ -162,11 +162,6 @@
     }
   }
 
-  &-news{
-    background-color: $site-section-bgclr-grylight;
-    padding: 50px 0;
-  }
-
   // Irfan
 
   &-features{
@@ -262,6 +257,13 @@
         }
       }
     }
+  }
+
+  &-news{
+    background-color: $site-section-bgclr-grylight;
+    padding: 100px 0;
+
+
   }
 
 }

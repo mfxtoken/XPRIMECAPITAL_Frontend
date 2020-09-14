@@ -147,8 +147,6 @@ $headslider-bgclr:                transparent;
 
     .openaccountbtns{
       .rounded-pill{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
         margin-right: 5px;
         margin-bottom: 5px;
         @include box-shadow(0 0 30px 0 transparentize($global-clr-green, 0.5));
@@ -164,7 +162,7 @@ $headslider-bgclr:                transparent;
 
     &::after{
       content: "";
-      background-color: #c2c9d6;
+      background-color: darken($site-clr-grylight, 5%);
       width: 15%;
       height: 10px;
       opacity: 0.30;

@@ -37,6 +37,13 @@
     h3+p,h4+p,h5+p,p+h3,p+h4,p+h5{margin-top: 10px;}
   }
 
+  &-line{
+    h1,h2,h3,h4,h5,h6{
+      border-bottom: 2px solid transparentize($site-clr-cyan, 0.5);
+      padding-bottom: 5px;
+    }
+  }
+
   &-dark{
     h1,h2,h3,h4,h5,h6{color: $site-clr-text-dark-pri;}
     p{color: $site-clr-text-dark-sec;}
