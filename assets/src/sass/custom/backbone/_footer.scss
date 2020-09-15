@@ -236,14 +236,13 @@ $foot-brdr-clr:                   #CFD8E7;
 
     h6{
       color: $foot-headtitle-clr;
-      font-size: $foot-headtitle-size;
+      font-size: $foot-headtitle-size * 0.9;
       line-height: 1.2;
       margin-bottom: 5px;
     }
 
     p{
-      font-size: $foot-text-size;
-      line-height: 1.25;
+      font-size: $foot-text-size * 0.9;
       margin-bottom: 5px;
 
       &:last-child{margin-bottom: 0;}
@@ -257,7 +256,7 @@ $foot-brdr-clr:                   #CFD8E7;
   }
 
   &-copyright{
-    padding: 20px 0;
+    padding: 15px 0;
     margin-top: 25px;
     border-top: 1px solid $foot-brdr-clr;
 
@@ -265,17 +264,18 @@ $foot-brdr-clr:                   #CFD8E7;
       @include flexbox-align-items(center);
     }
 
-    .copyright{}
+    .copyright{
+      font-size: $foot-text-size;
+    }
+
     .socialmedia{
       .sociallist{
         @include flexbox-display-flex();
 
         li{
           background-color: transparent;
-          width: 34px;
-          height: 34px;
           margin-right: 5px;
-          border: 2px solid $foot-brdr-clr;
+          border: 1px solid $foot-brdr-clr;
           @include border-radius(2px);
           @include transition-multiple(background 0.15s ease-in-out, border 0.15s ease-in-out);
 
@@ -290,9 +290,15 @@ $foot-brdr-clr:                   #CFD8E7;
             }
           }
 
+          a{
+            @include flexbox-display-flex();
+            width: 34px;
+            height: 34px;
+          }
+
           .socialicon{
             position: relative;
-            margin: 3px;
+            margin: auto;
             @include svg-filter(0%, 0, 0, 100%, 100%, 75%);
             @include transition-multiple(filter 0.15s ease-in-out);
           }
