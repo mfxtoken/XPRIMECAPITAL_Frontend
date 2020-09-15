@@ -1,11 +1,11 @@
 
 /* Components Variables Settings */
-$foot-text-clr:                   $site-clr-text-dark-sec;
+$foot-text-clr:                   $site-clr-text-dark-pri;
 $foot-text-size:                  1rem;
-$foot-headtitle-clr:              $site-clr-text-dark-pri;
+$foot-headtitle-clr:              $site-clr-cyan;
 $foot-headtitle-size:             1.25rem;
 $foot-bgclr:                      #E9F0FC;
-$foot-brdr-clr:                   #a9b4c7;
+$foot-brdr-clr:                   #CFD8E7;
 /* Components Variables Settings */
 
 .footer{
@@ -50,7 +50,7 @@ $foot-brdr-clr:                   #a9b4c7;
   }
 
   > .container{
-    padding: 220px 0 30px;
+    padding-top: 190px;
     position: relative;
     z-index: 1;
   }
@@ -69,16 +69,11 @@ $foot-brdr-clr:                   #a9b4c7;
       display: block;
       margin: 0 auto;
     }
-
-    .copyright{
-      margin-top: 10px;
-      font-size: 90%;
-    }
   }
 
   &-navigation{
     padding-left: 60px;
-    margin-left: 50px;
+    margin-left: 20px;
     border-left: 1px solid $foot-brdr-clr;
 
     &-col{
@@ -228,6 +223,75 @@ $foot-brdr-clr:                   #a9b4c7;
             &:nth-child(2){
               margin-top: 5px;
             }
+          }
+        }
+      }
+    }
+  }
+
+  &-risk{
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid $foot-brdr-clr;
+
+    h6{
+      color: $foot-headtitle-clr;
+      font-size: $foot-headtitle-size;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    p{
+      font-size: $foot-text-size;
+      line-height: 1.25;
+      margin-bottom: 5px;
+
+      &:last-child{margin-bottom: 0;}
+
+      a{
+        color: $foot-headtitle-clr;
+        font-weight: $var-custom-font-weight-bold;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-copyright{
+    padding: 20px 0;
+    margin-top: 25px;
+    border-top: 1px solid $foot-brdr-clr;
+
+    &-row{
+      @include flexbox-align-items(center);
+    }
+
+    .copyright{}
+    .socialmedia{
+      .sociallist{
+        @include flexbox-display-flex();
+
+        li{
+          width: 34px;
+          height: 34px;
+          margin-right: 5px;
+          border: 2px solid $foot-brdr-clr;
+          @include border-radius(2px);
+
+          @include BootstrapMaxWidthResponsive(hd){
+            margin-right: 2px;
+            @include scale(0.9);
+          }
+          @include BootstrapMaxWidthResponsive(xl){
+            margin-right: -2px;
+            @include scale(0.8);
+          }
+
+          &:last-child{margin-right: 0;}
+
+          .socialicon{
+            position: relative;
+            margin: 3px;
+            //@include svg-filter(0%, 1, 0, 100%);
           }
         }
       }
