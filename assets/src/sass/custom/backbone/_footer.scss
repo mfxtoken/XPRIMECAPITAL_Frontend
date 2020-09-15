@@ -271,27 +271,30 @@ $foot-brdr-clr:                   #CFD8E7;
         @include flexbox-display-flex();
 
         li{
+          background-color: transparent;
           width: 34px;
           height: 34px;
           margin-right: 5px;
           border: 2px solid $foot-brdr-clr;
           @include border-radius(2px);
-
-          @include BootstrapMaxWidthResponsive(hd){
-            margin-right: 2px;
-            @include scale(0.9);
-          }
-          @include BootstrapMaxWidthResponsive(xl){
-            margin-right: -2px;
-            @include scale(0.8);
-          }
+          @include transition-multiple(background 0.15s ease-in-out, border 0.15s ease-in-out);
 
           &:last-child{margin-right: 0;}
+
+          &:hover{
+            background-color: $foot-headtitle-clr;
+            border-color: $foot-headtitle-clr;
+
+            .socialicon{
+              @include svg-filter(0%, 1, 0, 100%, 100%, 100%);
+            }
+          }
 
           .socialicon{
             position: relative;
             margin: 3px;
-            //@include svg-filter(0%, 1, 0, 100%);
+            @include svg-filter(0%, 0, 0, 100%, 100%, 75%);
+            @include transition-multiple(filter 0.15s ease-in-out);
           }
         }
       }

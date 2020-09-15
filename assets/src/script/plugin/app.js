@@ -20,3 +20,9 @@ jQuery(function($) {
     }
 });
 /* Header Web Navbar Fixed */
+
+/* Tooltip */
+$(function(){
+    $('[data-toggle="tooltip"]').tooltip()
+});
+/* Tooltip */
