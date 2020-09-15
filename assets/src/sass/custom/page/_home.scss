@@ -162,8 +162,6 @@
     }
   }
 
-  // Irfan
-
   &-features{
     background-color: $var-custom-body-bg;
     padding: 200px 0 50px;
@@ -262,12 +260,12 @@
 
   &-news{
     background-color: lighten($site-section-bgclr-grylight, 1%);
-    padding: 100px 0;
+    padding: 80px 0 50px;
   }
 
   &-tradingtools{
     background-color: $var-custom-body-bg;
-    padding: 100px 0;
+    padding: 70px 0 80px;
     position: relative;
 
     .sitetitle-xl{
