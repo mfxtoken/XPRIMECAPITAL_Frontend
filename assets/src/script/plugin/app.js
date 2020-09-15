@@ -1,5 +1,5 @@
 /* Header Web Navbar Fixed */
-jQuery(function($) {
+$(document).ready(function() {
     if($(window).width() > 1059){
 
         $(window).on("load resize scroll",function(e){
@@ -26,3 +26,9 @@ $(function(){
     $('[data-toggle="tooltip"]').tooltip()
 });
 /* Tooltip */
+
+/* Popovers */
+$(function () {
+    $('[data-toggle="popover"]').popover()
+});
+/* Popovers */

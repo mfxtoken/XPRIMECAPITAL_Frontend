@@ -23,6 +23,43 @@ $('.headsliderowl').owlCarousel({
 });
 /* Head Home Slider */
 
+/* Sticky Tickers */
+$(document).ready(function() {
+    var footsticyticker = $('.stickyside-ticker');
+    var footer          = $('.footer');
+    footer.css("padding-bottom", footsticyticker.height() + "px");
+});
+
+$('.stickytickersowl').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:2000,
+    autoplayHoverPause:true,
+    items:8,
+    margin:0,
+    autoWidth:false,
+    mouseDrag:false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            mouseDrag:true
+        },
+        819:{
+            items:1,
+            mouseDrag:true
+        },
+        1059:{},
+        1379:{
+            items:4
+        },
+        1939:{}
+    }
+});
+/* Sticky Tickers */
+
 /* Research News Category List Owl Carousel */
 $('.researchnewscatlistowl').owlCarousel({
     loop:true,
