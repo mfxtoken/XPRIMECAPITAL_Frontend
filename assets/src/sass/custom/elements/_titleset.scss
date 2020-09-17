@@ -25,6 +25,12 @@
     h4+p,h5+p,h6+p,p+h4,p+h5,p+h6{margin-top: 10px;}
   }
 
+  &-lg{
+    h1,h2,h3{font-size: 2.0rem;}
+    p{font-size: 18px;}
+    h1+p,h2+p,h3+p,p+h1,p+h2,p+h3{margin-top: 10px;}
+  }
+
   &-md{
     h1,h2,h3{font-size: 2.0rem;}
     p{font-size: 18px;}
