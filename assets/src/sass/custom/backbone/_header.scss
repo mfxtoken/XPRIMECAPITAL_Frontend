@@ -19,6 +19,22 @@ $headlogo-clr-red:                $site-clr-red;
     .headlogo{
       display: block;
       margin-right: 1rem;
+      position: relative;
+
+      &::before{
+        content: attr(data-title);
+        color: $site-clr-text-dark-pri;
+        font-size: 0.6rem;
+        text-align: right;
+        white-space: nowrap;
+        position: absolute;
+        width: 100%;
+        height: 14px;
+        right: 0;
+        bottom: -12px;
+        opacity: 1;
+        @include transition-multiple(opacity 0.5s ease-in-out);
+      }
 
       &-svg{
         width: 200px;
@@ -61,6 +77,16 @@ $headlogo-clr-red:                $site-clr-red;
     padding: 30px 0;
     @include box-shadow(0 0 50px 0 #e3e9f2);
 
-    #{$headerclassname}-top{}
+    #{$headerclassname}-logoarea{
+      .headlogo{
+        &::before{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  + .noheadtitle{
+    padding-top: 135px;
   }
 }
