@@ -146,92 +146,92 @@
       }
 
 
-      &.colorforexnews{
-        $newscat-forexnewscolor: $site-clr-cyan;
+      &.boxcolorcyan{
+        $newscat-colorcyan: $site-clr-cyan;
 
-        &::before{background-color: $newscat-forexnewscolor;}
-        .sitetitle-lg span{color: $newscat-forexnewscolor;}
-        .headnewstopinfo{color: $newscat-forexnewscolor;}
-        .listnewsinfo{color: $newscat-forexnewscolor;}
+        &::before{background-color: $newscat-colorcyan;}
+        .sitetitle-lg span{color: $newscat-colorcyan;}
+        .headnewstopinfo{color: $newscat-colorcyan;}
+        .listnewsinfo{color: $newscat-colorcyan;}
 
         .btn-secondary{
-          background-color: $newscat-forexnewscolor;
-          border-color: $newscat-forexnewscolor;
+          background-color: $newscat-colorcyan;
+          border-color: $newscat-colorcyan;
 
           &:hover{
-            background-color: darken($newscat-forexnewscolor, 5%);
-            border-color: darken($newscat-forexnewscolor, 5%);
+            background-color: darken($newscat-colorcyan, 5%);
+            border-color: darken($newscat-colorcyan, 5%);
           }
         }
 
         .btn-outline-secondary{
-          color: $newscat-forexnewscolor;
-          border-color: $newscat-forexnewscolor;
+          color: $newscat-colorcyan;
+          border-color: $newscat-colorcyan;
 
           &:hover{
             color: $site-clr-white;
-            background-color: $newscat-forexnewscolor;
-            border-color: $newscat-forexnewscolor;
+            background-color: $newscat-colorcyan;
+            border-color: $newscat-colorcyan;
           }
         }
       }
 
-      &.coloreconomynews{
-        $newscat-economynewscolor: $site-clr-blue;
+      &.boxcolorblue{
+        $newscat-colorblue: $site-clr-blue;
 
-        &::before{background-color: $newscat-economynewscolor;}
-        .sitetitle-lg span{color: $newscat-economynewscolor;}
-        .headnewstopinfo{color: $newscat-economynewscolor;}
-        .listnewsinfo{color: $newscat-economynewscolor;}
+        &::before{background-color: $newscat-colorblue;}
+        .sitetitle-lg span{color: $newscat-colorblue;}
+        .headnewstopinfo{color: $newscat-colorblue;}
+        .listnewsinfo{color: $newscat-colorblue;}
 
         .btn-secondary{
-          background-color: $newscat-economynewscolor;
-          border-color: $newscat-economynewscolor;
+          background-color: $newscat-colorblue;
+          border-color: $newscat-colorblue;
 
           &:hover{
-            background-color: darken($newscat-economynewscolor, 5%);
-            border-color: darken($newscat-economynewscolor, 5%);
+            background-color: darken($newscat-colorblue, 5%);
+            border-color: darken($newscat-colorblue, 5%);
           }
         }
 
         .btn-outline-secondary{
-          color: $newscat-economynewscolor;
-          border-color: $newscat-economynewscolor;
+          color: $newscat-colorblue;
+          border-color: $newscat-colorblue;
 
           &:hover{
             color: $site-clr-white;
-            background-color: $newscat-economynewscolor;
-            border-color: $newscat-economynewscolor;
+            background-color: $newscat-colorblue;
+            border-color: $newscat-colorblue;
           }
         }
       }
 
-      &.coloreconomicindicator{
-        $newscat-economicindicatorcolor: $site-clr-green;
+      &.boxcolorgreen{
+        $newscat-colorgreen: $site-clr-green;
 
-        &::before{background-color: $newscat-economicindicatorcolor;}
-        .sitetitle-lg span{color: $newscat-economicindicatorcolor;}
-        .headnewstopinfo{color: $newscat-economicindicatorcolor;}
-        .listnewsinfo{color: $newscat-economicindicatorcolor;}
+        &::before{background-color: $newscat-colorgreen;}
+        .sitetitle-lg span{color: $newscat-colorgreen;}
+        .headnewstopinfo{color: $newscat-colorgreen;}
+        .listnewsinfo{color: $newscat-colorgreen;}
 
         .btn-secondary{
-          background-color: $newscat-economicindicatorcolor;
-          border-color: $newscat-economicindicatorcolor;
+          background-color: $newscat-colorgreen;
+          border-color: $newscat-colorgreen;
 
           &:hover{
-            background-color: darken($newscat-economicindicatorcolor, 5%);
-            border-color: darken($newscat-economicindicatorcolor, 5%);
+            background-color: darken($newscat-colorgreen, 5%);
+            border-color: darken($newscat-colorgreen, 5%);
           }
         }
 
         .btn-outline-secondary{
-          color: $newscat-economicindicatorcolor;
-          border-color: $newscat-economicindicatorcolor;
+          color: $newscat-colorgreen;
+          border-color: $newscat-colorgreen;
 
           &:hover{
             color: $site-clr-white;
-            background-color: $newscat-economicindicatorcolor;
-            border-color: $newscat-economicindicatorcolor;
+            background-color: $newscat-colorgreen;
+            border-color: $newscat-colorgreen;
           }
         }
       }
