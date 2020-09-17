@@ -3,6 +3,7 @@
 #### Web Public Area Frontend List
  - [Home_Page](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Home_Page.html)
  - [Research_News](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News.html)
+ - [Research_News_Detail](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News_Detail.html)
    
 
 # NodeJS Kurulumu
