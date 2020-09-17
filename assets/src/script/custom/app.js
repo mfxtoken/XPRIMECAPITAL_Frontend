@@ -60,8 +60,8 @@ $('.stickytickersowl').owlCarousel({
 });
 /* Sticky Tickers */
 
-/* Research News Category List Owl Carousel */
-$('.researchnewscatlistowl').owlCarousel({
+/* Home News Category List Owl Carousel */
+$('.homenewsnewscatlistowl').owlCarousel({
     loop:true,
     nav:false,
     dots:false,
@@ -100,4 +100,4 @@ $('.researchnewscatlistowl').owlCarousel({
         }
     }
 });
-/* Research News Category List Owl Carousel */
+/* Home News Category List Owl Carousel */
