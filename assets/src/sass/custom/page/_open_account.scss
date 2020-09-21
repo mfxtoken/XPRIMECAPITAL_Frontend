@@ -1,0 +1,185 @@
+/* Components Variables Settings */
+$openacc-bgclr-welcome:           #F1F3FF;
+$openacc-bgclr-welcome-demo:      #7D8AD6;
+$openacc-bgclr-welcome-live:      #74CBC1;
+$openacc-bgclr-form:              $site-clr-white;
+/* Components Variables Settings */
+
+
+.openaccount{
+
+  &-section{
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwLjAwMSIgaGVpZ2h0PSIyNjQuNTQxIiB2aWV3Qm94PSIwIDAgMTkyMC4wMDEgMjY0LjU0MSI+DQogIDxwYXRoIGlkPSJQYXRoXzExNjExIiBkYXRhLW5hbWU9IlBhdGggMTE2MTEiIGQ9Ik0tMTQ2MC40MDksMjAwMC45MTljMzI0LjA1My0xMS40NTgsNDYxLjEsODMuMDkyLDY1MS4xNTksODMuMDkyLDE0NC43MTcsMCwyNzIuMjI5LTcxLjQ3MSw0MTMuNDc2LTcyLjE0MywxNTQuODQ4LS43MzcsMjYwLjg1LDgzLjMzNSwzOTguNzM4LDc3LjgxNCwxOTEuOTM2LTcuNjgzLDIzOC43LTcwLjM4Miw0NTYuNjI4LTcwLjkyN1YxODI1LjRoLTE5MjBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDYwLjQwOSAtMTgyNS40MDMpIiBmaWxsPSIjZjZmOWZmIi8+DQo8L3N2Zz4NCg==");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+    padding: 80px 0;
+  }
+
+  &-wrapper{
+    background-color: $var-custom-body-bg;
+    padding: 10px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    @include border-radius(10px);
+    @include box-shadow(0 0 30px 0 #edf0ff);
+
+    &-row{
+      @include flexbox-display-flex();
+      @include flexbox-justify-content(space-between);
+      @include flexbox-align-items(center);
+      height: 900px;
+
+      > div[class*="col"]{
+        @include flexbox-display-flex();
+        @include flexbox-flex-direction(column);
+        @include flexbox-justify-content(center);
+        @include flexbox-align-items(center);
+        @include flexbox-flex-wrap(wrap);
+        @include flexbox-flex-basis(0);
+        @include flexbox-flex-grow(1);
+        min-width: 0;
+        max-width: 100%;
+        height: 100%;
+        @include border-radius(6px);
+        @include transition-multiple(background-color 0.15s ease-in-out, transform .7s cubic-bezier(.77,0,.175,1))
+      }
+    }
+
+    &.opendemoacc{
+
+      .welcomeopendemoacc,
+      .formopenliveacc{
+        display: none;
+      }
+
+      div[class*="welcomecol"]{
+        background-color: $openacc-bgclr-welcome-demo;
+        @include translateX(0);
+
+        .btn-secondary{
+          color: $openacc-bgclr-welcome-demo;
+
+          &:hover{
+            background-color: darken($openacc-bgclr-welcome-demo, 20%);
+            border-color: darken($openacc-bgclr-welcome-demo, 20%);
+          }
+        }
+      }
+
+      div[class*="formcol"]{
+        @include translateX(0);
+      }
+
+    }
+
+    &.openliveacc{
+      .welcomeopenliveacc,
+      .formopendemoacc{
+        display: none;
+      }
+
+      div[class*="welcomecol"]{
+        background-color: $openacc-bgclr-welcome-live;
+        @include translateX(100%);
+
+        .btn-secondary{
+          color: $openacc-bgclr-welcome-live;
+
+          &:hover{
+            background-color: darken($openacc-bgclr-welcome-live, 20%);
+            border-color: darken($openacc-bgclr-welcome-live, 20%);
+          }
+        }
+      }
+
+      div[class*="formcol"]{
+        @include translateX(-100%);
+      }
+    }
+  }
+
+  &-welcomecol{
+    background-color: $openacc-bgclr-welcome;
+    position: relative;
+    z-index: 1;
+
+    .welcomearea{
+      padding: 50px;
+      text-align: center;
+
+      .welcomeimg{
+        margin-bottom: 50px;
+      }
+
+      .welcomebtn{
+        margin-top: 30px;
+
+        .btn-secondary{
+          color: black;
+          background-color: $site-clr-white;
+          border-color: $site-clr-white;
+
+          &:hover{
+            color: $site-clr-white;
+            background-color: black;
+            border-color: black;
+          }
+        }
+      }
+
+      .sitecontent-desc{}
+    }
+  }
+
+  &-formcol{
+    background-color: $openacc-bgclr-form;
+    position: relative;
+    z-index: 0;
+
+    .formboxarea{
+      width: 100%;
+      padding: 75px 100px;
+
+      .sitecontent-desc{
+        margin-bottom: 30px;
+      }
+
+      .alertarea{}
+
+      .formarea{
+
+        .form-group{
+          label{
+            margin-bottom: 0;
+            position: relative;
+            bottom: -5px;
+          }
+        }
+
+        input.form-control{
+          border-top-width: 0;
+          border-left-width: 0;
+          border-right-width: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .form-row.formbottom{
+          @include flexbox-align-items(center);
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &-platforms{
+    background-color: $var-custom-body-bg;
+    padding: 50px 0 0;
+
+    &::after{
+      background-color: $var-custom-body-bg;
+    }
+  }
+}

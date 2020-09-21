@@ -1,4 +1,20 @@
 
+/* Open Account Wrapper */
+$(document).ready(function() {
+
+    $(".JsWelcomeBtn").on("click", function(){
+        if ( $(this).attr("data-function") === "openliveaccount" ){
+            $(".openaccount-wrapper").removeClass('opendemoacc').addClass('openliveacc');
+        }
+        if ( $(this).attr("data-function") === "opendemoaccount" ){
+            $(".openaccount-wrapper").removeClass('openliveacc').addClass('opendemoacc');
+        }
+    });
+
+});
+/* Open Account Wrapper */
+
+
 /* Head Home Slider */
 $('.headsliderowl').owlCarousel({
     loop: true,
@@ -29,6 +45,7 @@ $(document).ready(function() {
     var footer          = $('.footer');
     footer.css("padding-bottom", footsticyticker.height() + "px");
 });
+/* Sticky Tickers */
 
 $('.stickytickersowl').owlCarousel({
     loop:true,
