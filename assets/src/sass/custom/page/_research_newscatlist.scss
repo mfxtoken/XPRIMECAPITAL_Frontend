@@ -31,6 +31,8 @@
       padding: 40px;
       min-height: 60px;
       position: relative;
+      @include border-radii(0,0,10px,10px);
+      @include box-shadow(0 0 50px 0 #e3e9f2);
 
       &::before{
         content: "";
@@ -276,6 +278,8 @@
       padding: 20px;
       min-height: 60px;
       position: relative;
+      @include border-radii(0,0,10px,10px);
+      @include box-shadow(0 0 50px 0 #e3e9f2);
 
       &-headarea{
         border-bottom: 1px solid $site-brdr-dark;

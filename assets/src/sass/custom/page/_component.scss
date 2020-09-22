@@ -294,7 +294,8 @@
   }
 
   &-platformssec{
-    background-color: lighten($site-section-bgclr-grylight, 1%);
+    //background-color: lighten($site-section-bgclr-grylight, 1%);
+    background-color: $var-custom-body-bg;
     padding: 50px 0 0;
     position: relative;
     overflow: hidden;

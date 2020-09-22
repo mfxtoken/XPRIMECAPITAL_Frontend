@@ -9,17 +9,12 @@ $openacc-bgclr-form:              $site-clr-white;
 .openaccount{
 
   &-section{
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwLjAwMSIgaGVpZ2h0PSIyNjQuNTQxIiB2aWV3Qm94PSIwIDAgMTkyMC4wMDEgMjY0LjU0MSI+DQogIDxwYXRoIGlkPSJQYXRoXzExNjExIiBkYXRhLW5hbWU9IlBhdGggMTE2MTEiIGQ9Ik0tMTQ2MC40MDksMjAwMC45MTljMzI0LjA1My0xMS40NTgsNDYxLjEsODMuMDkyLDY1MS4xNTksODMuMDkyLDE0NC43MTcsMCwyNzIuMjI5LTcxLjQ3MSw0MTMuNDc2LTcyLjE0MywxNTQuODQ4LS43MzcsMjYwLjg1LDgzLjMzNSwzOTguNzM4LDc3LjgxNCwxOTEuOTM2LTcuNjgzLDIzOC43LTcwLjM4Miw0NTYuNjI4LTcwLjkyN1YxODI1LjRoLTE5MjBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDYwLjQwOSAtMTgyNS40MDMpIiBmaWxsPSIjZjZmOWZmIi8+DQo8L3N2Zz4NCg==");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: top center;
     padding: 80px 0;
   }
 
   &-wrapper{
     background-color: $var-custom-body-bg;
     padding: 10px;
-    margin-top: 30px;
     position: relative;
     overflow: hidden;
     @include border-radius(10px);
@@ -171,15 +166,6 @@ $openacc-bgclr-form:              $site-clr-white;
           margin-top: 1.5rem;
         }
       }
-    }
-  }
-
-  &-platforms{
-    background-color: $var-custom-body-bg;
-    padding: 50px 0 0;
-
-    &::after{
-      background-color: $var-custom-body-bg;
     }
   }
 }
