@@ -361,7 +361,8 @@
   &-featuresbox{
 
     .sitefeaturesv1{
-      margin: 0 5%;
+      max-width: 1300px;
+      margin: auto;
 
       @include flexbox-display-flex();
       @include flexbox-flex-wrap(wrap);
@@ -467,6 +468,37 @@
           margin-top: 0.25rem;
         }
 
+      }
+    }
+
+    .sitefeaturesv3{
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+
+      > li{
+        @include flexbox-flex(0 0 calc(100%/4));
+        max-width: calc(100%/4);
+        padding: 15px;
+      }
+
+      &-box{
+        background-color: lighten($site-section-bgclr-grylight, 1%);
+        text-align: center;
+        padding: 45px 50px;
+        height: 100%;
+        position: relative;
+        @include border-radius(10px);
+
+        i[class*="icon"]{
+          display: block;
+          margin: 0 auto 1rem;
+        }
+
+        h3,h4,h5{
+          color: $site-clr-text-dark-pri;
+          font-size: 1.1rem;
+          margin: 0;
+        }
       }
     }
   }

@@ -3,6 +3,7 @@
 #### Web Public Area Frontend List
  - [Home_Page](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Home_Page.html)
  - [Account_Open_Demo](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Demo.html)
+ - [Partnership_Affiliate_IB](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Partnership_Affiliate_IB.html)
  - [Research_News](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News.html)
  - [Research_News_Detail](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News_Detail.html)
    

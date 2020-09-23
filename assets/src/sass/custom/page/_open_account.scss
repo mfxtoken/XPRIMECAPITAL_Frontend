@@ -144,23 +144,6 @@ $openacc-bgclr-form:              $site-clr-white;
       .alertarea{}
 
       .formarea{
-
-        .form-group{
-          label{
-            margin-bottom: 0;
-            position: relative;
-            bottom: -5px;
-          }
-        }
-
-        input.form-control{
-          border-top-width: 0;
-          border-left-width: 0;
-          border-right-width: 0;
-          padding-left: 0;
-          padding-right: 0;
-        }
-
         .form-row.formbottom{
           @include flexbox-align-items(center);
           margin-top: 1.5rem;

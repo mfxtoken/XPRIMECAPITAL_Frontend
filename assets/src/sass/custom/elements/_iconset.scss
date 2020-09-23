@@ -32,8 +32,8 @@
     display: inline-block;
     position: relative;
 
-    &.sprite-60-sitefeatures{
-      background-image: url(#{$path-img-url-icons}/icons_spite_60_sitefeatures.svg);
+    &.sprite-60-sitefeatures-cyan{
+      background-image: url(#{$path-img-url-icons}/icons_spite_60_sitefeatures_cyan.svg);
       background-position: 0 0;
       width: 60px;
       height: 60px;
@@ -45,6 +45,26 @@
       &.icons05{background-position: calc(-60px*4) 0;}
       &.icons06{background-position: calc(-60px*5) 0;}
       &.icons07{background-position: calc(-60px*6) 0;}
+      &.icons08{background-position: calc(-60px*7) 0;}
+      &.icons09{background-position: calc(-60px*8) 0;}
+      &.icons10{background-position: calc(-60px*9) 0;}
+      &.icons11{background-position: calc(-60px*10) 0;}
+    }
+
+    &.sprite-64-sitefeatures-orange{
+      background-image: url(#{$path-img-url-icons}/icons_spite_64_sitefeatures_orange.svg);
+      background-position: 0 0;
+      width: 64px;
+      height: 64px;
+
+      &.icons01{background-position: calc(-64px*0) 0;}
+      &.icons02{background-position: calc(-64px*1) 0;}
+      &.icons03{background-position: calc(-64px*2) 0;}
+      &.icons04{background-position: calc(-64px*3) 0;}
+      &.icons05{background-position: calc(-64px*4) 0;}
+      &.icons06{background-position: calc(-64px*5) 0;}
+      &.icons07{background-position: calc(-64px*6) 0;}
+      &.icons08{background-position: calc(-64px*7) 0;}
     }
 
     &.sprite-24-socialmedia{
