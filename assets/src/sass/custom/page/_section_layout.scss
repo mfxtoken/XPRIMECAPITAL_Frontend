@@ -1,0 +1,173 @@
+
+.sectionlayout{
+  $sectionlayoutclassname: &;
+
+  &-start{
+    padding: 60px 0;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding: 40px 0;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding: 20px 0;
+    }
+
+    > .container .row{
+      @include flexbox-align-items(center);
+
+      @include BootstrapMaxWidthResponsive(lg){
+        @include flexbox-flex-direction(column);
+      }
+    }
+
+    &-text{
+
+      .sitetitle-xl{
+
+        @include BootstrapMaxWidthResponsive(lg){
+          text-align: center;
+        }
+
+        .btn{
+          margin-top: 10px;
+        }
+      }
+
+    }
+
+    &-img{
+      @include BootstrapMaxWidthResponsive(lg){
+        padding-top: 20px;
+      }
+
+      img{
+        @include BootstrapMaxWidthResponsive(lg){
+          max-width: 500px;
+          margin: auto;
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  &-body{
+    background-color: $var-custom-body-bg;
+    padding: 60px 0;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding: 40px 0;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding: 20px 0;
+    }
+
+    &-wrp{
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      @include BootstrapMaxWidthResponsive(1k){
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      &:first-child{padding-top: 0;}
+      &:last-child{padding-bottom: 0;}
+
+      &.layoutleft{
+        #{$sectionlayoutclassname}-body-text{
+          @include BootstrapMinWidthResponsive(lg){
+            @include flexbox-flex-order(1);
+          }
+        }
+        #{$sectionlayoutclassname}-body-img{
+          @include BootstrapMinWidthResponsive(lg){
+            @include flexbox-flex-order(2);
+          }
+        }
+      }
+
+      &.layoutright{
+        #{$sectionlayoutclassname}-body-text{
+          @include BootstrapMinWidthResponsive(lg){
+            @include flexbox-flex-order(2);
+          }
+        }
+        #{$sectionlayoutclassname}-body-img{
+          @include BootstrapMinWidthResponsive(lg){
+            @include flexbox-flex-order(1);
+          }
+        }
+      }
+
+      .container{
+        padding: 50px;
+
+        @include BootstrapMinWidthResponsive(xl){
+          max-width: 1000px;
+        }
+        @include BootstrapMinWidthResponsive(hd){
+          max-width: 1200px;
+        }
+
+        @include BootstrapMaxWidthResponsive(1k){
+          padding: 35px;
+        }
+        @include BootstrapMaxWidthResponsive(hd){
+          padding: 25px;
+        }
+
+        .row{
+          @include flexbox-align-items(center);
+        }
+      }
+
+    }
+
+
+
+    &-text{
+
+      h3 + ul.ullist{
+        margin-top: 20px;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          margin-top: 10px;
+        }
+      }
+
+      ul.ullist{
+        li{
+          margin-bottom: 15px;
+
+          @include BootstrapMaxWidthResponsive(hd){
+            margin-bottom: 10px;
+          }
+
+          &:last-child{margin-bottom: 0;}
+        }
+      }
+
+    }
+
+    &-img{
+      text-align: center;
+
+      img{
+        max-width: 400px;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          max-width: 320px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          max-width: 260px;
+        }
+      }
+    }
+  }
+
+}
