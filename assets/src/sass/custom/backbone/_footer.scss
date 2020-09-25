@@ -139,6 +139,29 @@ $foot-brdr-clr:                   #CFD8E7;
         }
       }
 
+      &.colmultimenu[class*="sm-12"]{
+        @include BootstrapMaxWidthResponsive(xl){
+          h4{
+            margin-bottom: 3px;
+          }
+
+          ul{
+            @include flexbox-display-flex();
+            @include flexbox-flex-wrap(wrap);
+            margin-left: -15px;
+            margin-right: -15px;
+
+            li{
+              @include flexbox-flex(0 0 calc(100% / 4));
+              max-width: calc(100% / 4);
+              margin: 3px 0;
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+
     }
 
     h4, h5{
@@ -226,6 +249,10 @@ $foot-brdr-clr:                   #CFD8E7;
             }
           }
         }
+      }
+
+      + ul{
+        margin-top: 5px;
       }
     }
   }
