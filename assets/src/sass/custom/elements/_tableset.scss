@@ -1,3 +1,8 @@
+/* Components Variables Settings */
+$tableborderclr:              $global-table-border-color;
+$tableborderclr-focus:        darken($global-table-border-color, 10%);
+/* Components Variables Settings */
+
 .sitetable{
   color: $site-clr-text-dark-sec;
   margin: 0;
@@ -25,7 +30,7 @@
 
       &.tdcolspan{
         td{
-          background-color: $site-brdr-light;
+          background-color: $tableborderclr;
           font-weight: $var-custom-btn-font-weight;
         }
       }
@@ -49,7 +54,7 @@
     thead{
       tr{
         th{
-          background-color: transparentize($site-brdr-light, 0.50);
+          background-color: transparentize($tableborderclr, 0.50);
         }
       }
     }
@@ -59,7 +64,7 @@
     tbody{
       tr{
         &:nth-child(even){
-          background-color: transparentize($site-brdr-light, 0.75);
+          background-color: transparentize($tableborderclr, 0.75);
         }
         td{}
       }
@@ -119,19 +124,19 @@
     tbody tr{
 
       &:first-child td{
-        border-top: 1px solid $site-brdr-light;
+        border-top: 1px solid $tableborderclr;
       }
       &:hover{
         td{
           border-bottom: 1px solid;
-          border-color: $site-brdr-light-focus;
+          border-color: $tableborderclr-focus;
         }
       }
 
       &.tdcolspan{
         &:hover{
           td{
-            border-color: $site-brdr-light;
+            border-color: $tableborderclr;
           }
         }
       }

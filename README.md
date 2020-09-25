@@ -9,6 +9,8 @@
  - [Partnership_Affiliate_IB](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Partnership_Affiliate_IB.html)
  - [Research_News](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News.html)
  - [Research_News_Detail](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News_Detail.html)
+ - [Research_Economic_Calendar](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Economic_Calendar.html)
+ - [Research_Morning](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Morning.html)
    
 
 # NodeJS Kurulumu
