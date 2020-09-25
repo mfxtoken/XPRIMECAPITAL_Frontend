@@ -5,6 +5,7 @@
  - [Account_Open_Demo](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Demo.html)
  - [Products_Forex](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Forex.html)
  - [Investments_PAMM](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_PAMM.html)
+ - [Investments_CopyTrade](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_CopyTrade.html)
  - [Partnership_Affiliate_IB](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Partnership_Affiliate_IB.html)
  - [Research_News](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News.html)
  - [Research_News_Detail](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News_Detail.html)
