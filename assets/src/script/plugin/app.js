@@ -21,6 +21,18 @@ $(document).ready(function() {
 });
 /* Header Web Navbar Fixed */
 
+/* Daphne Mobile Menu */
+$(document).ready(function() {
+
+    $("body").addClass('daphne-navbody');
+
+    $('.daphne-mobile').click(function () {
+        $('.daphne-navbody').toggleClass('daphne-overlay');
+    });
+
+});
+/* Daphne Mobile Menu */
+
 /* Tooltip */
 $(function(){
     $('[data-toggle="tooltip"]').tooltip()

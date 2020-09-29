@@ -14,7 +14,28 @@ $headlogo-clr-red:                $site-clr-red;
   @include box-shadow(0 0 0 0 transparent);
   @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 
+  > .container .row{
+    @include BootstrapMaxWidthResponsive(xl){
+      @include flexbox-justify-content(space-between);
+    }
+  }
+
+  &-menubtn{
+    display: none;
+
+    @include BootstrapMinWidthResponsive(xl){
+      @include flexbox-flex-order(1);
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      display: block;
+    }
+  }
+
   &-logoarea{
+
+    @include BootstrapMinWidthResponsive(xl){
+      @include flexbox-flex-order(2);
+    }
 
     .headlogo{
       display: block;
@@ -52,10 +73,30 @@ $headlogo-clr-red:                $site-clr-red;
     }
   }
 
-  &-navarea{}
+  &-navarea{
+
+    @include BootstrapMinWidthResponsive(xl){
+      @include flexbox-flex-order(3);
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      margin-top: 20px;
+
+      .navbar-nav{
+        width: 100%;
+        @include flexbox-justify-content(space-between);
+      }
+    }
+  }
 
   &-userarea{
+
+    @include BootstrapMinWidthResponsive(xl){
+      @include flexbox-flex-order(4);
+    }
+
     &-btns{
+      text-align: right;
+
       > .btn{
         line-height: 1.4;
         padding-left: 1rem;
@@ -63,14 +104,6 @@ $headlogo-clr-red:                $site-clr-red;
       }
     }
   }
-
-  &-desktop{
-    > .row{
-      @include flexbox-align-items(flex-end);
-    }
-  }
-
-  &-mobile{}
 
   &.headscroll{
     background-color: $var-custom-body-bg;
