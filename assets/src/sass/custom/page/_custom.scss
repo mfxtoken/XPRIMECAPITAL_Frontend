@@ -86,7 +86,7 @@ ul.ullist{
     &-platdown{
       @include flexbox-display-flex();
       @include flexbox-align-items(center);
-      min-width: 200px;
+      min-width: 240px;
       height: auto;
       @include transition-multiple(none);
       padding-left: 1rem;
@@ -157,7 +157,7 @@ ul.ullist{
 
     &[class*="info"]{
       &.active{
-        @include box-shadow(0 0 30px 0 transparentize($site-clr-cyan, 0.75));
+        //@include box-shadow(0 0 30px 0 transparentize($site-clr-cyan, 0.75));
       }
     }
   }

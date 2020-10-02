@@ -52,7 +52,6 @@ $enable-hover-media-query:                        $bootstrap-enable-hover-media-
 $enable-grid-classes:                             $bootstrap-enable-grid-classes !global;
 $enable-pointer-cursor-for-buttons:               $bootstrap-enable-pointer-cursor-for-buttons !global;
 $enable-print-styles:                             $bootstrap-enable-print-styles !global;
-$enable-responsive-font-sizes:                    $bootstrap-enable-responsive-font-sizes !global;
 $enable-validation-icons:                         $bootstrap-enable-validation-icons !global;
 $enable-deprecation-messages:                     $bootstrap-enable-deprecation-messages !global;
 $theme-color-interval:                            $bootstrap-theme-color-interval !global;
@@ -61,6 +60,19 @@ $yiq-text-dark:                                   $bootstrap-yiq-text-dark !glob
 $yiq-text-light:                                  $bootstrap-yiq-text-light !global;
 $escaped-characters:                              $bootstrap-escaped-characters!global;
 /* Bootstrap General Settings */
+
+/* Bootstrap RFS (Responsive Font Size) */
+$enable-responsive-font-sizes:                    $bootstrap-enable-responsive-font-sizes !global;
+$rfs-base-font-size:                              $bootstrap-rfs-base-font-size !global;
+$rfs-font-size-unit:                              $bootstrap-rfs-font-size-unit !global;
+$rfs-breakpoint:                                  $bootstrap-rfs-breakpoint !global;
+$rfs-breakpoint-unit:                             $bootstrap-rfs-breakpoint-unit !global;
+$rfs-two-dimensional:                             $bootstrap-rfs-two-dimensional !global;
+$rfs-factor:                                      $bootstrap-rfs-factor !global;
+$rfs-class:                                       $bootstrap-rfs-class !global;
+$rfs-rem-value:                                   $bootstrap-rfs-rem-value !global;
+$rfs-safari-iframe-resize-bug-fix:                $bootstrap-rfs-safari-iframe-resize-bug-fix !global;
+/* Bootstrap RFS (Responsive Font Size) */
 
 /* Bootstrap Common Padding and Border Radius Sizes Settings */
 $line-height-lg:              $bootstrap-line-height-lg !global;

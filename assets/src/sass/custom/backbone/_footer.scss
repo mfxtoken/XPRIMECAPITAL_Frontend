@@ -14,35 +14,32 @@ $foot-brdr-clr:                   #CFD8E7;
   @include flexbox-flex-direction(column);
   @include flexbox-flex(inherit);
   color: $foot-text-clr;
-  font-size: $foot-text-size;
+  @include responsive-font-size($foot-text-size);
   background-color: $foot-bgclr;
   min-height: 300px;
   padding-bottom: 65px;
   position: relative;
   overflow: hidden;
 
-  &::before{
-    content: "";
-    background-color: $var-custom-body-bg;
-    width: 100%;
-    height: 165px;
-    position: absolute;
-    left: 0;
-    top: 0;
+  > .container{
+    //padding-top: 190px;
+    //position: relative;
+    //z-index: 1;
   }
 
-  &::after{
-    content: "";
+  &-mount{
+    background-color: $var-custom-body-bg;
     background-image: url(#{$path-img-url}/footer/footchartbuilds.svg);
     background-repeat: repeat-x;
-    background-position: top 0 left 50%;
+    background-position: bottom -5px left 50%;
     background-size: 200% auto;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    height: 200px;
     @include animation-multi(FootChartBuilds 160s linear infinite);
+
+    @include BootstrapMaxWidthResponsive(1k){
+      height: 170px;
+    }
 
     @include keyframes(FootChartBuilds){
       0%  {background-position-x: 0%;}
@@ -50,13 +47,9 @@ $foot-brdr-clr:                   #CFD8E7;
     }
   }
 
-  > .container{
-    padding-top: 190px;
-    position: relative;
-    z-index: 1;
-  }
-
   &-top{
+    padding-top: 50px;
+
     &-row{
       @include flexbox-align-items(center);
     }
@@ -183,7 +176,7 @@ $foot-brdr-clr:                   #CFD8E7;
 
     h4{
       color: $foot-headtitle-clr;
-      font-size: $foot-headtitle-size;
+      @include responsive-font-size($foot-headtitle-size);
       margin-bottom: 5px;
 
       a{
@@ -194,7 +187,7 @@ $foot-brdr-clr:                   #CFD8E7;
 
     h5{
       color: $site-clr-green;
-      font-size: $foot-text-size;
+      @include responsive-font-size($foot-text-size);
       margin-bottom: 5px;
 
       a{
@@ -205,7 +198,7 @@ $foot-brdr-clr:                   #CFD8E7;
     &-list{
 
       > li{
-        font-size: $foot-text-size;
+        @include responsive-font-size($foot-text-size);
         line-height: 1.2;
         margin: 5px 0;
 
@@ -264,13 +257,13 @@ $foot-brdr-clr:                   #CFD8E7;
 
     h6{
       color: $foot-headtitle-clr;
-      font-size: $foot-headtitle-size * 0.9;
+      @include responsive-font-size($foot-headtitle-size * 0.9);
       line-height: 1.2;
       margin-bottom: 5px;
     }
 
     p{
-      font-size: $foot-text-size * 0.9;
+      @include responsive-font-size($foot-text-size * 0.9);
       margin-bottom: 5px;
 
       &:last-child{margin-bottom: 0;}
@@ -293,7 +286,7 @@ $foot-brdr-clr:                   #CFD8E7;
     }
 
     .copyright{
-      font-size: $foot-text-size;
+      @include responsive-font-size($foot-text-size);
     }
 
     .socialmedia{

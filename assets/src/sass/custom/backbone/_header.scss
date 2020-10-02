@@ -15,6 +15,9 @@ $headlogo-clr-red:                $site-clr-red;
   @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 
   > .container .row{
+    @include BootstrapMinWidthResponsive(xl){
+      @include flexbox-align-items(flex-end);
+    }
     @include BootstrapMaxWidthResponsive(xl){
       @include flexbox-justify-content(space-between);
     }
@@ -40,19 +43,20 @@ $headlogo-clr-red:                $site-clr-red;
     .headlogo{
       display: block;
       margin-right: 1rem;
+      padding-bottom: 5px;
       position: relative;
 
       &::before{
         content: attr(data-title);
-        color: $site-clr-text-dark-pri;
-        font-size: 0.6rem;
+        color: $site-clr-text-dark-sec;
+        @include responsive-font-size(0.6rem);
         text-align: right;
         white-space: nowrap;
         position: absolute;
         width: 100%;
         height: 14px;
         right: 0;
-        bottom: -12px;
+        bottom: -5px;
         opacity: 1;
         @include transition-multiple(opacity 0.5s ease-in-out);
       }

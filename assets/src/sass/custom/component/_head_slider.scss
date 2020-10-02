@@ -91,13 +91,13 @@ $headslider-bgclr:                transparent;
 
       &-content{
         h1,h2,h3,h4,h5,h6{
-          font-size: 2.5rem;
+          @include responsive-font-size(2.2rem);
           line-height: 1.2;
           position: relative;
         }
 
         p{
-          font-size: 1.4rem;
+          @include responsive-font-size(1.2rem);
           margin-top: 15px;
         }
       }

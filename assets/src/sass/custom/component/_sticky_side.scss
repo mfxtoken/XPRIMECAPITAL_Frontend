@@ -75,6 +75,10 @@ $sticyside-text-size:           1rem;
       max-width: 100%;
       padding-right: 50px;
 
+      @include BootstrapMaxWidthResponsive(1k){
+        width: 700px;
+      }
+
       .stickytickersowl{
         text-align: center;
         z-index: 0;

@@ -281,7 +281,7 @@
             overflow: hidden;
 
             @include BootstrapMaxWidthResponsive(1k){
-              height: 185px;
+              height: 220px;
             }
             @include BootstrapMaxWidthResponsive(hd){
               height: 170px;
@@ -376,7 +376,7 @@
             overflow: hidden;
 
             @include BootstrapMaxWidthResponsive(1k){
-              height: 125px;
+              height: 150px;
             }
             @include BootstrapMaxWidthResponsive(hd){
               height: 130px;
@@ -392,7 +392,7 @@
             height: 120px;
 
             @include BootstrapMaxWidthResponsive(1k){
-              height: 120px;
+              height: 140px;
             }
             @include BootstrapMaxWidthResponsive(hd){
               height: 90px;
@@ -453,6 +453,10 @@
 
         .platappdownbtns{
           margin-top: 30px;
+
+          + .platappdownbtns{
+            margin-top: 15px;
+          }
         }
       }
     }

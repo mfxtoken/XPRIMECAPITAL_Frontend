@@ -58,7 +58,7 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
   &-navbar{
     background-color: $navmenu-headbgclr;
     color: $navmenu-clr;
-    font-size: $navmenu-headfontsize;
+    @include responsive-font-size($navmenu-headfontsize);
     font-weight: $navmenu-headfontweight;
     line-height: $navmenu-headlineheight;
     padding: 0;
@@ -160,7 +160,7 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
 
         h4{
           color: $navsubmenu-headclr;
-          font-size: $navsubmenu-headfontsize;
+          @include responsive-font-size($navsubmenu-headfontsize);
           font-weight: $navsubmenu-headfontweight;
           margin-bottom: 5px;
           margin-top: 5px;
@@ -179,7 +179,7 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
         a{
           color: $navsubmenu-navlinktxtclr;
           background-color: $navsubmenu-navlinkbgclr;
-          font-size: $navsubmenu-headfontsize;
+          @include responsive-font-size($navsubmenu-headfontsize);
           font-weight: $navsubmenu-headfontweight;
           display: block;
           padding: 12px 15px;
