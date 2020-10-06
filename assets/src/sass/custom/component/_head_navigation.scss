@@ -3,14 +3,14 @@
 $navmenu-mainclass:                     ".daphne";
 $navmenu-clr:                           $site-clr-text-dark-pri;
 $navmenu-clrhover:                      $site-clr-cyan;
-$navmenu-headfontsize:                  1.1rem;
+$navmenu-headfontsize:                  1.08rem;
 $navmenu-headlineheight:                1;
 $navmenu-headfontweight:                $var-custom-font-weight-bold;
 $navmenu-headborderclr:                 transparent;
 $navmenu-headbgclr:                     transparent;
 
 $navsubmenu-headclr:                    $site-clr-cyan;
-$navsubmenu-headfontsize:               1rem;
+$navsubmenu-headfontsize:               0.9rem;
 $navsubmenu-headfontweight:             $var-custom-font-weight-bold;
 $navsubmenu-navlinktxtclr:              $site-clr-text-dark-pri;
 $navsubmenu-navlinkbgclr:               lighten($site-section-bgclr-grylight, 1%);
@@ -39,18 +39,30 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       height: 100%;
       top: 0;
       left: 0;
-      z-index: -1;
-      visibility: hidden;
+      z-index: -3;
+      //visibility: hidden;
       opacity: 0;
-      @include transition-multiple(background 0.3s cubic-bezier(.77,0,.175,1), opacity 0.3s cubic-bezier(.77,0,.175,1));
+      @include transition-multiple(background 0.3s cubic-bezier(.77,0,.175,1), opacity 0.3s cubic-bezier(.77,0,.175,1), z-index 0.15s cubic-bezier(.77,0,.175,1));
     }
 
-    &#{$navmenu-mainclass}-overlay{
-      &::after{
-        background-color: transparentize($global-clr-white, 0.1);
-        z-index: 2;
-        visibility: visible;
-        opacity: 1;
+    &#{$navmenu-mainclass}-moverlay{
+      @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+        &::after{
+          background-color: transparentize($site-clr-white, 0.1);
+          z-index: 2;
+          //visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    &#{$navmenu-mainclass}-doverlay{
+      @include BootstrapMinWidthResponsive($navmenu-resp-width){
+        &::after{
+          background-color: transparentize($site-clr-white, 0.05);
+          z-index: 2;
+          //visibility: visible;
+          opacity: 1;
+        }
       }
     }
   }
@@ -80,6 +92,18 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       @include border-radius(0);
       @include transition-multiple(transform $navmenu-resp-transition);
     }
+
+    &.navbar-expand-md{
+      .nav-link{
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          padding-right: 0.3rem;
+          padding-left: 0.3rem;
+        }
+      }
+    }
   }
 
   &-nav{
@@ -99,6 +123,7 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       &-link{
         color: $navmenu-clr;
         padding: 10px 10px 2px;
+        white-space: nowrap;
         @include transition-multiple(color 0.15s ease-in-out);
 
         &:hover,
@@ -227,10 +252,13 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
     }
   }
 
-  &-overlay{
-    overflow: hidden !important;
-    position: fixed;
-    @include translateX(#{$navmenu-resp-navwidth});
+  &-moverlay{
+
+    @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+      overflow: hidden !important;
+      position: fixed;
+      @include translateX(#{$navmenu-resp-navwidth});
+    }
 
     #{$navmenu-mainclass}-menu{
       @include translateX(-#{$navmenu-resp-navwidth});

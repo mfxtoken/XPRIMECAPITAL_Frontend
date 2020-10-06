@@ -24,11 +24,27 @@ $(document).ready(function() {
 /* Daphne Mobile Menu */
 $(document).ready(function() {
 
-    $("body").addClass('daphne-navbody');
+    // Body Add Class
+    $('body').addClass('daphne-navbody');
 
-    $('.daphne-mobile').click(function () {
-        $('.daphne-navbody').toggleClass('daphne-overlay');
-    });
+    // Desktop or Mobile Menu Overlay
+    if($(window).width() < 1060){
+        $('.daphne-mobile').click(function () {
+            $('.daphne-navbody').toggleClass('daphne-moverlay');
+        });
+    } else {
+        $('.daphne-navbar .nav-link[data-toggle="dropdown"]').click(function() {
+            $('body').addClass('daphne-doverlay');
+
+            $(document).click(function(event) {
+                if (!$(event.target).parent().hasClass('show')) {
+                    setTimeout(function () {
+                        $('body').removeClass('daphne-doverlay');
+                    },250);
+                }
+            });
+        });
+    }
 
 });
 /* Daphne Mobile Menu */

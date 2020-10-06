@@ -61,7 +61,11 @@ $headslider-bgclr:                transparent;
         @include flexbox-flex-grow(1);
         min-width: 0;
         max-width: 100%;
-        padding-right: 140px;
+
+        > *{
+          padding-right: 100px;
+        }
+
       }
 
       &-right{
@@ -91,13 +95,13 @@ $headslider-bgclr:                transparent;
 
       &-content{
         h1,h2,h3,h4,h5,h6{
-          @include responsive-font-size(2.2rem);
+          @include responsive-font-size(2rem);
           line-height: 1.2;
           position: relative;
         }
 
         p{
-          @include responsive-font-size(1.2rem);
+          @include responsive-font-size(1.1rem);
           margin-top: 15px;
         }
       }

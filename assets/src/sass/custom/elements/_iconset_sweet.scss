@@ -15,10 +15,10 @@
     @include border-radius(50%);
 
     &-success {
-      border-color: $global-clr-green;
+      border-color: $site-clr-green;
 
       &-tip, &-long {
-        background-color: $global-clr-green;
+        background-color: $site-clr-green;
         height: 5px;
         position: absolute;
         z-index: 2;

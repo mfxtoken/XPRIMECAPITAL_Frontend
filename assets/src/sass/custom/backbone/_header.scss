@@ -10,7 +10,7 @@ $headlogo-clr-red:                $site-clr-red;
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   @include box-shadow(0 0 0 0 transparent);
   @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 
@@ -45,6 +45,10 @@ $headlogo-clr-red:                $site-clr-red;
       margin-right: 1rem;
       padding-bottom: 5px;
       position: relative;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        margin-right: 0;
+      }
 
       &::before{
         content: attr(data-title);

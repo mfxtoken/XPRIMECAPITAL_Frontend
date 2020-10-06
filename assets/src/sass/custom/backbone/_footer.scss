@@ -286,7 +286,7 @@ $foot-brdr-clr:                   #CFD8E7;
     }
 
     .copyright{
-      @include responsive-font-size($foot-text-size);
+      @include responsive-font-size($foot-text-size * 0.9);
     }
 
     .socialmedia{

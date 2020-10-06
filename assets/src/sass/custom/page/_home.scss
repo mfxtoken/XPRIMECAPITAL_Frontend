@@ -205,7 +205,7 @@
 
   &-news{
     background-color: lighten($site-section-bgclr-grylight, 1%);
-    padding: 80px 0 50px;
+    padding: 80px 0;
 
     &-newscat{
 
@@ -345,9 +345,6 @@
         margin-top: 30px;
         border-top: 2px solid darken($site-clr-grylight, 5%);
 
-        @include BootstrapMaxWidthResponsive(hd){
-          padding-top: 10px;
-        }
         @include BootstrapMaxWidthResponsive(xl){
           padding-top: 20px;
           border-top: 1px solid $site-brdr-light;
@@ -363,11 +360,6 @@
           @include flexbox-flex-grow(1);
           min-width: 0;
           max-width: 100%;
-          padding-bottom: 30px;
-
-          @include BootstrapMaxWidthResponsive(1k){
-            padding-bottom: 20px;
-          }
 
           .listnewstopimg{
             width: 100%;
@@ -393,9 +385,6 @@
 
             @include BootstrapMaxWidthResponsive(1k){
               height: 140px;
-            }
-            @include BootstrapMaxWidthResponsive(hd){
-              height: 90px;
             }
             @include BootstrapMaxWidthResponsive(xl){
               height: 90px;

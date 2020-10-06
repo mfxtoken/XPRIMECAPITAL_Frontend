@@ -70,7 +70,7 @@ $('.stickytickersowl').owlCarousel({
         },
         1059:{},
         1379:{
-            items:4
+            items:6
         },
         1939:{}
     }
@@ -105,7 +105,7 @@ $('.homenewsnewscatlistowl').owlCarousel({
             margin:20
         },
         1379:{
-            items:3,
+            items:4,
             margin:25
         },
         1619:{
