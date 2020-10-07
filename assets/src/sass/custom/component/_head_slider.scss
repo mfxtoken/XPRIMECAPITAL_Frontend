@@ -70,6 +70,10 @@ $headslider-ptop:                 130px;
       @include flexbox-align-items(center);
       height: 100%;
 
+      @include BootstrapMaxWidthResponsive(lg){
+        display: block !important;
+      }
+
       &-left{
         @include flexbox-flex-basis(0);
         @include flexbox-flex-grow(1);
