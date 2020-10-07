@@ -172,6 +172,10 @@
     @include BootstrapMaxWidthResponsive(xl){
       padding: 160px 0 10px;
     }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding: 100px 0 10px;
+      margin-top: -40px;
+    }
 
     &::before{
       content: "";
@@ -185,6 +189,10 @@
       position: absolute;
       right: 0;
       top: 0;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        border-width: 0 0 100px 100vw;
+      }
     }
 
     .sitetitle-xl{
