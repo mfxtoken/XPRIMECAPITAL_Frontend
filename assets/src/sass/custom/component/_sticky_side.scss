@@ -67,6 +67,10 @@ $sticyside-text-size:           1rem;
       @include flexbox-justify-content(space-between);
       @include flexbox-align-items(center);
       padding: 12px 0;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        padding: 8px 0;
+      }
     }
 
     .foottickercol{
@@ -77,6 +81,12 @@ $sticyside-text-size:           1rem;
 
       @include BootstrapMaxWidthResponsive(1k){
         width: 700px;
+      }
+      @include BootstrapMaxWidthResponsive(xl){
+        width: 480px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        width: 500px;
       }
 
       .stickytickersowl{
@@ -216,6 +226,7 @@ $sticyside-text-size:           1rem;
           font-size: $sticyside-text-size * 0.9;
           display: block;
           padding-top: 1px;
+          white-space: nowrap;
         }
       }
     }
@@ -225,6 +236,10 @@ $sticyside-text-size:           1rem;
       @include flexbox-flex-grow(1);
       min-width: 0;
       max-width: 100%;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        display: none;
+      }
 
       h6{
         font-size: $sticyside-text-size * 0.75;

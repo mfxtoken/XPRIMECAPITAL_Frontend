@@ -80,8 +80,25 @@ ul.ullist{
 .platappdownbtns{
   @include flexbox-display-flex();
 
+  @include BootstrapMaxWidthResponsive(xl){
+    @include flexbox-flex-direction(column);
+  }
+  @include BootstrapMaxWidthResponsive(lg){
+    @include flexbox-flex-direction(row);
+    @include flexbox-justify-content(center);
+  }
+
   .btn{
     margin: 0 7px;
+
+    @include BootstrapMaxWidthResponsive(xl){
+      margin: 5px 7px;
+      &:first-child{margin-top: 0;}
+      &:last-child{margin-bottom: 0;}
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      margin: 5px 7px !important;
+    }
 
     &-platdown{
       @include flexbox-display-flex();

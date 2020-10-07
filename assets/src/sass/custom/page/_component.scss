@@ -361,11 +361,10 @@
   &-featuresbox{
 
     .sitefeaturesv1{
-      max-width: 1300px;
-      margin: auto;
-
       @include flexbox-display-flex();
       @include flexbox-flex-wrap(wrap);
+      max-width: 1300px;
+      margin: auto;
 
       > li{
         @include flexbox-flex(0 0 calc(100%/2));
@@ -396,6 +395,11 @@
             border-bottom-width: 2px;
             right: 0;
             bottom: 0;
+
+            @include BootstrapMaxWidthResponsive(lg){
+              right: -16px;
+              bottom: -16px;
+            }
           }
 
         }
@@ -407,19 +411,35 @@
             border-left-width: 2px;
             left: 0;
             top: 0;
+
+            @include BootstrapMaxWidthResponsive(lg){
+              left: -16px;
+              top: -16px;
+            }
           }
         }
       }
 
       &-box{
-        //padding: 45px 50px;
         padding: 35px 40px;
         height: 100%;
         position: relative;
 
+        @include BootstrapMaxWidthResponsive(xl){
+          padding: 20px 25px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          padding: 10px 15px;
+        }
+
         i[class*="icon"]{
           display: block;
           margin-bottom: 1rem;
+
+          @include BootstrapMaxWidthResponsive(xl){
+            margin-bottom: 0.5rem;
+            @include scale(0.9);
+          }
         }
 
         h3,h4,h5{

@@ -50,6 +50,10 @@ $foot-brdr-clr:                   #CFD8E7;
   &-top{
     padding-top: 50px;
 
+    @include BootstrapMaxWidthResponsive(lg){
+      padding-top: 20px;
+    }
+
     &-row{
       @include flexbox-align-items(center);
     }
@@ -58,6 +62,13 @@ $foot-brdr-clr:                   #CFD8E7;
   &-logo{
     width: 240px;
     text-align: center;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      width: 200px;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      display: none;
+    }
 
     img{
       display: block;
@@ -69,6 +80,15 @@ $foot-brdr-clr:                   #CFD8E7;
     padding-left: 60px;
     margin-left: 20px;
     border-left: 1px solid $foot-brdr-clr;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-left: 40px;
+      margin-left: 0;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding-left: 15px;
+      border-left-width: 0;
+    }
 
     &-col{
 
@@ -255,6 +275,11 @@ $foot-brdr-clr:                   #CFD8E7;
     margin-top: 40px;
     border-top: 1px solid $foot-brdr-clr;
 
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+
     h6{
       color: $foot-headtitle-clr;
       @include responsive-font-size($foot-headtitle-size * 0.9);
@@ -280,6 +305,11 @@ $foot-brdr-clr:                   #CFD8E7;
     padding: 15px 0;
     margin-top: 25px;
     border-top: 1px solid $foot-brdr-clr;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 10px 0;
+      margin-top: 20px;
+    }
 
     &-row{
       @include flexbox-align-items(center);

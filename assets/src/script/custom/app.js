@@ -65,10 +65,12 @@ $('.stickytickersowl').owlCarousel({
             mouseDrag:true
         },
         819:{
-            items:1,
+            items:4,
             mouseDrag:true
         },
-        1059:{},
+        1059:{
+            items:4
+        },
         1379:{
             items:6
         },

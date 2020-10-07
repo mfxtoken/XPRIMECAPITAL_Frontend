@@ -2,6 +2,7 @@
 /* Components Variables Settings */
 $headslider-clr:                  $site-clr-text-dark-pri;
 $headslider-bgclr:                transparent;
+$headslider-ptop:                 130px;
 /* Components Variables Settings */
 
 .headslider{
@@ -11,16 +12,24 @@ $headslider-bgclr:                transparent;
   @include flexbox-flex(inherit);
   color: $headslider-clr;
   background-color: $headslider-bgclr;
-  height: 750px;
-  padding-top: 130px;
+  //height: 750px;
+  height: calc(100vh - calc(#{$headslider-ptop} / 2));
+  min-height: 600px;
+  padding-top: $headslider-ptop;
   position: relative;
   overflow: hidden;
+
+  @include BootstrapMaxWidthResponsive(lg){
+    height: auto;
+    min-height: auto;
+    padding-top: 72px;
+  }
 
   &::after{
     content: "";
     background-image: url(#{$path-img-url}/header/headchartmountains.svg);
     background-repeat: repeat-x;
-    background-position: bottom 0 left 50%;
+    background-position: bottom 20vh left 50%;
     background-size: 200% auto;
     width: 100%;
     height: 100%;
@@ -47,14 +56,19 @@ $headslider-bgclr:                transparent;
 
   &-top{
     height: 100%;
-    padding-top: 75px;
+    //padding-top: 75px;
     position: relative;
     z-index: 2;
+
+    @include BootstrapMaxWidthResponsive(xl){
+      padding-top: 0;
+    }
 
     &-row{
       @include flexbox-display-flex();
       @include flexbox-justify-content(space-between);
       @include flexbox-align-items(center);
+      height: 100%;
 
       &-left{
         @include flexbox-flex-basis(0);
@@ -62,8 +76,19 @@ $headslider-bgclr:                transparent;
         min-width: 0;
         max-width: 100%;
 
+        @include BootstrapMaxWidthResponsive(lg){
+          padding: 50px 0;
+        }
+
         > *{
           padding-right: 100px;
+
+          @include BootstrapMaxWidthResponsive(xl){
+            padding-right: 50px;
+          }
+          @include BootstrapMaxWidthResponsive(lg){
+            padding: 0;
+          }
         }
 
       }
@@ -73,6 +98,10 @@ $headslider-bgclr:                transparent;
         @include flexbox-flex-grow(1);
         min-width: 0;
         max-width: 100%;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          display: none;
+        }
       }
 
       &-auto{
@@ -91,6 +120,10 @@ $headslider-bgclr:                transparent;
   &-slider{
     height: 100%;
 
+    @include BootstrapMaxWidthResponsive(lg){
+      text-align: center;
+    }
+
     .headsliderowl{
 
       &-content{
@@ -98,6 +131,12 @@ $headslider-bgclr:                transparent;
           @include responsive-font-size(2rem);
           line-height: 1.2;
           position: relative;
+
+          br{
+            @include BootstrapMaxWidthResponsive(lg){
+              display: none;
+            }
+          }
         }
 
         p{
@@ -123,6 +162,10 @@ $headslider-bgclr:                transparent;
         &-dots{
           margin-top: 20px;
           text-align: left;
+
+          @include BootstrapMaxWidthResponsive(lg){
+            text-align: center;
+          }
         }
 
         &-dot{
@@ -146,6 +189,12 @@ $headslider-bgclr:                transparent;
 
   &-buttons{
     margin-top: 20px;
+
+    .openaccountbtns{
+      @include BootstrapMaxWidthResponsive(lg){
+        @include flexbox-justify-content(center);
+      }
+    }
   }
 
   &-banner{
@@ -158,7 +207,7 @@ $headslider-bgclr:                transparent;
       height: 10px;
       opacity: 0.30;
       position: absolute;
-      bottom: 0;
+      bottom: -5vh;
       left: 50%;
       @include translateX(-50%);
       @include border-radius(50%);

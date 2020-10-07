@@ -20,7 +20,7 @@ $navsubmenu-navlinkbgclrhover:          $site-clr-cyan;
 
 /* Components Variables Settings */
 $navmenu-resp-width:                    "lg";
-$navmenu-resp-navbg:                    #072b5d;
+$navmenu-resp-navbg:                    $site-clr-white;
 $navmenu-resp-navwidth:                 260px;
 $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
 /* Components Variables Settings */
@@ -88,9 +88,10 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       border: none;
       overflow-y: auto;
       z-index: 103;
+      @include box-shadow(0 0 0 0 #e3e9f2);
       @include translateX(-#{$navmenu-resp-navwidth});
       @include border-radius(0);
-      @include transition-multiple(transform $navmenu-resp-transition);
+      @include transition-multiple(transform $navmenu-resp-transition, box-shadow $navmenu-resp-transition);
     }
 
     &.navbar-expand-md{
@@ -115,6 +116,11 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
     .nav{
 
       &-item{
+
+        @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+          border-top: 1px solid #D9E7FC;
+        }
+
         &.dropdown.show{
           background-color: transparentize($navmenu-headbgclr, 0.8);
         }
@@ -126,9 +132,36 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
         white-space: nowrap;
         @include transition-multiple(color 0.15s ease-in-out);
 
+        @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+          //color: $site-clr-white;
+          padding: 12px 15px !important;
+        }
+
         &:hover,
         &[aria-expanded="true"]{
           color: $navmenu-clrhover;
+
+          @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+            //color: $site-clr-white;
+          }
+        }
+
+        &[data-toggle="dropdown"]{
+          @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+            position: relative;
+
+            &::after{
+              content: "";
+              width: 8px;
+              height: 8px;
+              border-right: 2px solid #d9e7fc;
+              border-bottom: 2px solid #d9e7fc;
+              position: absolute;
+              right: 15px;
+              top: 50%;
+              @include transform-multiple(translateY(-50%) rotate(45deg));
+            }
+          }
         }
       }
 
@@ -142,12 +175,21 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
         padding: 0;
         border: none;
         left: -5px;
+
+        @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+          position: relative !important;
+          left: 0;
+        }
       }
     }
 
     &-dropdownmenu{
       background-color: transparent;
       padding-top: 20px !important;
+
+      @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+        padding-top: 0 !important;
+      }
     }
 
     &-megamenu{
@@ -159,6 +201,14 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       @include box-shadow(0 0 20px 0 #e3e9f2);
       position: relative;
 
+      @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+        display: block !important;
+        background-color: transparentize(#d9e7fc, 0.5);
+        padding: 10px;
+        @include border-radius(0);
+        @include box-shadow(none);
+      }
+
       &::before{
         content: "";
         position: absolute;
@@ -169,6 +219,10 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
         border-bottom: 12px solid $var-custom-body-bg;
         top: -12px;
         left: 25px;
+
+        @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+          display: none;
+        }
       }
 
       &-col{
@@ -177,8 +231,22 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
         min-width: 180px;
         margin-right: 15px;
 
+        @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+          margin-right: 0;
+          margin-bottom: 15px;
+
+          &:last-child{margin-bottom: 0;}
+        }
+
         &.colmultimenu{
           margin-right: 5px;
+
+          @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+            margin-right: 0;
+            margin-bottom: 5px;
+
+            &:last-child{margin-bottom: 0;}
+          }
         }
 
         &:last-child{margin-right: 0;}
@@ -189,6 +257,10 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
           font-weight: $navsubmenu-headfontweight;
           margin-bottom: 5px;
           margin-top: 5px;
+
+          @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+            margin-top: 0;
+          }
         }
       }
     }
@@ -211,6 +283,10 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
           @include border-radius(4px);
           @include transition-multiple(color 0.15s ease-in-out, background 0.15s ease-in-out);
 
+          @include BootstrapMaxWidthResponsive($navmenu-resp-width){
+            padding: 10px;
+          }
+
           &:hover{
             color: $navsubmenu-navlinktxtclrhover;
             background-color: $navsubmenu-navlinkbgclrhover;
@@ -226,12 +302,14 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
     @include BootstrapMaxWidthResponsive($navmenu-resp-width){
       @include flexbox-display-flex();
       @include flexbox-align-items(center);
-      height: 40px;
+      height: 30px;
       position: relative;
       cursor: pointer;
 
       .btnhamb{
-        width: 30px;
+        width: 26px;
+        height: 20px;
+        position: relative;
 
         span,
         span::before,
@@ -240,14 +318,14 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
           background: $site-clr-cyan;
           display: inline-block;
           height: 4px;
-          width: 30px;
+          width: 26px;
           position: absolute;
           @include border-radius(10px);
           @include transition-multiple(all $navmenu-resp-transition);
         }
-
-        span::before{top: -9px;}
-        span::after{bottom: -9px;}
+        span{top: 0;}
+        span::before{top: 8px;}
+        span::after{top: 16px;}
       }
     }
   }
@@ -268,14 +346,15 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
     @include BootstrapMaxWidthResponsive($navmenu-resp-width){
 
       #{$navmenu-mainclass}-navbar{
+        @include box-shadow(0 0 30px 0 #e3e9f2);
         @include translateX(-#{$navmenu-resp-navwidth});
-        @include transition-multiple(transform $navmenu-resp-transition);
+        display: block !important;
       }
 
       #{$navmenu-mainclass}-mobile{
         position: fixed;
         left: 15px;
-        top: 10px;
+        top: 25px;
 
         .btnhamb{
           span{background-color: transparent;}

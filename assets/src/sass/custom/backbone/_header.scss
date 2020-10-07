@@ -14,6 +14,16 @@ $headlogo-clr-red:                $site-clr-red;
   @include box-shadow(0 0 0 0 transparent);
   @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 
+  @include BootstrapMaxWidthResponsive(hd){
+    padding: 40px 0;
+  }
+  @include BootstrapMaxWidthResponsive(xl){
+    padding: 30px 0;
+  }
+  @include BootstrapMaxWidthResponsive(lg){
+    padding: 20px 0;
+  }
+
   > .container .row{
     @include BootstrapMinWidthResponsive(xl){
       @include flexbox-align-items(flex-end);
@@ -21,10 +31,26 @@ $headlogo-clr-red:                $site-clr-red;
     @include BootstrapMaxWidthResponsive(xl){
       @include flexbox-justify-content(space-between);
     }
+    @include BootstrapMaxWidthResponsive(lg){
+      max-height: 32px;
+    }
   }
 
   &-menubtn{
     display: none;
+    position: relative;
+    @include transition-multiple(width 0.7s cubic-bezier(.77,0,.175,1), padding 0.7s cubic-bezier(.77,0,.175,1));
+
+    &::after{
+      content: "";
+      background-color: darken($site-clr-grylight, 5%);
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -2px;
+      @include border-radius(2px);
+    }
 
     @include BootstrapMinWidthResponsive(xl){
       @include flexbox-flex-order(1);
@@ -87,11 +113,52 @@ $headlogo-clr-red:                $site-clr-red;
       @include flexbox-flex-order(3);
     }
     @include BootstrapMaxWidthResponsive(xl){
-      margin-top: 20px;
+      margin-top: 10px;
 
       .navbar-nav{
         width: 100%;
         @include flexbox-justify-content(space-between);
+      }
+    }
+
+    &-userarea-btns{
+      display: none;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        display: block;
+        padding: 10px;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .daphne-navbar{
+      @include BootstrapMaxWidthResponsive(lg){
+        &::after{
+          content: "";
+          background-image: url(#{$path-img-url}/header/headchartmountains.svg);
+          background-repeat: repeat-x;
+          background-position: bottom 0 left 50%;
+          background-size: 2000% auto;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          @include animation-multi(HeadNavChartMountains 160s linear infinite);
+
+          @include keyframes(HeadNavChartMountains){
+            0%  {background-position-x: 0%;}
+            to  {background-position-x: 200%;}
+          }
+        }
+      }
+    }
+
+    .daphne-nav{
+      @include BootstrapMaxWidthResponsive(lg){
+        position: relative;
+        z-index: 1;
       }
     }
   }
@@ -118,6 +185,13 @@ $headlogo-clr-red:                $site-clr-red;
     padding: 30px 0;
     @include box-shadow(0 0 50px 0 #e3e9f2);
 
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 25px 0;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 20px 0;
+    }
+
     #{$headerclassname}-logoarea{
       .headlogo{
         &::before{
@@ -133,5 +207,16 @@ $headlogo-clr-red:                $site-clr-red;
     background-size: 100%;
     background-position: top -50px center;
     padding-top: 160px;
+  }
+}
+
+.daphne-moverlay{
+  .header-menubtn{
+    width: 0;
+    padding: 0;
+
+    &::after{
+      display: none;
+    }
   }
 }
