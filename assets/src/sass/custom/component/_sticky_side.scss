@@ -16,6 +16,10 @@ $sticyside-text-size:           1rem;
     @include translateY(-50%);
     z-index: 1;
 
+    @include BootstrapMaxWidthResponsive(md){
+      display: none;
+    }
+
     .sitec2aarea{
       background-color: $sticyside-bgclr;
       padding: 8px;
@@ -87,6 +91,12 @@ $sticyside-text-size:           1rem;
       }
       @include BootstrapMaxWidthResponsive(lg){
         width: 500px;
+      }
+      @include BootstrapMaxWidthResponsive(md){
+        width: 360px;
+      }
+      @include BootstrapMaxWidthResponsive(sm){
+        width: 270px;
       }
 
       .stickytickersowl{

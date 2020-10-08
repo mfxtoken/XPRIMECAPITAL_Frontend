@@ -64,6 +64,10 @@ $('.stickytickersowl').owlCarousel({
             items:1,
             mouseDrag:true
         },
+        619:{
+            items:2,
+            mouseDrag:true
+        },
         819:{
             items:4,
             mouseDrag:true

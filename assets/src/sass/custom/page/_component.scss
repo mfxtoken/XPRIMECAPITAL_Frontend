@@ -36,10 +36,24 @@
         @include flexbox-flex-grow(1);
         min-width: 0;
         max-width: 100%;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          @include flexbox-flex(0 0 calc(100% / 2));
+          width: calc(100% / 2);
+          max-width: 100%;
+        }
       }
 
       &-content{
         padding: 50px;
+        //height: 100%;
+
+        @include BootstrapMaxWidthResponsive(1k){
+          padding: 40px;
+        }
+        @include BootstrapMaxWidthResponsive(hd){
+          padding: 30px;
+        }
       }
 
       &-head{}
@@ -49,7 +63,8 @@
         line-height: 1.2;
         text-align: left;
         margin-top: 25px;
-        min-height: 280px;
+        padding-bottom: 30px;
+        //min-height: 280px;
 
         li{
           position: relative;
@@ -288,9 +303,7 @@
         @include box-shadow(0 0 50px 0 #e3e9f2);
         position: relative;
       }
-
     }
-
   }
 
   &-platformssec{
@@ -299,6 +312,10 @@
     padding: 50px 0 0;
     position: relative;
     overflow: hidden;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 30px 0 0;
+    }
 
     &::after{
       content: "";
@@ -314,14 +331,36 @@
       @include flexbox-align-items(center);
       position: relative;
       z-index: 1;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        display: block !important;
+      }
     }
 
     &-cont{
       max-width: 600px;
 
+      @include BootstrapMinWidthResponsive(lg){
+        @include flexbox-flex-order(1);
+      }
+      @include BootstrapMaxWidthResponsive(xl){
+        max-width: 500px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        max-width: none;
+      }
+
       .sitetitle-xl{
         padding-right: 100px;
         padding-bottom: 60px;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          padding-right: 0;
+          padding-bottom: 20px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          text-align: center;
+        }
 
         .platreqbtns{
           margin-top: 30px;
@@ -348,7 +387,17 @@
 
     &-spec{
 
+      @include BootstrapMinWidthResponsive(lg){
+        @include flexbox-flex-order(2);
+      }
+
       .platspecbox{
+
+        @include BootstrapMaxWidthResponsive(lg){
+          text-align: center;
+          max-width: 400px;
+          margin: 0 auto 30px;
+        }
 
         &-img{
           display: block;
@@ -396,7 +445,7 @@
             right: 0;
             bottom: 0;
 
-            @include BootstrapMaxWidthResponsive(lg){
+            @include BootstrapMaxWidthResponsive(xl){
               right: -16px;
               bottom: -16px;
             }
@@ -412,7 +461,7 @@
             left: 0;
             top: 0;
 
-            @include BootstrapMaxWidthResponsive(lg){
+            @include BootstrapMaxWidthResponsive(xl){
               left: -16px;
               top: -16px;
             }
@@ -477,6 +526,11 @@
         i[class*="icon"]{
           display: block;
           margin: 0 auto 1rem;
+
+          @include BootstrapMaxWidthResponsive(xl){
+            margin-bottom: 0.5rem;
+            @include scale(0.9);
+          }
         }
 
         h3,h4,h5{
@@ -501,6 +555,11 @@
         @include flexbox-flex(0 0 calc(100%/4));
         max-width: calc(100%/4);
         padding: 15px;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          @include flexbox-flex(0 0 calc(100%/2));
+          max-width: calc(100%/2);
+        }
       }
 
       &-box{
@@ -511,9 +570,18 @@
         position: relative;
         @include border-radius(10px);
 
+        @include BootstrapMaxWidthResponsive(xl){
+          padding: 25px 20px;
+        }
+
         i[class*="icon"]{
           display: block;
           margin: 0 auto 1rem;
+
+          @include BootstrapMaxWidthResponsive(xl){
+            margin-bottom: 0.5rem;
+            @include scale(0.9);
+          }
         }
 
         h3,h4,h5{
@@ -529,6 +597,15 @@
     @include flexbox-flex(0);
     padding: 80px 0;
 
+    @include BootstrapMaxWidthResponsive(1k){
+      padding: 60px 0;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 50px 0;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 30px 0;
+    }
     @include BootstrapMaxWidthResponsive(lg){
       padding-top: 15px;
     }
@@ -576,6 +653,17 @@
 
     .aboutusimg{
       max-width: 700px;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        max-width: 600px;
+      }
+      @include BootstrapMaxWidthResponsive(xl){
+        max-width: 480px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        max-width: 400px;
+        margin-bottom: 30px;
+      }
     }
   }
 

@@ -36,21 +36,20 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       background-color: transparent;
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 0;
       top: 0;
       left: 0;
-      z-index: -3;
-      //visibility: hidden;
+      z-index: 2;
       opacity: 0;
-      @include transition-multiple(background 0.3s cubic-bezier(.77,0,.175,1), opacity 0.3s cubic-bezier(.77,0,.175,1), z-index 0.15s cubic-bezier(.77,0,.175,1));
+      @include transition-multiple(background 0.3s cubic-bezier(.77,0,.175,1), opacity 0.3s cubic-bezier(.77,0,.175,1), height 0.15s cubic-bezier(.77,0,.175,1));
     }
 
     &#{$navmenu-mainclass}-moverlay{
       @include BootstrapMaxWidthResponsive($navmenu-resp-width){
         &::after{
           background-color: transparentize($site-clr-white, 0.1);
+          height: 100%;
           z-index: 2;
-          //visibility: visible;
           opacity: 1;
         }
       }
@@ -59,8 +58,8 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       @include BootstrapMinWidthResponsive($navmenu-resp-width){
         &::after{
           background-color: transparentize($site-clr-white, 0.05);
+          height: 100%;
           z-index: 2;
-          //visibility: visible;
           opacity: 1;
         }
       }
@@ -118,7 +117,11 @@ $navmenu-resp-transition:               0.7s cubic-bezier(.77,0,.175,1);
       &-item{
 
         @include BootstrapMaxWidthResponsive($navmenu-resp-width){
-          border-top: 1px solid #D9E7FC;
+          border-bottom: 1px solid #D9E7FC;
+
+          &:last-child{
+            border-bottom-width: 0;
+          }
         }
 
         &.dropdown.show{

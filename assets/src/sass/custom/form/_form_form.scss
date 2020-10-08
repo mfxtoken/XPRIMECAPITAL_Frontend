@@ -29,6 +29,14 @@
     font-weight: $var-custom-font-weight-bold;
   }
 
+
+
+  #{$formclassname}-group{
+    @include BootstrapMaxWidthResponsive(hd){
+      margin-bottom: 0.75rem;
+    }
+  }
+
   #{$formclassname}-control{
     color: $site-clr-text-dark-sec;
     background-clip: inherit;

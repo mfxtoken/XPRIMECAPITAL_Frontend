@@ -15,17 +15,25 @@
     > .container .row{
       @include flexbox-align-items(center);
 
-      @include BootstrapMaxWidthResponsive(lg){
-        @include flexbox-flex-direction(column);
+      @include BootstrapMaxWidthResponsive(xl){
+        display: block !important;
       }
     }
 
     &-text{
 
+      @include BootstrapMinWidthResponsive(xl){
+        @include flexbox-flex-order(1);
+      }
+
       .sitetitle-xl{
         padding-right: 100px;
 
-        @include BootstrapMaxWidthResponsive(lg){
+        @include BootstrapMaxWidthResponsive(hd){
+          padding-right: 50px;
+        }
+        @include BootstrapMaxWidthResponsive(xl){
+          padding-right: 0;
           text-align: center;
         }
 
@@ -37,14 +45,15 @@
     }
 
     &-img{
-      @include BootstrapMaxWidthResponsive(lg){
-        padding-top: 20px;
+
+      @include BootstrapMinWidthResponsive(xl){
+        @include flexbox-flex-order(2);
       }
 
       img{
-        @include BootstrapMaxWidthResponsive(lg){
-          max-width: 500px;
-          margin: auto;
+        @include BootstrapMaxWidthResponsive(xl){
+          max-width: 400px;
+          margin: 0 auto 30px;
           display: block;
         }
       }
@@ -127,6 +136,10 @@
 
         .row{
           @include flexbox-align-items(center);
+
+          @include BootstrapMaxWidthResponsive(xl){
+            display: block !important;
+          }
         }
       }
 
@@ -135,6 +148,12 @@
 
 
     &-text{
+
+      @include BootstrapMaxWidthResponsive(xl){
+        text-align: center;
+        max-width: 600px;
+        margin: auto;
+      }
 
       h3 + ul.ullist{
         margin-top: 20px;
@@ -145,6 +164,8 @@
       }
 
       ul.ullist{
+        text-align: left;
+
         li{
           margin-bottom: 15px;
 
@@ -160,6 +181,10 @@
 
     &-img{
       text-align: center;
+
+      @include BootstrapMaxWidthResponsive(xl){
+        margin-bottom: 30px;
+      }
 
       img{
         max-width: 400px;

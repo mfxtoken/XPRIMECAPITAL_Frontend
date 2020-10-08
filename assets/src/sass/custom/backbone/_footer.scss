@@ -40,6 +40,12 @@ $foot-brdr-clr:                   #CFD8E7;
     @include BootstrapMaxWidthResponsive(1k){
       height: 170px;
     }
+    @include BootstrapMaxWidthResponsive(hd){
+      height: 100px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      background-size: 250% auto;
+    }
 
     @include keyframes(FootChartBuilds){
       0%  {background-position-x: 0%;}
@@ -149,6 +155,11 @@ $foot-brdr-clr:                   #CFD8E7;
         }
         @include BootstrapMaxWidthResponsive(xl){
           border-bottom: none;
+        }
+        @include BootstrapMaxWidthResponsive(md){
+          > .row > .col-xs-12{
+            margin-top: 40px;
+          }
         }
       }
 

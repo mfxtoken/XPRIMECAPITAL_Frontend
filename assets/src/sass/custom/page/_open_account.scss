@@ -10,6 +10,16 @@ $openacc-bgclr-form:              $site-clr-white;
 
   &-section{
     padding: 80px 0;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding: 110px 0 60px !important;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 140px 0 40px !important;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding: 70px 0 40px !important;
+    }
   }
 
   &-wrapper{
@@ -25,6 +35,23 @@ $openacc-bgclr-form:              $site-clr-white;
       @include flexbox-justify-content(space-between);
       @include flexbox-align-items(center);
       height: 900px;
+
+      @include BootstrapMaxWidthResponsive(1k){
+        height: 700px;
+      }
+      @include BootstrapMaxWidthResponsive(hd){
+        height: 670px;
+      }
+      @include BootstrapMaxWidthResponsive(xl){
+        height: 625px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        height: 690px;
+      }
+      @include BootstrapMaxWidthResponsive(md){
+        display: block !important;
+        height: auto;
+      }
 
       > div[class*="col"]{
         @include flexbox-display-flex();
@@ -49,24 +76,24 @@ $openacc-bgclr-form:              $site-clr-white;
         display: none;
       }
 
-      div[class*="welcomecol"]{
-        background-color: $openacc-bgclr-welcome-demo;
-        @include translateX(0);
+      @include BootstrapMinWidthResponsive(md){
+        div[class*="welcomecol"]{
+          background-color: $openacc-bgclr-welcome-demo;
+          @include translateX(0);
 
-        .btn-secondary{
-          color: $openacc-bgclr-welcome-demo;
+          .btn-secondary{
+            color: $openacc-bgclr-welcome-demo;
 
-          &:hover{
-            background-color: darken($openacc-bgclr-welcome-demo, 20%);
-            border-color: darken($openacc-bgclr-welcome-demo, 20%);
+            &:hover{
+              background-color: darken($openacc-bgclr-welcome-demo, 20%);
+              border-color: darken($openacc-bgclr-welcome-demo, 20%);
+            }
           }
         }
+        div[class*="formcol"]{
+          @include translateX(0);
+        }
       }
-
-      div[class*="formcol"]{
-        @include translateX(0);
-      }
-
     }
 
     &.openliveacc{
@@ -75,22 +102,24 @@ $openacc-bgclr-form:              $site-clr-white;
         display: none;
       }
 
-      div[class*="welcomecol"]{
-        background-color: $openacc-bgclr-welcome-live;
-        @include translateX(100%);
+      @include BootstrapMinWidthResponsive(md){
+        div[class*="welcomecol"]{
+          background-color: $openacc-bgclr-welcome-live;
+          @include translateX(100%);
 
-        .btn-secondary{
-          color: $openacc-bgclr-welcome-live;
+          .btn-secondary{
+            color: $openacc-bgclr-welcome-live;
 
-          &:hover{
-            background-color: darken($openacc-bgclr-welcome-live, 20%);
-            border-color: darken($openacc-bgclr-welcome-live, 20%);
+            &:hover{
+              background-color: darken($openacc-bgclr-welcome-live, 20%);
+              border-color: darken($openacc-bgclr-welcome-live, 20%);
+            }
           }
         }
-      }
 
-      div[class*="formcol"]{
-        @include translateX(-100%);
+        div[class*="formcol"]{
+          @include translateX(-100%);
+        }
       }
     }
   }
@@ -100,12 +129,24 @@ $openacc-bgclr-form:              $site-clr-white;
     position: relative;
     z-index: 1;
 
+    @include BootstrapMaxWidthResponsive(md){
+      display: none !important;
+    }
+
     .welcomearea{
       padding: 50px;
       text-align: center;
 
+      @include BootstrapMaxWidthResponsive(lg){
+        padding: 30px;
+      }
+
       .welcomeimg{
         margin-bottom: 50px;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          margin-bottom: 30px;
+        }
       }
 
       .welcomebtn{
@@ -137,6 +178,16 @@ $openacc-bgclr-form:              $site-clr-white;
       width: 100%;
       padding: 75px 100px;
 
+      @include BootstrapMaxWidthResponsive(1k){
+        padding: 35px 50px;
+      }
+      @include BootstrapMaxWidthResponsive(xl){
+        padding: 30px 30px 30px 20px;
+      }
+      @include BootstrapMaxWidthResponsive(md){
+        padding: 20px;
+      }
+
       .sitecontent-desc{
         margin-bottom: 30px;
       }
@@ -147,6 +198,12 @@ $openacc-bgclr-form:              $site-clr-white;
         .form-row.formbottom{
           @include flexbox-align-items(center);
           margin-top: 1.5rem;
+
+          @include BootstrapMaxWidthResponsive(lg){
+            .col-lg-auto{
+              margin-top: 20px;
+            }
+          }
         }
       }
     }

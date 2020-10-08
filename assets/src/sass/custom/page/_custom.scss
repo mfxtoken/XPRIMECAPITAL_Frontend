@@ -5,6 +5,10 @@
   background-repeat: repeat-x;
   background-size: contain;
   background-position: left center;
+
+  @include BootstrapMaxWidthResponsive(xl){
+    background-size: cover;
+  }
 }
 
 ul.ullist{

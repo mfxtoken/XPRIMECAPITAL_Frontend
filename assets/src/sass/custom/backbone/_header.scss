@@ -14,7 +14,7 @@ $headlogo-clr-red:                $site-clr-red;
   @include box-shadow(0 0 0 0 transparent);
   @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
 
-  @include BootstrapMaxWidthResponsive(hd){
+  @include BootstrapMaxWidthResponsive(1k){
     padding: 40px 0;
   }
   @include BootstrapMaxWidthResponsive(xl){
@@ -39,7 +39,6 @@ $headlogo-clr-red:                $site-clr-red;
   &-menubtn{
     display: none;
     position: relative;
-    @include transition-multiple(width 0.7s cubic-bezier(.77,0,.175,1), padding 0.7s cubic-bezier(.77,0,.175,1));
 
     &::after{
       content: "";
@@ -60,17 +59,37 @@ $headlogo-clr-red:                $site-clr-red;
     }
   }
 
+  %extlogosvg {
+    display: block;
+    position: relative;
+
+    .logosvg{
+      width: 200px;
+      height: auto;
+
+      &-text{
+        &-title{fill: $headlogo-clr-black;}
+      }
+
+      &-icon{
+        &-black{fill: $headlogo-clr-black;}
+        &-red{fill: $headlogo-clr-red;}
+      }
+    }
+  }
+
   &-logoarea{
+    opacity: 1;
+    @include transition-multiple(opacity 0.7s cubic-bezier(.77,0,.175,1));
 
     @include BootstrapMinWidthResponsive(xl){
       @include flexbox-flex-order(2);
     }
 
     .headlogo{
-      display: block;
+      @extend %extlogosvg;
       margin-right: 1rem;
       padding-bottom: 5px;
-      position: relative;
 
       @include BootstrapMaxWidthResponsive(hd){
         margin-right: 0;
@@ -89,20 +108,6 @@ $headlogo-clr-red:                $site-clr-red;
         bottom: -5px;
         opacity: 1;
         @include transition-multiple(opacity 0.5s ease-in-out);
-      }
-
-      &-svg{
-        width: 200px;
-        height: auto;
-
-        &-text{
-          &-title{fill: $headlogo-clr-black;}
-        }
-
-        &-icon{
-          &-black{fill: $headlogo-clr-black;}
-          &-red{fill: $headlogo-clr-red;}
-        }
       }
     }
   }
@@ -126,9 +131,22 @@ $headlogo-clr-red:                $site-clr-red;
 
       @include BootstrapMaxWidthResponsive(lg){
         display: block;
-        padding: 10px;
+        padding: 15px;
+        border-top: 1px solid darken($site-clr-grylight, 5%);
         position: relative;
         z-index: 1;
+      }
+    }
+
+    &-logoarea{
+      display: none;
+      padding: 15px;
+      border-bottom: 1px solid darken($site-clr-grylight, 5%);
+      position: relative;
+      z-index: 1;
+
+      .headlogo{
+        @extend %extlogosvg;
       }
     }
 
@@ -207,16 +225,35 @@ $headlogo-clr-red:                $site-clr-red;
     background-size: 100%;
     background-position: top -50px center;
     padding-top: 160px;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding-top: 140px;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-top: 120px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      background-size: 150%;
+      padding-top: 140px;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      background-size: 125%;
+      padding-top: 70px;
+    }
   }
 }
 
 .daphne-moverlay{
   .header-menubtn{
-    width: 0;
-    padding: 0;
-
     &::after{
       display: none;
     }
+  }
+
+  .header-logoarea{
+    opacity: 0;
+  }
+  .header-navarea-logoarea{
+    display: block;
   }
 }
