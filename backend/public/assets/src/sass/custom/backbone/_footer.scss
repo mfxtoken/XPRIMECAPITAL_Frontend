@@ -1,0 +1,371 @@
+
+/* Components Variables Settings */
+$foot-text-clr:                   $site-clr-text-dark-pri;
+$foot-text-size:                  1rem;
+$foot-headtitle-clr:              $site-clr-cyan;
+$foot-headtitle-size:             1.25rem;
+$foot-bgclr:                      #E9F0FC;
+$foot-brdr-clr:                   #CFD8E7;
+/* Components Variables Settings */
+
+.footer{
+  @include flexbox-display-flex();
+  @include flexbox-align-items(center);
+  @include flexbox-flex-direction(column);
+  @include flexbox-flex(inherit);
+  color: $foot-text-clr;
+  @include responsive-font-size($foot-text-size);
+  background-color: $foot-bgclr;
+  min-height: 300px;
+  padding-bottom: 65px;
+  position: relative;
+  overflow: hidden;
+
+  > .container{
+    //padding-top: 190px;
+    //position: relative;
+    //z-index: 1;
+  }
+
+  &-mount{
+    background-color: $var-custom-body-bg;
+    background-image: url(#{$path-img-url}/footer/footchartbuilds.svg);
+    background-repeat: repeat-x;
+    background-position: bottom -5px left 50%;
+    background-size: 200% auto;
+    width: 100%;
+    height: 200px;
+    @include animation-multi(FootChartBuilds 160s linear infinite);
+
+    @include BootstrapMaxWidthResponsive(1k){
+      height: 170px;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      height: 100px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      background-size: 250% auto;
+    }
+
+    @include keyframes(FootChartBuilds){
+      0%  {background-position-x: 0%;}
+      to  {background-position-x: 200%;}
+    }
+  }
+
+  &-top{
+    padding-top: 50px;
+
+    @include BootstrapMaxWidthResponsive(lg){
+      padding-top: 20px;
+    }
+
+    &-row{
+      @include flexbox-align-items(center);
+    }
+  }
+
+  &-logo{
+    width: 240px;
+    text-align: center;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      width: 200px;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      display: none;
+    }
+
+    img{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &-navigation{
+    padding-left: 60px;
+    margin-left: 20px;
+    border-left: 1px solid $foot-brdr-clr;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-left: 40px;
+      margin-left: 0;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding-left: 15px;
+      border-left-width: 0;
+    }
+
+    &-col{
+
+      @include BootstrapMaxWidthResponsive(xl){
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        &.col-sm-6{
+          border-bottom: 1px solid $foot-brdr-clr;
+        }
+      }
+      @include BootstrapMaxWidthResponsive(sm){
+        &:last-child{
+          padding-bottom: 0;
+        }
+      }
+
+      &.navmtmenu{
+        @include BootstrapMinWidthResponsive(xl){
+
+          > .row{
+            @include flexbox-flex-direction(column);
+
+            .col + .col{
+              margin-top: 5px;
+            }
+
+            h5{display: none;}
+          }
+
+        }
+      }
+
+      &.navanalysismenu{
+        padding-top: 20px;
+        margin-top: 30px;
+        border-top: 1px solid $foot-brdr-clr;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          margin-top: 0;
+        }
+        @include BootstrapMaxWidthResponsive(sm){
+          .col-xm-4{
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      &.navmultimenu{
+        @include BootstrapMinWidthResponsive(xl){
+
+          > .row > div[class*="-12"]{
+            margin-top: 20px;
+
+            &:first-child{margin-top: 0;}
+          }
+
+        }
+        @include BootstrapMaxWidthResponsive(xl){
+          border-bottom: none;
+        }
+        @include BootstrapMaxWidthResponsive(md){
+          > .row > .col-xs-12{
+            margin-top: 40px;
+          }
+        }
+      }
+
+      &.colmultimenu[class*="sm-12"]{
+        @include BootstrapMaxWidthResponsive(xl){
+          h4{
+            margin-bottom: 3px;
+          }
+
+          ul{
+            @include flexbox-display-flex();
+            @include flexbox-flex-wrap(wrap);
+            margin-left: -15px;
+            margin-right: -15px;
+
+            li{
+              @include flexbox-flex(0 0 calc(100% / 4));
+              max-width: calc(100% / 4);
+              margin: 3px 0;
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+
+    }
+
+    h4, h5{
+      line-height: 1.2;
+      position: relative;
+    }
+
+    h4 + h4{
+      margin-top: 15px;
+
+      @include BootstrapMaxWidthResponsive(xl){
+        margin-top: 10px;
+      }
+    }
+
+    ul + h4{
+      margin-top: 20px;
+    }
+
+    h4{
+      color: $foot-headtitle-clr;
+      @include responsive-font-size($foot-headtitle-size);
+      margin-bottom: 5px;
+
+      a{
+        color: $foot-headtitle-clr;
+        @include transition-multiple(color 0.15s ease-in-out);
+      }
+    }
+
+    h5{
+      color: $site-clr-green;
+      @include responsive-font-size($foot-text-size);
+      margin-bottom: 5px;
+
+      a{
+        color: $site-clr-green;
+      }
+    }
+
+    &-list{
+
+      > li{
+        @include responsive-font-size($foot-text-size);
+        line-height: 1.2;
+        margin: 5px 0;
+
+        &:first-child{margin-top: 0;}
+        &:last-child{margin-bottom: 0;}
+
+        a{
+          color: $foot-text-clr;
+          @include transition-multiple(color 0.15s ease-in-out);
+        }
+      }
+
+      &.ulanalysisforexmenu{
+        @include flexbox-display-flex();
+        @include flexbox-flex-wrap(wrap);
+        margin-left: -15px;
+        margin-right: -15px;
+
+        > li{
+          @include flexbox-flex(0 0 calc(100%/2));
+          max-width: calc(100%/2);
+          padding-left: 15px;
+          padding-right: 15px;
+
+          &:nth-child(2){
+            margin-top: 0;
+          }
+        }
+
+        @include BootstrapMaxWidthResponsive(sm){
+          display: block;
+          margin: 0;
+
+          > li{
+            max-width: calc(100%/1);
+            padding-left: 0;
+            padding-right: 0;
+
+            &:nth-child(2){
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+
+      + ul{
+        margin-top: 5px;
+      }
+    }
+  }
+
+  &-risk{
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid $foot-brdr-clr;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+
+    h6{
+      color: $foot-headtitle-clr;
+      @include responsive-font-size($foot-headtitle-size * 0.9);
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    p{
+      @include responsive-font-size($foot-text-size * 0.9);
+      margin-bottom: 5px;
+
+      &:last-child{margin-bottom: 0;}
+
+      a{
+        color: $foot-headtitle-clr;
+        font-weight: $var-custom-font-weight-bold;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-copyright{
+    padding: 15px 0;
+    margin-top: 25px;
+    border-top: 1px solid $foot-brdr-clr;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    &-row{
+      @include flexbox-align-items(center);
+    }
+
+    .copyright{
+      @include responsive-font-size($foot-text-size * 0.9);
+    }
+
+    .socialmedia{
+      .sociallist{
+        @include flexbox-display-flex();
+
+        li{
+          background-color: transparent;
+          margin-right: 5px;
+          border: 1px solid $foot-brdr-clr;
+          @include border-radius(2px);
+          @include transition-multiple(background 0.15s ease-in-out, border 0.15s ease-in-out);
+
+          &:last-child{margin-right: 0;}
+
+          &:hover{
+            background-color: $foot-headtitle-clr;
+            border-color: $foot-headtitle-clr;
+
+            .socialicon{
+              @include svg-filter(0%, 1, 0, 100%, 100%, 100%);
+            }
+          }
+
+          a{
+            @include flexbox-display-flex();
+            width: 34px;
+            height: 34px;
+          }
+
+          .socialicon{
+            position: relative;
+            margin: auto;
+            @include svg-filter(0%, 0, 0, 100%, 100%, 75%);
+            @include transition-multiple(filter 0.15s ease-in-out);
+          }
+        }
+      }
+    }
+  }
+}
