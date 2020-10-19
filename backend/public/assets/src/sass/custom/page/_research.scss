@@ -1,0 +1,31 @@
+
+.research{
+
+  &-section{
+    padding: 80px 0;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding: 60px 0;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 40px 0;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 30px 0;
+    }
+  }
+
+  &-sitetitle{
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding-top: 30px;
+      padding-bottom: 15px;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-bottom: 0;
+    }
+  }
+
+}
