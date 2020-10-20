@@ -19,7 +19,6 @@ class PricePull extends Command
 
     public function handle()
     {
-        Log::info("Loading prices");
         $markets = Market::where('status', 1)->get();
         foreach ($markets as $market){
             switch ($market->type){

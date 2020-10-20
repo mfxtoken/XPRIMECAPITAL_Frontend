@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class NewsFetch extends Command
 {
@@ -27,24 +28,28 @@ class NewsFetch extends Command
             Cache::forget('latestnews');
             Cache::put('latestnews', $latestNews, 3600);
         }
+        Log::info("Latest news loaded");
 
         $fxNews = $this->loadNews('forex_news', 6);
         if($fxNews){
             Cache::forget('latestfxnews');
             Cache::put('latestfxnews', $fxNews, 3600);
         }
+        Log::info("Forex news loaded");
 
         $ecoNews = $this->loadNews('economy_news', 6);
         if($ecoNews){
             Cache::forget('latestEcoNews');
             Cache::put('latestEcoNews', $ecoNews, 3600);
         }
+        Log::info("Economy news loaded");
 
         $ecoIndicators = $this->loadNews('economic_indicators', 6);
         if($ecoNews){
             Cache::forget('latestEcoInd');
             Cache::put('latestEcoInd', $ecoIndicators, 3600);
         }
+        Log::info("Economic indicators loaded");
     }
 
     private function loadNews($type, $count){
