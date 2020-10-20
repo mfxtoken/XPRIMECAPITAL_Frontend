@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\CryptoMarket;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 
 class CryptoPricePull extends Command
@@ -19,6 +20,7 @@ class CryptoPricePull extends Command
 
     public function handle()
     {
+        Log::info("Loading crypto prices");
         $jsonurl = "http://price.icrypex.com/getcurrency?symbol=BTCUSD,LTCUSD,XRPUSD,ETHUSD,XLMUSD";
         $json = @file_get_contents($jsonurl);
         if($json){
@@ -38,6 +40,7 @@ class CryptoPricePull extends Command
                 $market->save();
             }
         }
+        Log::info("Crypto prices loaded");
         Cache::forget('cryptoprices');
     }
 }

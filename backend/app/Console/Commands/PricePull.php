@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 use App\Market;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Weidner\Goutte\GoutteFacade;
 use Illuminate\Support\Facades\Cache;
 
@@ -18,6 +19,7 @@ class PricePull extends Command
 
     public function handle()
     {
+        Log::info("Loading prices");
         $markets = Market::where('status', 1)->get();
         foreach ($markets as $market){
             switch ($market->type){
@@ -57,6 +59,7 @@ class PricePull extends Command
             }
         }
 
+        Log::info("Prices loaded");
         Cache::forget('marketprices');
     }
 
