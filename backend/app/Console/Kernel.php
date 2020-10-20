@@ -24,7 +24,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('price:pull')->everyFifteenMinutes();
+        $schedule->command('price:crypto')->everyFifteenMinutes();
+        $schedule->command('news:fetch')->everyThirtyMinutes();
+        $schedule->command('analysis:fetch')->everyThirtyMinutes();
     }
 
     /**
