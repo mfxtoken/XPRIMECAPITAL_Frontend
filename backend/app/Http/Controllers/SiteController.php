@@ -9,17 +9,19 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
+    private $newsCache = 3*60*60;
+
     public function notfound(){
         abort(404);
     }
 
     public function index(){
-        $news = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', 180, function() {
-            return $this->loadNews('all', 5);
+        $news = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', $this->newsCache, function() {
+            return $this->loadNews('all', 10);
         });
 
         return view('index', [
-            'news' => $news
+            'news' => array_slice($news, 0, 5)
         ]);
     }
 
@@ -57,15 +59,15 @@ class SiteController extends Controller
 
     public function news(){
 
-        $fxNews = Cache::has('latestfxnews') ? Cache::get('latestfxnews') : Cache::remember('latestfxnews', 180, function() {
+        $fxNews = Cache::has('latestfxnews') ? Cache::get('latestfxnews') : Cache::remember('latestfxnews', $this->newsCache, function() {
             return $this->loadNews('forex_news', 6);
         });
 
-        $ecoNews = Cache::has('latestEcoNews') ? Cache::get('latestEcoNews') : Cache::remember('latestEcoNews', 180, function() {
+        $ecoNews = Cache::has('latestEcoNews') ? Cache::get('latestEcoNews') : Cache::remember('latestEcoNews', $this->newsCache, function() {
             return $this->loadNews('economy_news', 6);
         });
 
-        $ecoIndicators  = Cache::has('latestEcoInd') ? Cache::get('latestEcoInd') : Cache::remember('latestEcoInd', 180, function() {
+        $ecoIndicators  = Cache::has('latestEcoInd') ? Cache::get('latestEcoInd') : Cache::remember('latestEcoInd', $this->newsCache, function() {
             return $this->loadNews('economic_indicators', 6);
         });
 
@@ -77,8 +79,20 @@ class SiteController extends Controller
         ]);
     }
 
-    public function news_detail(){
-        return view('pages.news.news_detail');
+    public function news_detail($newsid){
+        $cache_key = $newsid . '_nd';
+        $news = Cache::has($cache_key) ? Cache::get($cache_key) : Cache::rememberForever($cache_key, function() use($newsid) {
+            return $this->loadNewsDetail($newsid);
+        });
+
+        $latesNews = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', $this->newsCache, function() {
+            return $this->loadNews('all', 10);
+        });
+
+        return view('pages.news.news_detail', [
+            'news' => $news,
+            'latestNews' => $latesNews
+         ]);
     }
 
 
@@ -105,5 +119,30 @@ class SiteController extends Controller
 
         $responsejson = json_decode($response);
         return $responsejson->items;
+    }
+
+    protected function loadNewsDetail($newsid){
+        $request_url = env('APIURL') . '/news/'. $newsid;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $request_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        if ($err) {
+            abort(500);
+        }
+
+        $responsejson = json_decode($response);
+        return $responsejson;
     }
 }

@@ -16,7 +16,7 @@
                     @foreach($cryptoPrices as $market)
                         <li>
                             <small class="stickytickersowl-symbol">{{ $market->market_name }}</small>
-                            <span class="stickytickersowl-price">{{ sprintf('%0.4f', $market->current_price) }}</span>
+                            <span class="stickytickersowl-price">{{ sprintf('%0.4f', $market->price) }}</span>
                         </li>
                     @endforeach
                 </ul>

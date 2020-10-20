@@ -29,6 +29,7 @@ Route::get('/partnership/affiliate', 'SiteController@notfound')->name('affiliate
 
 Route::get('/research/economic-calendar', 'SiteController@economic_calendar')->name('economic_calendar');
 Route::get('/research/news', 'SiteController@news')->name('news');
+Route::get('/research/news/{newsid}', 'SiteController@news_detail');
 
 Route::get('/company', 'SiteController@notfound')->name('company');
 

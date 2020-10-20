@@ -30,17 +30,17 @@
                             <div class="row">
                                 <div class="newscontcatbox-newsarea-big col-xl">
                                     <div class="headnewstopimg">
-                                        <a href="/news/{{ $fx_news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $fx_news[0]->image_url }});" title="{{ $fx_news[0]->title }}" rel="bookmark"></a>
+                                        <a href="/research/news/{{ $fx_news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $fx_news[0]->image_url }});" title="{{ $fx_news[0]->title }}" rel="bookmark"></a>
                                     </div>
                                     <div class="headnewstopinfo">
                                         <span class="headnewsinfodate">{{ getNewsDate($fx_news[0]) }}</span>
                                     </div>
                                     <div class="sitecontent-desc">
-                                        <h3><a href="/news/{{ $fx_news[0]->_id }}" title="" rel="bookmark">{{ $fx_news[0]->title }}</a></h3>
+                                        <h3><a href="/research/news/{{ $fx_news[0]->_id }}" title="" rel="bookmark">{{ $fx_news[0]->title }}</a></h3>
                                         <p>{{ getNewsSpot($fx_news[0]) }}</p>
                                     </div>
                                     <div class="headnewsreadbtn">
-                                        <a href="/news/{{ $fx_news[0]->_id }}" class="btn rounded-pill btn-secondary" title="Read News" rel="bookmark">Read News</a>
+                                        <a href="/research/news/{{ $fx_news[0]->_id }}" class="btn rounded-pill btn-secondary" title="Read News" rel="bookmark">Read News</a>
                                     </div>
                                 </div>
                                 <div class="newscontcatbox-newsarea-list col-xl">
@@ -52,12 +52,12 @@
                                                     <div class="row">
                                                         <div class="col-sm-auto">
                                                             <div class="listnewstopimg">
-                                                                <a href="/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
+                                                                <a href="/research/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm">
                                                             <div class="sitecontent-desc">
-                                                                <h5><a href="/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
+                                                                <h5><a href="/research/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
                                                                 <p>{{ getNewsSpot($n) }}</p>
                                                             </div>
                                                             <div class="listnewsinfo">
@@ -102,17 +102,17 @@
                             <div class="row">
                                 <div class="newscontcatbox-newsarea-big col-xl">
                                     <div class="headnewstopimg">
-                                        <a href="/news/{{ $eco_news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $eco_news[0]->image_url }});" title="{{ $eco_news[0]->title }}" rel="bookmark"></a>
+                                        <a href="/research/news/{{ $eco_news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $eco_news[0]->image_url }});" title="{{ $eco_news[0]->title }}" rel="bookmark"></a>
                                     </div>
                                     <div class="headnewstopinfo">
                                         <span class="headnewsinfodate">{{ getNewsDate($eco_news[0]) }}</span>
                                     </div>
                                     <div class="sitecontent-desc">
-                                        <h3><a href="/news/{{ $eco_news[0]->_id }}" title="" rel="bookmark">{{ $eco_news[0]->title }}</a></h3>
+                                        <h3><a href="/research/news/{{ $eco_news[0]->_id }}" title="" rel="bookmark">{{ $eco_news[0]->title }}</a></h3>
                                         <p>{{ getNewsSpot($eco_news[0]) }}</p>
                                     </div>
                                     <div class="headnewsreadbtn">
-                                        <a href="/news/{{ $eco_news[0]->_id }}" class="btn rounded-pill btn-secondary" title="Read News" rel="bookmark">Read News</a>
+                                        <a href="/research/news/{{ $eco_news[0]->_id }}" class="btn rounded-pill btn-secondary" title="Read News" rel="bookmark">Read News</a>
                                     </div>
                                 </div>
                                 <div class="newscontcatbox-newsarea-list col-xl">
@@ -124,12 +124,12 @@
                                                     <div class="row">
                                                         <div class="col-sm-auto">
                                                             <div class="listnewstopimg">
-                                                                <a href="/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
+                                                                <a href="/research/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm">
                                                             <div class="sitecontent-desc">
-                                                                <h5><a href="/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
+                                                                <h5><a href="/research/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
                                                                 <p>{{ getNewsSpot($n) }}</p>
                                                             </div>
                                                             <div class="listnewsinfo">
@@ -174,17 +174,17 @@
                             <div class="row">
                                 <div class="newscontcatbox-newsarea-big col-xl">
                                     <div class="headnewstopimg">
-                                        <a href="/news/{{ $eco_ind[0]->_id }}" class="newsimgbg" style="background-image: url({{ $eco_ind[0]->image_url }});" title="{{ $eco_ind[0]->title }}" rel="bookmark"></a>
+                                        <a href="/research/news/{{ $eco_ind[0]->_id }}" class="newsimgbg" style="background-image: url({{ $eco_ind[0]->image_url }});" title="{{ $eco_ind[0]->title }}" rel="bookmark"></a>
                                     </div>
                                     <div class="headnewstopinfo">
                                         <span class="headnewsinfodate">{{ getNewsDate($eco_ind[0]) }}</span>
                                     </div>
                                     <div class="sitecontent-desc">
-                                        <h3><a href="/news/{{ $eco_ind[0]->_id }}" title="" rel="bookmark">{{ $eco_ind[0]->title }}</a></h3>
+                                        <h3><a href="/research/news/{{ $eco_ind[0]->_id }}" title="" rel="bookmark">{{ $eco_ind[0]->title }}</a></h3>
                                         <p>{{ getNewsSpot($eco_ind[0]) }}</p>
                                     </div>
                                     <div class="headnewsreadbtn">
-                                        <a href="/news/{{ $eco_ind[0]->_id }}" class="btn rounded-pill btn-secondary" title="Read News" rel="bookmark">Read News</a>
+                                        <a href="/research/news/{{ $eco_ind[0]->_id }}" class="btn rounded-pill btn-secondary" title="Read News" rel="bookmark">Read News</a>
                                     </div>
                                 </div>
                                 <div class="newscontcatbox-newsarea-list col-xl">
@@ -196,12 +196,12 @@
                                                     <div class="row">
                                                         <div class="col-sm-auto">
                                                             <div class="listnewstopimg">
-                                                                <a href="/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
+                                                                <a href="/research/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm">
                                                             <div class="sitecontent-desc">
-                                                                <h5><a href="/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
+                                                                <h5><a href="/research/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
                                                                 <p>{{ getNewsSpot($n) }}</p>
                                                             </div>
                                                             <div class="listnewsinfo">
