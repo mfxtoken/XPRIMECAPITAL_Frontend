@@ -11,9 +11,9 @@
                     <p>XPrime Capital brings you the forex expertise of last two decades. You can trade any asset, any time, any where. This is our vision. That is why, we want you to take the advantage of our mobile multi-asset platforms. XPrime Capital experienced and well qualified Trading Advisors are ready to guide you and teach you.</p>
                     <p>XPrime Capital knows what you need and promises to deliver the best!</p>
                     <div class="openaccountbtns">
-                        <a href="Account_Open_Live.html" class="btn btn-lg rounded-pill btn-success" title="Start Trading Now" rel="bookmark">Start Trading Now</a>
+                        <a href="{{ route('open_live_account') }}" class="btn btn-lg rounded-pill btn-success" title="Start Trading Now" rel="bookmark">Start Trading Now</a>
                         <span>or</span>
-                        <a href="Account_Open_Demo.html" class="btn btn-lg rounded-pill btn-outline-info" title="Try Demo Account" rel="bookmark">Try Demo Account</a>
+                        <a href="{{ route('open_demo_account') }}" class="btn btn-lg rounded-pill btn-outline-info" title="Try Demo Account" rel="bookmark">Try Demo Account</a>
                     </div>
                 </div>
             </div>
