@@ -84,14 +84,11 @@
                         <div class="footer-navigation-col colmultimenu col-sm-12 col-xl-3">
                             <h4>Analysis</h4>
                             <ul class="footer-navigation-list ">
-                                <li><a href="{{ route('analysis', ["symbol" => 'XAU_USD']) }}" title="XAU/USD" rel="category">XAU/USD</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'EUR_TRY']) }}" title="EUR/TRY" rel="category">EUR/TRY</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'EUR_USD']) }}" title="EUR/USD" rel="category">EUR/USD</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'GBP_USD']) }}" title="GBP/USD" rel="category">GBP/USD</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'NZD_USD']) }}" title="NZD/USD" rel="category">NZD/USD</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'USD_CHF']) }}" title="USD/CHF" rel="category">USD/CHF</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'USD_JPY']) }}" title="USD/JPY" rel="category">USD/JPY</a></li>
-                                <li><a href="{{ route('analysis', ["symbol" => 'USD_TRY']) }}" title="USD/TRY" rel="category">USD/TRY</a></li>
+                                <li><a href="{{ route('analysis', ["symbol" => 'EURUSD']) }}" title="EUR/USD" rel="category">EUR/USD</a></li>
+                                <li><a href="{{ route('analysis', ["symbol" => 'GBPUSD']) }}" title="GBP/USD" rel="category">GBP/USD</a></li>
+                                <li><a href="{{ route('analysis', ["symbol" => 'NZDUSD']) }}" title="NZD/USD" rel="category">NZD/USD</a></li>
+                                <li><a href="{{ route('analysis', ["symbol" => 'USDCHF']) }}" title="USD/CHF" rel="category">USD/CHF</a></li>
+                                <li><a href="{{ route('analysis', ["symbol" => 'USDJPY']) }}" title="USD/JPY" rel="category">USD/JPY</a></li>
                             </ul>
                         </div>
                     </div>
