@@ -29,14 +29,13 @@
                     </div>
                     <div class="headslider-buttons">
                         <div class="openaccountbtns">
-                            <a href="Account_Open_Live.html" class="btn btn-lg rounded-pill btn-success" title="Start Trading Now" rel="bookmark">Start Trading Now</a>
+                            <a href="{{ route('open_live_account') }}" class="btn btn-lg rounded-pill btn-success" title="Start Trading Now" rel="bookmark">Start Trading Now</a>
                             <span>or</span>
-                            <a href="Account_Open_Demo.html" class="btn-link sitecolororange sitefontweightbold" title="Try Demo Account" rel="bookmark">Try Demo Account</a>
+                            <a href="{{ route('open_demo_account') }}" class="btn-link sitecolororange sitefontweightbold" title="Try Demo Account" rel="bookmark">Try Demo Account</a>
                         </div>
                     </div>
                 </div>
                 <!-- Owl Slider End -->
-
                 <!-- Img -->
                 <div class="headslider-top-row-right">
                     <div class="headslider-banner">
@@ -44,7 +43,6 @@
                     </div>
                 </div>
                 <!-- Img -->
-
             </div>
         </div>
         <!-- Slider Top End -->
