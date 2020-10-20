@@ -17,7 +17,7 @@
                     <div class="home-news-newscat-head-row">
                         <div class="home-news-newscat-head-imgarea">
                             <div class="bignewstopimg">
-                                <a href="/news/{{ $news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $news[0]->image_url }});" title="{{ $news[0]->title }}" rel="bookmark"></a>
+                                <a href="/research/news/{{ $news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $news[0]->image_url }});" title="{{ $news[0]->title }}" rel="bookmark"></a>
                             </div>
                         </div>
                         <div class="home-news-newscat-head-textarea">
@@ -25,17 +25,17 @@
                                 <h2><a href="#" title="Latest News" rel="bookmark">Latest News</a></h2>
                             </div>
                             <div class="headnewstopimg">
-                                <a href="/news/{{ $news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $news[0]->image_url }});" title="{{ $news[0]->title }}" rel="bookmark"></a>
+                                <a href="/research/news/{{ $news[0]->_id }}" class="newsimgbg" style="background-image: url({{ $news[0]->image_url }});" title="{{ $news[0]->title }}" rel="bookmark"></a>
                             </div>
                             <div class="headnewstopinfo">
                                 <span class="headnewsinfodate sitecolorcyan">{{ getNewsDate($news[0]) }}</span>
                             </div>
                             <div class="sitecontent-desc">
-                                <h3><a href="/news/{{ $news[0]->_id }}" title="" rel="bookmark">{{ $news[0]->title }}</a></h3>
+                                <h3><a href="/research/news/{{ $news[0]->_id }}" title="" rel="bookmark">{{ $news[0]->title }}</a></h3>
                                 <p>{{ getNewsSpot($news[0]) }}</p>
                             </div>
                             <div class="headnewsreadbtn">
-                                <a href="/news/{{ $news[0]->_id }}" class="btn rounded-pill btn-info" title="Read News" rel="bookmark">Read News</a>
+                                <a href="/research/news/{{ $news[0]->_id }}" class="btn rounded-pill btn-info" title="Read News" rel="bookmark">Read News</a>
                             </div>
                         </div>
                     </div>
@@ -52,17 +52,17 @@
                                     @if(!$first)
                                         <li>
                                             <div class="listnewstopimg">
-                                                <a href="/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
+                                                <a href="/research/news/{{ $n->_id }}" class="newsimgbg" style="background-image: url({{ $n->image_url }});" title="{{ $n->title }}" rel="bookmark"></a>
                                             </div>
                                             <div class="listnewsinfo">
                                                 <span class="listnewsinfodate sitecolorcyan">{{ getNewsDate($n) }}</span>
                                             </div>
                                             <div class="sitecontent-desc">
-                                                <h5><a href="/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
+                                                <h5><a href="/research/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
                                                 <p>{{ getNewsSpot($n) }}</p>
                                             </div>
                                             <div class="listnewsreadbtn">
-                                                <a href="/news/{{ $n->_id }}" class="btn btn-sm rounded-pill btn-info" title="Read News" rel="bookmark">Read News</a>
+                                                <a href="/research/news/{{ $n->_id }}" class="btn btn-sm rounded-pill btn-info" title="Read News" rel="bookmark">Read News</a>
                                             </div>
                                         </li>
                                     @endif
