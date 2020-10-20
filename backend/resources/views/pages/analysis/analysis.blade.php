@@ -7,8 +7,9 @@
 
             <!-- Analysis -->
             <div class="research-analysis sitecontent-desc">
-                <h1>EUR/USD trading around 1.1750 amid dollar weakness, ahead of ZEW data</h1>
-                <p>EUR/USD is trading around 1.1750, marginally higher. The safe-haven dollar is under pressure amid an upbeat market mood. The German ZEW figures are awaited.&nbsp;</p>
+                <h1>{!! $analysisData->title !!}</h1>
+                <p>{!! $analysisData->spot !!}</p>
+
 
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container">
@@ -19,7 +20,7 @@
                         new TradingView.widget(
                             {
                                 "autosize": true,
-                                "symbol": "FX:EURUSD",
+                                "symbol": "FX:{{$symbol}}",
                                 "interval": "D",
                                 "timezone": "Etc/UTC",
                                 "theme": "light",
@@ -35,15 +36,20 @@
                 </div>
                 <!-- TradingView Widget END -->
 
-                <h3>Technical Overview</h3>
-                <p><em></em></p>
-                <p>EUR/USD looks to have formed a double top bearish reversal pattern on the daily chart with the neckline support at 1.1696 (Aug. 3 low). A daily close below that level would confirm the double top breakdown and create room for a sell-off to 1.1475 (target as per the measured height method).&nbsp;</p>
-                <p>A move to the double top necklines support at 1.1696 looks likely with the recent candlestick arrangement signaling a bullish-to-bearish trend change and bearish divergences of the the 14-day relative strength index and the slow stochastic.&nbsp;</p>
-                <h3>Fundamental Overview</h3>
-                <p>ZEW Economic Sentiment figures for Germany and the&nbsp;<a href="https://www.fxstreet.com/economic-calendar/united-states/country/c9822cb1-6cee-45f4-a9a2-89d136990308">Eurozone</a>&nbsp;are scheduled for release at 09:00 GMT.&nbsp;</p>
-                <p>The German ZEW Economic Sentiment, which measures the difference between the share of investors that are optimistic and pessimistic, is forecasted to have dropped to 58.00 in August from July's 59.3. A below-forecast print would strengthen the case for a notable pullback put forward by technical studies.&nbsp;</p>
-                <p>Later in the day, the focus would shift to the US NFIB Business Optimism Index (Jul) and Producer Price Index (July).&nbsp;</p>
-                <p>Apart from the macro data releases, the pair could take cues from the US Congress' discussions and negotiations regarding the next federal stimulus package. President Trump said on Monday that that top congressional Democrats wanted to meet him for discussing virus-related economic relief, reviving hopes for additional stimulus. Also,&nbsp;<a href="https://www.fxstreet.com/news">news</a>&nbsp;flow&nbsp;related to the lingering US-China tensions could influence demand for the safe-haven&nbsp;<a href="https://www.fxstreet.com/economic-calendar/united-states">US</a>&nbsp;dollar. At press time, the pair is trading largely unchanged on the day at 1.1747.</p>
+                @if(count($analysisData->technical_overviews) > 0)
+                    <h3>Technical Overview</h3>
+                    <p><em></em></p>
+                    @foreach($analysisData->technical_overviews as $item)
+                        <p>{!! $item !!}</p>
+                    @endforeach
+                @endif
+
+                @if(count($analysisData->fundamental_overviews) > 0)
+                    <h3>Fundamental Overview</h3>
+                    @foreach($analysisData->fundamental_overviews as $item)
+                        <p>{!! $item !!}</p>
+                    @endforeach
+                @endif
             </div>
             <!-- Analysis -->
 

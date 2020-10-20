@@ -53,8 +53,46 @@ class SiteController extends Controller
         return view('pages.analysis.ecocal');
     }
 
-    public function analysis(){
-        return view('pages.analysis.analysis');
+    public function analysis(Request $request){
+        if(!$request->has('symbol')){
+            return abort(404);
+        }
+
+        $symbol = $request->symbol;
+
+        $cache_key = $symbol . 'analysis';
+        $analysisData = Cache::has($cache_key) ? Cache::get($cache_key) : Cache::remember($cache_key, 36000, function() use($symbol) {
+            $request_url = env('APIURL') . '/analysis/' . $symbol;
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $request_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30000,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+            curl_close($curl);
+
+            if ($err) {
+                abort(500);
+            }
+            $responsejson = json_decode($response);
+            return $responsejson;
+        });
+
+        if(is_null($analysisData)){
+            return abort(404);
+        }
+
+        return view('pages.analysis.analysis', [
+            'analysisData' => $analysisData,
+            'symbol' => $symbol
+        ]);
     }
 
     public function news(){
