@@ -20,7 +20,6 @@ class CryptoPricePull extends Command
 
     public function handle()
     {
-        Log::info("Loading crypto prices");
         $jsonurl = "http://price.icrypex.com/getcurrency?symbol=BTCUSD,LTCUSD,XRPUSD,ETHUSD,XLMUSD";
         $json = @file_get_contents($jsonurl);
         if($json){

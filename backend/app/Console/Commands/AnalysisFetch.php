@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class AnalysisFetch extends Command
 {
@@ -24,30 +25,35 @@ class AnalysisFetch extends Command
             Cache::forget('EURUSDanalysis');
             Cache::put('EURUSDanalysis', $analysis, 36000);
         }
+        Log::info("EURUSD Analysis loaded");;
 
         $analysis = $this->loadAnalysis('GBPUSD');
         if($analysis){
             Cache::forget('GBPUSDanalysis');
             Cache::put('GBPUSDanalysis', $analysis, 36000);
         }
+        Log::info("GBPUSD Analysis loaded");;
 
         $analysis = $this->loadAnalysis('USDJPY');
         if($analysis){
             Cache::forget('USDJPYanalysis');
             Cache::put('USDJPYanalysis', $analysis, 36000);
         }
+        Log::info("USDJPY Analysis loaded");;
 
         $analysis = $this->loadAnalysis('NZDUSD');
         if($analysis){
             Cache::forget('NZDUSDanalysis');
             Cache::put('NZDUSDanalysis', $analysis, 36000);
         }
+        Log::info("NZDUSD Analysis loaded");;
 
         $analysis = $this->loadAnalysis('USDCHF');
         if($analysis){
             Cache::forget('USDCHFanalysis');
             Cache::put('USDCHFanalysis', $analysis, 36000);
         }
+        Log::info("USDCHF Analysis loaded");;
     }
 
     public function loadAnalysis($symbol){
