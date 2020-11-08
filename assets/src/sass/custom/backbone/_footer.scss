@@ -21,6 +21,10 @@ $foot-brdr-clr:                   #CFD8E7;
   position: relative;
   overflow: hidden;
 
+  @include BootstrapMaxWidthResponsive(hd){
+    @include responsive-font-size($foot-text-size * 0.95);
+  }
+
   > .container{
     //padding-top: 190px;
     //position: relative;
@@ -53,53 +57,119 @@ $foot-brdr-clr:                   #CFD8E7;
     }
   }
 
-  &-top{
-    padding-top: 50px;
-
-    @include BootstrapMaxWidthResponsive(lg){
-      padding-top: 20px;
-    }
-
-    &-row{
-      @include flexbox-align-items(center);
-    }
-  }
+  &-top{}
 
   &-logo{
-    width: 240px;
+    padding: 30px 0;
     text-align: center;
 
-    @include BootstrapMaxWidthResponsive(hd){
-      width: 200px;
-    }
     @include BootstrapMaxWidthResponsive(lg){
-      display: none;
+      padding: 5px 0;
+    }
+
+
+    &-line{
+      position: relative;
+
+      &::before{
+        content: "";
+        background-color: $foot-brdr-clr;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        @include translateX(-50%);
+      }
     }
 
     img{
+      background-color: $foot-bgclr;
+      max-width: 60px;
       display: block;
       margin: 0 auto;
+      position: relative;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        max-width: 40px;
+      }
+    }
+  }
+
+  &-address{
+    width: 400px;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      width: 360px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      width: 320px;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      width: 100%;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $foot-brdr-clr;
+    }
+
+    ul + h4{
+      margin-top: 20px;
+    }
+
+    h4{
+      color: $foot-headtitle-clr;
+      @include responsive-font-size($foot-headtitle-size);
+      margin-bottom: 5px;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        @include responsive-font-size($foot-headtitle-size * 0.9);
+      }
+
+      a{
+        color: $foot-headtitle-clr;
+        @include transition-multiple(color 0.15s ease-in-out);
+      }
+    }
+
+    ul{
+
+      > li{
+        @include responsive-font-size($foot-text-size);
+        line-height: 1.2;
+        margin: 15px 0;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          @include responsive-font-size($foot-text-size * 0.95);
+        }
+
+        &:first-child{margin-top: 0;}
+        &:last-child{margin-bottom: 0;}
+
+        a{
+          color: $foot-text-clr;
+          @include transition-multiple(color 0.15s ease-in-out);
+        }
+      }
+
     }
   }
 
   &-navigation{
-    padding-left: 60px;
-    margin-left: 20px;
+    padding-left: 40px;
+    margin-left: 10px;
     border-left: 1px solid $foot-brdr-clr;
 
     @include BootstrapMaxWidthResponsive(hd){
-      padding-left: 40px;
+      padding-left: 20px;
       margin-left: 0;
     }
     @include BootstrapMaxWidthResponsive(lg){
-      padding-left: 15px;
+      padding-left: 10px;
       border-left-width: 0;
     }
 
     &-col{
 
       @include BootstrapMaxWidthResponsive(xl){
-        padding-top: 20px;
         padding-bottom: 20px;
 
         &.col-sm-6{
@@ -210,6 +280,10 @@ $foot-brdr-clr:                   #CFD8E7;
       @include responsive-font-size($foot-headtitle-size);
       margin-bottom: 5px;
 
+      @include BootstrapMaxWidthResponsive(hd){
+        @include responsive-font-size($foot-headtitle-size * 0.9);
+      }
+
       a{
         color: $foot-headtitle-clr;
         @include transition-multiple(color 0.15s ease-in-out);
@@ -220,6 +294,10 @@ $foot-brdr-clr:                   #CFD8E7;
       color: $site-clr-green;
       @include responsive-font-size($foot-text-size);
       margin-bottom: 5px;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        @include responsive-font-size($foot-text-size * 0.95);
+      }
 
       a{
         color: $site-clr-green;
@@ -232,6 +310,10 @@ $foot-brdr-clr:                   #CFD8E7;
         @include responsive-font-size($foot-text-size);
         line-height: 1.2;
         margin: 5px 0;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          @include responsive-font-size($foot-text-size * 0.95);
+        }
 
         &:first-child{margin-top: 0;}
         &:last-child{margin-bottom: 0;}
