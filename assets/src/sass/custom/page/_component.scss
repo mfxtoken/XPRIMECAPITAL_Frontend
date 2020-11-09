@@ -84,7 +84,7 @@
 
         @include BootstrapMaxWidthResponsive(xl){
           @include flexbox-flex(0 0 calc(100% / 1));
-          width: calc(100% / 2);
+          width: calc(100% / 1);
           max-width: 100%;
           margin: 15px 0;
 
@@ -514,6 +514,10 @@
             &.btn-outline-info.active{
               @include box-shadow(0 0 20px 0 transparentize($site-clr-cyan, 0.75));
             }
+          }
+
+          + .platreqbtns{
+            margin-top: 15px;
           }
         }
       }
