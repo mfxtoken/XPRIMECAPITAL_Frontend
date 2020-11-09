@@ -725,6 +725,51 @@
         }
       }
     }
+
+    .sitefeaturesv4{
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+
+      > li{
+        @include flexbox-flex(0 0 calc(100%/3));
+        max-width: calc(100%/3);
+        padding: 15px;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          @include flexbox-flex(0 0 calc(100%/2));
+          max-width: calc(100%/2);
+        }
+      }
+
+      &-box{
+        background-color: lighten($site-section-bgclr-grylight, 1%);
+        text-align: center;
+        padding: 45px 50px;
+        height: 100%;
+        position: relative;
+        @include border-radius(10px);
+
+        @include BootstrapMaxWidthResponsive(xl){
+          padding: 25px 20px;
+        }
+
+        i[class*="icon"]{
+          display: block;
+          margin: 0 auto 1rem;
+
+          @include BootstrapMaxWidthResponsive(xl){
+            margin-bottom: 0.5rem;
+            @include scale(0.9);
+          }
+        }
+
+        h3,h4,h5{
+          color: $site-clr-text-dark-pri;
+          @include responsive-font-size(1rem);
+          margin: 0;
+        }
+      }
+    }
   }
 
   &-aboutus{

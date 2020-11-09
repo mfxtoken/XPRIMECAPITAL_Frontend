@@ -29,7 +29,25 @@
   }
 
   &-accounttypes{
+    padding-top: 40px;
     position: relative;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-top: 20px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding-top: 0;
+    }
   }
+
+
+  .component-featuresbox{
+    padding-top: 80px;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-top: 60px;
+    }
+  }
+
 
 }
