@@ -1,6 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
+
     <!-- Account Start -->
     <section class="account account-section noheadtitle">
 
@@ -133,37 +134,37 @@
                 <ul class="sitefeaturesv4">
                     <li>
                         <div class="sitefeaturesv4-box">
-                            <i class="icons-sprite sprite-64-sitefeatures-orange icons01"></i>
+                            <i class="icons-sprite sprite-64-sitefeatures-orange icons13"></i>
                             <h4>Maximum Value <br />& Reliability</h4>
                         </div>
                     </li>
                     <li>
                         <div class="sitefeaturesv4-box">
-                            <i class="icons-sprite sprite-64-sitefeatures-orange icons02"></i>
+                            <i class="icons-sprite sprite-64-sitefeatures-orange icons14"></i>
                             <h4>Superior <br />Trade Executions</h4>
                         </div>
                     </li>
                     <li>
                         <div class="sitefeaturesv4-box">
-                            <i class="icons-sprite sprite-64-sitefeatures-orange icons03"></i>
+                            <i class="icons-sprite sprite-64-sitefeatures-orange icons15"></i>
                             <h4>Sophisticated <br />Trader Tools</h4>
                         </div>
                     </li>
                     <li>
                         <div class="sitefeaturesv4-box">
-                            <i class="icons-sprite sprite-64-sitefeatures-orange icons04"></i>
+                            <i class="icons-sprite sprite-64-sitefeatures-orange icons16"></i>
                             <h4>Professional <br />Guidance & Support</h4>
                         </div>
                     </li>
                     <li>
                         <div class="sitefeaturesv4-box">
-                            <i class="icons-sprite sprite-64-sitefeatures-orange icons05"></i>
+                            <i class="icons-sprite sprite-64-sitefeatures-orange icons17"></i>
                             <h4>Financial<br />Strength And Security</h4>
                         </div>
                     </li>
                     <li>
                         <div class="sitefeaturesv4-box">
-                            <i class="icons-sprite sprite-64-sitefeatures-orange icons06"></i>
+                            <i class="icons-sprite sprite-64-sitefeatures-orange icons18"></i>
                             <h4>Strong <br />Regulatory Framework</h4>
                         </div>
                     </li>
