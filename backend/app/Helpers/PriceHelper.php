@@ -48,3 +48,5 @@ if (! function_exists('getNewsDate')) {
         return date('d F Y', strtotime($news->publish_date));
     }
 }
+
+

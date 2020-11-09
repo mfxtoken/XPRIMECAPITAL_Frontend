@@ -6,6 +6,7 @@ use App\CryptoMarket;
 use App\Market;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SiteController extends Controller
 {
@@ -16,10 +17,10 @@ class SiteController extends Controller
     }
 
     public function index(){
+
         $news = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', $this->newsCache, function() {
             return $this->loadNews('all', 10);
         });
-
         return view('index', [
             'news' => array_slice($news, 0, 5)
         ]);
@@ -50,7 +51,33 @@ class SiteController extends Controller
     }
 
     public function economic_calendar(){
-        return view('pages.analysis.ecocal');
+        $request_url = env('APIURL') . '/economic_calendar';
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $request_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        if ($err) {
+            abort(500);
+        }
+
+        $responsejson = json_decode($response);
+
+        return view('pages.analysis.ecocal', [
+            'calendarEvents' => $responsejson,
+            'current_time' => date('H:i')
+        ]);
     }
 
     public function analysis(Request $request){
@@ -152,6 +179,7 @@ class SiteController extends Controller
         curl_close($curl);
 
         if ($err) {
+            Log::error($err);
             abort(500);
         }
 
