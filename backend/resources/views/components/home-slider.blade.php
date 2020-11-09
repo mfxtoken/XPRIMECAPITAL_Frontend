@@ -16,7 +16,7 @@
                             <li>
                                 <div class="headsliderowl-content">
                                     <h2><span class="sitecolorcyan">30%</span> Welcome Bonus</h2>
-                                    <p><strong>XPRIME CAPITAL</strong> is the award-winning global multi-asset broker, offering over 500 tradable instruments. Our multilingual customer support team is ready to help you 24 hours a day. we're dedicated to helping you at every stage of your trading journey.</p>
+                                    <p><strong>XPRIME CAPITAL</strong> is the award-winning global multi-asset broker, offering over 500 tradable instruments. Our multilingual customer support team is ready to help you 24 hours a day. We're dedicated to helping you at every stage of your trading journey.</p>
                                 </div>
                             </li>
                             <li>
