@@ -11,10 +11,25 @@
             <div class="footer-top-row row">
 
                 <!-- Logo -->
-                <div class="footer-logo col-lg-auto">
-                    <img src="/assets/img/footer/footer_logo.svg" alt="XPrime Capital" width="131" height="131" />
+                <div class="footer-logo col-12">
+                    <div class="footer-logo-line">
+                        <img src="/assets/img/footer/footer_logo.svg" alt="XPrime Capital" width="131" height="131" />
+                    </div>
                 </div>
                 <!-- Logo -->
+
+                <!-- Address -->
+                <div class="footer-address col-lg-auto">
+                    <h4>Office Locations</h4>
+                    <ul>
+                        <li><strong>Dubai:</strong> 2nd Dec Road Jafiliya, Trade Center Area, Dubai, United Arab Emirates</li>
+                        <li><strong>Frankfurt:</strong> Schweizer Str. 28a 30, 60594 Frankfurt am Main, Germany</li>
+                        <li><strong>London:</strong> Cabot Square, Canary Wharf, London E14 4QT, United Kingdom</li>
+                        <li><strong>Malta:</strong> Triq san Gorg, St Paul's Bay SPB 3482, Malta</li>
+                        <li><strong>Russia:</strong> Tverskaya St, 18, Moscow, Russia, 125007</li>
+                    </ul>
+                </div>
+                <!-- Address -->
 
                 <!-- Navigation -->
                 <div class="footer-navigation col-lg">
@@ -61,8 +76,9 @@
                                 <div class="col-xs-6 col-md-3 col-xl-12">
                                     <h4>Platforms</h4>
                                     <ul class="footer-navigation-list">
-                                        <li><a href="{{ route('mt4') }}" title="Metatrader 4" rel="category">Metatrader 4</a></li>
-                                        <li><a href="{{ route('mt5') }}" title="Metatrader 5" rel="category">Metatrader 5</a></li>
+                                        <li><a href="{{ route('mt5') }}" title="Metatrader 5 PC" rel="category">Metatrader 5 PC</a></li>
+                                        <li><a href="{{ route('mt5') }}" title="Metatrader 5 Web" rel="category">Metatrader 5 Web</a></li>
+                                        <li><a href="{{ route('mt5') }}" title="Metatrader 5 Mobil" rel="category">Metatrader 5 Mobil</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-xs-6 col-md-3 col-xl-12">
@@ -119,10 +135,10 @@
                 </div>
                 <div class="socialmedia col-sm-auto">
                     <ul class="sociallist">
-                        <li><a href="{{ config('app.social_fb') }}" data-toggle="tooltip" data-placement="bottom" title="Follow us on Facebook" rel="external nofollow"><i class="socialicon icons-sprite sprite-24-socialmedia icons-facebook"></i></a></li>
-                        <li><a href="{{ config('app.social_tw') }}" data-toggle="tooltip" data-placement="bottom" title="Follow on Twitter" rel="external nofollow"><i class="socialicon icons-sprite sprite-24-socialmedia icons-twitter"></i></a></li>
-                        <li><a href="{{ config('app.social_li') }}" data-toggle="tooltip" data-placement="bottom" title="Follow on LinkedIn" rel="external nofollow"><i class="socialicon icons-sprite sprite-24-socialmedia icons-linkedin"></i></a></li>
-                        <li><a href="{{ config('app.social_ins') }}" data-toggle="tooltip" data-placement="bottom" title="Follow on Instagram" rel="external nofollow"><i class="socialicon icons-sprite sprite-24-socialmedia icons-instagram"></i></a></li>
+                        <li class="d-none"><a href="{{ config('app.social_fb') }}" data-toggle="tooltip" data-placement="bottom" title="Follow us on Facebook" rel="external nofollow" target="_blank"><i class="socialicon icons-sprite sprite-24-socialmedia icons-facebook"></i></a></li>
+                        <li><a href="{{ config('app.social_tw') }}" data-toggle="tooltip" data-placement="bottom" title="Follow on Twitter" rel="external nofollow" target="_blank"><i class="socialicon icons-sprite sprite-24-socialmedia icons-twitter"></i></a></li>
+                        <li class="d-none"><a href="{{ config('app.social_li') }}" data-toggle="tooltip" data-placement="bottom" title="Follow on LinkedIn" rel="external nofollow" target="_blank"><i class="socialicon icons-sprite sprite-24-socialmedia icons-linkedin"></i></a></li>
+                        <li><a href="{{ config('app.social_ins') }}" data-toggle="tooltip" data-placement="bottom" title="Follow on Instagram" rel="external nofollow" target="_blank"><i class="socialicon icons-sprite sprite-24-socialmedia icons-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
