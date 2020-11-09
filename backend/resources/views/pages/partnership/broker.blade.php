@@ -201,3 +201,49 @@
     </section>
     <!-- Exclusively For You and Your Clients End -->
 @endsection
+
+@section('script')
+    <script>
+        const validateForm = () => {
+            var firstName = document.getElementsByName('firstname')[0].value;
+            var lastName = document.getElementsByName('lastname')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var phone = document.getElementsByName('phone')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+            var passwordConf = document.getElementsByName('confirm_password')[0].value;
+
+            if(firstName.length < 2){
+                alert("First name cannot be shorter than 2 characters");
+                return false;
+            }
+
+            if(lastName.length < 2){
+                alert("Last name cannot be shorter than 2 characters");
+                return false;
+            }
+
+
+            if(!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+                alert("Please enter a valid email adress");
+                return false;
+            }
+
+            if(!phone.replace(/\s/g, '').match(/^\d{11}$/g)){
+                alert("Please enter a valid phone number");
+                return false;
+            }
+
+            if(password.length < 8){
+                alert("Password must be at least 8 characters");
+                return false;
+            }
+
+            if(password !== passwordConf){
+                alert("Passwords must match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+@endsection
