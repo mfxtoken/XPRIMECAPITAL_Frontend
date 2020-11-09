@@ -35,5 +35,6 @@
     <script id="script-custom-app" src="/assets/dist/js/custom-app.js"></script>
     <!-- JavaScript End -->
 
+    @yield('script')
 </body>
 </html>

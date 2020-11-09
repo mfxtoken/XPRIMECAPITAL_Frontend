@@ -32,7 +32,7 @@
                                 <p><strong>Welcome!</strong> Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
                             <div class="welcomebtn">
-                                <a class="btn btn-lg rounded-pill btn-secondary JsWelcomeBtn" href="javascript:void(0)" title="Open Live Account" rel="bookmark" data-function="openliveaccount">Open Live Account</a>
+                                <a class="btn btn-lg rounded-pill btn-secondary JsWelcomeBtn" href="{{ route('open_live_account') }}" title="Open Live Account" rel="bookmark" data-function="openliveaccount">Open Live Account</a>
                             </div>
                         </div>
                     </div>
@@ -67,30 +67,30 @@
                                 </div>
                             </div>
                             <div class="formarea">
-                                <form class="siteformui" action="" autocomplete="off" novalidate>
+                                <form class="siteformui" action="" autocomplete="off" novalidate onsubmit="return validateForm()">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter First Name" />
+                                        <input type="text" class="form-control" placeholder="Enter First Name" name="firstname" />
                                     </div>
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter Last Name" />
+                                        <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname" />
                                     </div>
                                     <div class="form-group">
                                         <label>E-Mail</label>
-                                        <input type="email" class="form-control" placeholder="Enter E-Mail" />
+                                        <input type="email" class="form-control" placeholder="Enter E-Mail"  name="email" />
                                     </div>
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="text" class="form-control" placeholder="Enter Phone" />
+                                        <input type="text" class="form-control" placeholder="Enter Phone"  name="phone" />
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter Password" />
+                                        <input type="password" class="form-control" placeholder="Enter Password"  name="password" />
                                     </div>
                                     <div class="form-group">
                                         <label>Re-Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter Re-Password" />
+                                        <input type="password" class="form-control" placeholder="Enter Re-Password"  name="confirm_password" />
                                     </div>
                                     <div class="form-row formbottom">
                                         <div class="col-lg">
@@ -102,80 +102,13 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-auto">
-                                            <button type="button" class="btn btn-lg rounded-pill btn-info">Open Demo Account</button>
+                                            <button type="submit" class="btn btn-lg rounded-pill btn-info">Open Demo Account</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div class="formboxarea formopenliveacc">
-                            <div class="sitecontent-desc">
-                                <h2>Open Live Account</h2>
-                                <p><strong>Welcome!</strong> Lorem ipsum dolor sit amet, consectetur</p>
-                            </div>
-                            <div class="alertarea">
-                                <div class="alert alert-sweet alert-warning alert-dismissible fade show d-none" role="alert">
-                                    <div class="alert-flex">
-                                        <div class="alert-icon">
-                                            <div class="animation-alert-icons">
-                                                <div class="alert-icons alert-icons-warning">
-                                                    <div class="alert-icons-warning-body"></div>
-                                                    <div class="alert-icons-warning-dot"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="alert-desc">
-                                            <h6 class="alert-heading">Warning!</h6>
-                                            <p>Aww yeah, you successfully read this important alert message.</p>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="formarea">
-                                <form class="siteformui" action="" autocomplete="off" novalidate>
-                                    <div class="form-group">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter First Name" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter Last Name" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>E-Mail</label>
-                                        <input type="email" class="form-control" placeholder="Enter E-Mail" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="text" class="form-control" placeholder="Enter Phone" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter Password" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Re-Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter Re-Password" />
-                                    </div>
-                                    <div class="form-row formbottom">
-                                        <div class="col-lg">
-                                            <div class="recaptcha-area">
-                                                <div class="recaptcha-check">
-                                                    <div class="g-recaptcha" data-theme="dark" data-sitekey="6LewOKAUAAAAAMDO2yohWeyDcjFAHfcuEqK2mIp4"></div>
-                                                </div>
-                                                <label>I'm Not Robot</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-auto">
-                                            <button type="button" class="btn btn-lg rounded-pill btn-info">Open Live Account</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+
                     </div>
                     <!-- Form -->
 
@@ -189,4 +122,50 @@
 
     <x-common-platforms/>
     <x-common-about-us/>
+@endsection
+
+@section('script')
+    <script>
+        const validateForm = () => {
+            var firstName = document.getElementsByName('firstname')[0].value;
+            var lastName = document.getElementsByName('lastname')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var phone = document.getElementsByName('phone')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+            var passwordConf = document.getElementsByName('confirm_password')[0].value;
+
+            if(firstName.length < 2){
+                alert("First name cannot be shorter than 2 characters");
+                return false;
+            }
+
+            if(lastName.length < 2){
+                alert("Last name cannot be shorter than 2 characters");
+                return false;
+            }
+
+
+            if(!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+                alert("Please enter a valid email adress");
+                return false;
+            }
+
+            if(!phone.replace(/\s/g, '').match(/^\d{11}$/g)){
+                alert("Please enter a valid phone number");
+                return false;
+            }
+
+            if(password.length < 8){
+                alert("Password must be at least 8 characters");
+                return false;
+            }
+
+            if(password !== passwordConf){
+                alert("Passwords must match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 @endsection
