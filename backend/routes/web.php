@@ -6,7 +6,10 @@ Route::get('/', 'SiteController@index')->name('homepage');
 
 Route::get('/trading/account/open-live-account', 'SiteController@open_live_account')->name('open_live_account');
 Route::get('/trading/account/open-demo-account', 'SiteController@open_demo_account')->name('open_demo_account');
-Route::get('/trading/account/account-types', 'SiteController@notfound')->name('account_types');
+Route::get('/trading/account/account-types', 'SiteController@account_types')->name('account_types');
+
+Route::post('/trading/account/open-live-account', 'SiteController@handle_live_form');
+Route::post('/trading/account/open-demo-account', 'SiteController@handle_demo_form');
 
 Route::get('/trading/products/forex', 'SiteController@forex')->name('forex');
 Route::get('/trading/products/commodities', 'SiteController@notfound')->name('commodities');
@@ -22,7 +25,7 @@ Route::get('/investments/copy-trade', 'SiteController@copy_trade')->name('copy_t
 
 Route::get('/analysis', 'SiteController@analysis')->name('analysis');
 
-Route::get('/education', 'SiteController@notfound')->name('education');
+Route::get('/education', 'SiteController@education')->name('education');
 
 Route::get('/partnership/introducing-broker', 'SiteController@broker')->name('broker');
 Route::get('/partnership/affiliate', 'SiteController@notfound')->name('affiliate');
@@ -31,7 +34,7 @@ Route::get('/research/economic-calendar', 'SiteController@economic_calendar')->n
 Route::get('/research/news', 'SiteController@news')->name('news');
 Route::get('/research/news/{newsid}', 'SiteController@news_detail');
 
-Route::get('/company', 'SiteController@notfound')->name('company');
+Route::get('/company', 'SiteController@company')->name('company');
 
 Route::get('/legal/cookie-policy', 'SiteController@notfound')->name('cookie_policy');
 Route::get('/legal/terms-and-conditions', 'SiteController@notfound')->name('terms_conditions');

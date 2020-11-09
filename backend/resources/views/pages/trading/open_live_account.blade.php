@@ -86,16 +86,14 @@
                                         </div>
                                         <div class="alert-desc">
                                             <h6 class="alert-heading">Warning!</h6>
-                                            <p>Aww yeah, you successfully read this important alert message.</p>
+                                            <p id="alerttext">Aww yeah, you successfully read this important alert message.</p>
                                         </div>
                                     </div>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
                                 </div>
                             </div>
                             <div class="formarea">
-                                <form class="siteformui" action="" autocomplete="off" novalidate onsubmit="return validateForm()">
+                                <form class="siteformui" id="demoaccountform" autocomplete="off" novalidate onsubmit="return validateForm()">
+                                    @csrf
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input type="text" class="form-control" placeholder="Enter First Name" name="firstname" />
@@ -118,16 +116,16 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Re-Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter Re-Password"  name="confirm_password" />
+                                        <input type="password" class="form-control" placeholder="Enter Re-Password"  name="conf_pass" />
                                     </div>
                                     <div class="form-row formbottom">
                                         <div class="col-lg">
-                                            <div class="recaptcha-area">
-                                                <div class="recaptcha-check">
-                                                    <div class="g-recaptcha" data-theme="dark" data-sitekey="6LewOKAUAAAAAMDO2yohWeyDcjFAHfcuEqK2mIp4"></div>
-                                                </div>
-                                                <label>I'm Not Robot</label>
-                                            </div>
+                                            {{--                                            <div class="recaptcha-area">--}}
+                                            {{--                                                <div class="recaptcha-check">--}}
+                                            {{--                                                    <div class="g-recaptcha" data-theme="dark" data-sitekey="6LewOKAUAAAAAMDO2yohWeyDcjFAHfcuEqK2mIp4"></div>--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                                <label>I'm Not Robot</label>--}}
+                                            {{--                                            </div>--}}
                                         </div>
                                         <div class="col-lg-auto">
                                             <button type="submit" class="btn btn-lg rounded-pill btn-info">Open Live Account</button>
@@ -155,45 +153,79 @@
 @section('script')
     <script>
         const validateForm = () => {
+            hideFormError();
             var firstName = document.getElementsByName('firstname')[0].value;
             var lastName = document.getElementsByName('lastname')[0].value;
             var email = document.getElementsByName('email')[0].value;
             var phone = document.getElementsByName('phone')[0].value;
             var password = document.getElementsByName('password')[0].value;
-            var passwordConf = document.getElementsByName('confirm_password')[0].value;
+            var passwordConf = document.getElementsByName('conf_pass')[0].value;
 
             if(firstName.length < 2){
-                alert("First name cannot be shorter than 2 characters");
+                showFormError("First name cannot be shorter than 2 characters");
                 return false;
             }
 
             if(lastName.length < 2){
-                alert("Last name cannot be shorter than 2 characters");
+                showFormError("Last name cannot be shorter than 2 characters");
                 return false;
             }
 
 
             if(!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-                alert("Please enter a valid email adress");
+                showFormError("Please enter a valid email adress");
                 return false;
             }
 
             if(!phone.replace(/\s/g, '').match(/^\d{11}$/g)){
-                alert("Please enter a valid phone number");
+                showFormError("Please enter a valid phone number");
                 return false;
             }
 
             if(password.length < 8){
-                alert("Password must be at least 8 characters");
+                showFormError("Password must be at least 8 characters");
                 return false;
             }
 
             if(password !== passwordConf){
-                alert("Passwords must match");
+                showFormError("Passwords must match");
                 return false;
             }
 
-            return true;
+            let frm = $(`form#demoaccountform`);
+            let originalValue = frm.find(':submit').html();
+            frm.find(':submit').html('Sending...');
+
+            $.ajax({
+                type: 'POST',
+                url: frm.attr('action'),
+                data: frm.serialize(),
+                success: function (data) {
+                    if(!data.success){
+                        showFormError(data.reason);
+                        frm.find(':submit').html(originalValue);
+                    }
+                    frm.find(':submit').html('Account Created');
+                },
+                error: function (data) {
+                    showFormError("Error sending form. Please try again later");
+                    console.log('An error occurred.');
+                    console.log(data);
+                    frm.find(':submit').html(originalValue);
+                },
+            });
+
+            return false;
+        }
+
+        const showFormError = (error) => {
+            $("#alerttext").html(error);
+            $(".alertarea .alert").removeClass('d-none');
+        }
+
+        const hideFormError = () => {
+            $("#alerttext").html("");
+            $(".alertarea .alert").addClass('d-none');
         }
     </script>
 @endsection
