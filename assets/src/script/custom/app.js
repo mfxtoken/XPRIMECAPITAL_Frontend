@@ -124,3 +124,30 @@ $('.homenewsnewscatlistowl').owlCarousel({
     }
 });
 /* Home News Category List Owl Carousel */
+
+/* Account Types Box */
+$('.accounttypesboxowlx').owlCarousel({
+    loop:false,
+    nav:false,
+    dots:false,
+    autoplay:false,
+    autoplayTimeout:2000,
+    autoplayHoverPause:false,
+    items:5,
+    margin:0,
+    autoWidth:false,
+    mouseDrag:false,
+    responsiveClass:true,
+    responsive:{
+        0:{},
+        819:{
+            items:2,
+            mouseDrag:true,
+            dots:true
+        },
+        1059:{},
+        1379:{},
+        1939:{}
+    }
+});
+/* Account Types Box */
