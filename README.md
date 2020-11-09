@@ -3,6 +3,8 @@
 #### Web Public Area Frontend List
  - [Home_Page](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Home_Page.html)
  - [Account_Open_Demo](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Demo.html)
+ - [Account_Open_Live](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Live.html)
+ - [Account_Types](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Types.html)
  - [Products_Forex](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Forex.html)
  - [Investments_PAMM](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_PAMM.html)
  - [Investments_CopyTrade](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_CopyTrade.html)
