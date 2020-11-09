@@ -15,6 +15,7 @@
  - [Research_Economic_Calendar](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Economic_Calendar.html)
  - [Research_Morning](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Morning.html)
  - [Education](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Education.html)
+ - [Company](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Company.html)
    
 
 # NodeJS Kurulumu
