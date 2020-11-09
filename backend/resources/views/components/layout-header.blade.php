@@ -88,8 +88,9 @@
                                 <div class="daphne-nav-megamenu">
                                     <div class="daphne-nav-megamenu-col">
                                         <ul class="daphne-nav-submenulist">
-                                            <li><a href="{{ route('mt4') }}" title="Metatrader 4" rel="category">Metatrader 4</a></li>
-                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5" rel="category">Metatrader 5</a></li>
+                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 PC" rel="category">Metatrader 5 PC</a></li>
+                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 Web" rel="category">Metatrader 5 Web</a></li>
+                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 Mobil" rel="category">Metatrader 5 Mobil</a></li>
                                         </ul>
                                     </div>
                                 </div>
