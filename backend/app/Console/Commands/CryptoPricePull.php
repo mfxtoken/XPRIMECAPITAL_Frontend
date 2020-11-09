@@ -25,8 +25,6 @@ class CryptoPricePull extends Command
         if($json){
             $data = json_decode($json);
             foreach ($data->result as $item){
-                print_r($item);
-                echo "\n\n";
                 $market = CryptoMarket::where('market_name', $item->symbols)->first();
                 if(is_null($market)){
                     $market = new CryptoMarket();

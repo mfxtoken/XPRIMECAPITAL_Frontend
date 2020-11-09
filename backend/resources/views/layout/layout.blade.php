@@ -21,10 +21,10 @@
     <!-- Sticky C2A Side Start -->
     <div class="stickyside-c2a">
         <ul class="sitec2aarea">
-            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Follow us on Facebook" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-facebook"></i></a></li>
-            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Follow on Twitter" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-twitter"></i></a></li>
-            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Follow on LinkedIn" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-linkedin"></i></a></li>
-            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Follow on Instagram" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-instagram"></i></a></li>
+{{--            <li><a href="{{ config('app.social_fb') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow us on Facebook" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-facebook"></i></a></li>--}}
+            <li><a href="{{ config('app.social_tw') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow on Twitter" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-twitter"></i></a></li>
+{{--            <li><a href="{{ config('app.social_li') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow on LinkedIn" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-linkedin"></i></a></li>--}}
+            <li><a href="{{ config('app.social_ins') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow on Instagram" rel="external nofollow"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-instagram"></i></a></li>
         </ul>
     </div>
     <!-- Sticky C2A Side End -->
@@ -47,8 +47,10 @@
 
     <!-- JavaScript Start -->
     <script id="script-owl-carousel" src="/assets/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script id="script-custom-app" src="/assets/dist/js/custom-app.js"></script>
     <!-- JavaScript End -->
 
+    @yield('script')
 </body>
 </html>

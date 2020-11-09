@@ -44,6 +44,9 @@ if (! function_exists('getNewsSpot')) {
 if (! function_exists('getNewsDate')) {
     function getNewsDate($news)
     {
+        return $news->publish_date;
         return date('d F Y', strtotime($news->publish_date));
     }
 }
+
+
