@@ -7,6 +7,7 @@ use App\Market;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class SiteController extends Controller
 {
@@ -48,6 +49,18 @@ class SiteController extends Controller
 
     public function forex(){
         return view('pages.products.forex');
+    }
+
+    public function education(){
+        return view('pages.education.education');
+    }
+
+    public function company(){
+        return view('pages.company.company');
+    }
+
+    public function account_types(){
+        return view('pages.trading.account_types');
     }
 
     public function economic_calendar(){
@@ -210,5 +223,126 @@ class SiteController extends Controller
 
         $responsejson = json_decode($response);
         return $responsejson;
+    }
+
+    public function handle_demo_form(Request $request) {
+        $result = $this->handle_account_form($request, 'demo', '0153f78bcdb3');
+        //$result = array( 'success' => false, 'reason' => 'Valla oldu');
+        return response()->json($result);
+    }
+
+    public function handle_live_form(Request $request) {
+        $result = $this->handle_account_form($request, 'real', '7790e6073163');
+        return response()->json($result);
+    }
+
+    protected function handle_account_form(Request $request, $account_type, $source_id){
+        $validator = Validator::make($request->all(), [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'password' => 'required',
+            'conf_pass' => 'required',
+        ]);
+
+        if($validator->fails()){
+
+            return [ 'success' => false, 'reason' => $validator->errors() ];
+        }
+
+        $name = $request->input('firstname') . ' ' . $request->input('lastname');
+        $phone = preg_replace("/[^0-9]/", "", $request->input('phone'));
+        $phone = preg_replace('/\s+/', '', $phone);
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $password_confirmation = $request->input('conf_pass');
+
+        $sca_result = $this->sendToSCA($account_type, $name, $phone, $email, $password, $password_confirmation);
+        if(!$sca_result['success']){
+            return $sca_result;
+        }
+
+        $crm_success = $this->sendToCRM($source_id, $name, $phone, $email);
+        if(!$crm_success){
+            return [ 'success' => false ];
+        }
+
+        return [ 'success' => true ];
+    }
+
+    protected function sendToSCA($account_type, $name, $number, $email, $password, $pass_conf){
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Accept: application/json'
+        );
+        $request_url = env("SCAREGISTERURL");
+        $post_data = 'name=' . $name . '&account_type=' . $account_type . '&number=' . $number . '&email=' . $email . '&password=' . $password . '&password_confirmation=' . $pass_conf;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $request_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $post_data,
+            CURLOPT_HTTPHEADER => $headers,
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        if ($err) {
+            return array( 'success' => false, 'reason' => 'A problem occured while creting your account. Please try again later');
+        } else {
+            $responsedata = json_decode($response);
+            Log::info($response);
+            if(isset($responsedata->errors)){
+                if(isset($responsedata->errors->email)){
+                    return array( 'success' => false, 'reason' => 'Email is in use. Please try another email adress.');
+                }
+                return array( 'success' => false, 'reason' => 'Unknown error');
+            }
+            return array( 'success' => true );
+        }
+    }
+
+    protected function sendToCRM($source_id, $name, $number, $email){
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Accept: application/json'
+        );
+        $request_url = env("CRMURL");
+        $post_data = 'source_id=' . $source_id . '&name=' . $name . '&phone=' . $number . '&email=' . $email;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $request_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $post_data,
+            CURLOPT_HTTPHEADER => $headers,
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        if ($err) {
+            return false;
+        } else {
+            $responsedata = json_decode($response);
+            Log::info($response);
+//            if($responsedata->errors){
+//                return false;
+//            }
+            return true;
+        }
     }
 }
