@@ -18,12 +18,12 @@ class SiteController extends Controller
     }
 
     public function index(){
-
         $news = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', $this->newsCache, function() {
-            return $this->loadNews('all', 10);
+            return $this->loadNews('latest', 5);
         });
+
         return view('index', [
-            'news' => array_slice($news, 0, 5)
+            'news' => $news->news
         ]);
     }
 
@@ -138,11 +138,11 @@ class SiteController extends Controller
     public function news(){
 
         $fxNews = Cache::has('latestfxnews') ? Cache::get('latestfxnews') : Cache::remember('latestfxnews', $this->newsCache, function() {
-            return $this->loadNews('forex_news', 6);
+            return $this->loadNews('forex', 6);
         });
 
         $ecoNews = Cache::has('latestEcoNews') ? Cache::get('latestEcoNews') : Cache::remember('latestEcoNews', $this->newsCache, function() {
-            return $this->loadNews('economy_news', 6);
+            return $this->loadNews('economy', 6);
         });
 
         $ecoIndicators  = Cache::has('latestEcoInd') ? Cache::get('latestEcoInd') : Cache::remember('latestEcoInd', $this->newsCache, function() {
@@ -151,9 +151,9 @@ class SiteController extends Controller
 
 
         return view('pages.news.news', [
-            'fx_news' => $fxNews,
-            'eco_news' => $ecoNews,
-            'eco_ind' => $ecoIndicators,
+            'fx_news' => $fxNews->news,
+            'eco_news' => $ecoNews->news,
+            'eco_ind' => $ecoIndicators->news,
         ]);
     }
 
@@ -163,21 +163,31 @@ class SiteController extends Controller
             return $this->loadNewsDetail($newsid);
         });
 
-        $latesNews = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', $this->newsCache, function() {
-            return $this->loadNews('all', 10);
+
+        $latestNews = Cache::has('latestnews') ? Cache::get('latestnews') : Cache::remember('latestnews', $this->newsCache, function() {
+            return $this->loadNews('latest', 10);
         });
 
         return view('pages.news.news_detail', [
             'news' => $news,
-            'latestNews' => $latesNews
-         ]);
+            'latestNews' => $latestNews->news
+        ]);
     }
 
 
+
+
     private function loadNews($type, $count){
-        $request_url = env('APIURL') . '/news?type=' . $type . '&count=' . $count;
+        $request_url = 'http://ziontrader.com/api/news/' . $type . '?language=en&count=' . $count;
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Accept: application/json',
+            'x-api-key: kqB32HFostbAWklVxUNGJEQwkRGO4INy'
+        );
 
         $curl = curl_init();
+
         curl_setopt_array($curl, array(
             CURLOPT_URL => $request_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -186,22 +196,29 @@ class SiteController extends Controller
             CURLOPT_TIMEOUT => 30000,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => $headers,
         ));
         $response = curl_exec($curl);
         $err = curl_error($curl);
         curl_close($curl);
 
         if ($err) {
-            Log::error($err);
             abort(500);
         }
 
         $responsejson = json_decode($response);
-        return $responsejson->items;
+        return $responsejson;
     }
 
     protected function loadNewsDetail($newsid){
-        $request_url = env('APIURL') . '/news/'. $newsid;
+        $request_url = 'http://ziontrader.com/api/news/detail/' . $newsid;
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Accept: application/json',
+            'x-api-key: kqB32HFostbAWklVxUNGJEQwkRGO4INy'
+        );
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -212,6 +229,7 @@ class SiteController extends Controller
             CURLOPT_TIMEOUT => 30000,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => $headers,
         ));
         $response = curl_exec($curl);
         $err = curl_error($curl);

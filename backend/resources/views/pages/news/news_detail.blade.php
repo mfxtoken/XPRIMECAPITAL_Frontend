@@ -25,28 +25,14 @@
                                 <!-- NewsArea -->
                                 <div class="newscontcatbox-newsdetail">
                                     <div class="headnewstopimg">
-                                        <div class="newsimgbg" style="background-image: url({{ $news->image_url }});"></div>
+                                        <div class="newsimgbg" style="background-image: url({{ $news->image }});"></div>
                                     </div>
                                     <div class="headnewstopinfo">
-                                        @switch($news->type)
-                                            @case("forex_news")
-                                            <h2 class="headnewsinfocat">Forex News</h2>
-                                            @break
-
-                                            @case("economic_indicators")
-                                            <h2 class="headnewsinfocat">Economic Indicators</h2>
-                                            @break
-
-                                            @case("economy_news")
-                                            <h2 class="headnewsinfocat">Economy News</h2>
-                                            @break
-                                        @endswitch
-                                        <span class="headnewsinfodate">{{ getNewsDate($news) }}</span>
+                                        <h2 class="headnewsinfocat">{{ $news->category }}</h2>
+                                        <span class="headnewsinfodate">{{ date('F d, Y', strtotime($news->publish_date)) }}</span>
                                     </div>
                                     <div class="sitecontent-desc">
-                                        @foreach($news->news_detail as $item)
-                                            <p>{!! $item !!}</p>
-                                        @endforeach
+                                        {!! $news->detail !!}
                                     </div>
                                     <div class="headallnewsbtn">
                                         <a href="/research/news" class="btn rounded-pill btn-outline-secondary" title="All News" rel="bookmark">All News</a>
@@ -77,10 +63,10 @@
                                     @foreach($latestNews as $n)
                                         <li>
                                             <div class="sitecontent-desc">
-                                                <h5><a href="/research/news/{{ $n->_id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
+                                                <h5><a href="/research/news/{{ $n->id }}" title="" rel="bookmark">{{ $n->title }}</a></h5>
                                             </div>
                                             <div class="listnewsinfo">
-                                                <span class="listnewsinfodate">{{ getNewsDate($n) }}</span>
+                                                <span class="listnewsinfodate">{{ date('F d, Y', strtotime($n->publish_date)) }}</span>
                                             </div>
                                         </li>
                                     @endforeach
