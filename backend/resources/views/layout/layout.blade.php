@@ -22,9 +22,9 @@
     <div class="stickyside-c2a">
         <ul class="sitec2aarea">
             <li><a href="https://wa.me/+905338489156" data-toggle="tooltip" data-placement="left" title="Write to us on Whatsapp" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-whatsapp"></i></a></li>
-{{--            <li><a href="{{ config('app.social_fb') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow us on Facebook" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-facebook"></i></a></li>--}}
+            <li><a href="https://wa.me/+905364941527" data-toggle="tooltip" data-placement="left" title="Write to us on Whatsapp" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-whatsapp"></i></a></li>
+            <li><a href="tel: 02127067595" data-toggle="tooltip" data-placement="left" title="Call us now" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-whatsapp"></i></a></li>
             <li><a href="{{ config('app.social_tw') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow on Twitter" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-twitter"></i></a></li>
-{{--            <li><a href="{{ config('app.social_li') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow on LinkedIn" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-linkedin"></i></a></li>--}}
             <li><a href="{{ config('app.social_ins') }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Follow on Instagram" rel="external nofollow" target="_blank"><i class="c2alisicons icons-sprite sprite-24-socialmedia icons-instagram"></i></a></li>
         </ul>
     </div>

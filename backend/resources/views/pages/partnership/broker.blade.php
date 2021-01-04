@@ -9,7 +9,7 @@
             <!-- Title -->
             <div class="partners-sitetitle">
                 <div class="sitetitle sitetitle-xl sitetitle-dark sitetitle-center sitetitle-width900">
-                    <h1 class="sitecolorcyan">Be A Introducing Broker</h1>
+                    <h1 class="sitecolorcyan">Be An Introducing Broker</h1>
                     <h2>Partner With A Trusted Online Trading Provider</h2>
                     <p>Build a rewarding and long-term business relationship with an industry pioneer.</p>
                 </div>

@@ -35,6 +35,8 @@
                 <div class="header-userarea-icons">
                     <ul class="headiconsset">
                         <li><a href="https://wa.me/+905338489156" data-toggle="tooltip" data-placement="bottom" title="Write to us on Whatsapp" rel="external nofollow" target="_blank"><i class="c2aicons icons-sprite sprite-24-socialmedia icons-whatsapp"></i></a></li>
+                        <li><a href="https://wa.me/+905364941527" data-toggle="tooltip" data-placement="bottom" title="Write to us on Whatsapp" rel="external nofollow" target="_blank"><i class="c2aicons icons-sprite sprite-24-socialmedia icons-whatsapp"></i></a></li>
+                        <li><a href="tel: 02127067595" data-toggle="tooltip" data-placement="bottom" title="Call us now" rel="external nofollow" target="_blank"><i class="c2aicons icons-sprite sprite-24-socialmedia icons-whatsapp"></i></a></li>
                     </ul>
                 </div>
                 <div class="header-userarea-btns">
@@ -93,9 +95,10 @@
                                 <div class="daphne-nav-megamenu">
                                     <div class="daphne-nav-megamenu-col">
                                         <ul class="daphne-nav-submenulist">
-                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 PC" rel="category">Metatrader 5 PC</a></li>
-                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 Web" rel="category">Metatrader 5 Web</a></li>
-                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 Mobil" rel="category">Metatrader 5 Mobil</a></li>
+                                            <li><a href="{{env("MTDESKTOP")}}" target="_blank" title="Metatrader 5 PC" rel="category">Metatrader 5 PC</a></li>
+{{--                                            <li><a href="{{ route('mt5') }}" title="Metatrader 5 Web" rel="category">Metatrader 5 Web</a></li>--}}
+                                            <li><a href="{{env("MTIOS")}}" target="_blank" title="Metatrader 5 Mobil" rel="category">Metatrader 5 IOS</a></li>
+                                            <li><a href="{{env("MTANDROID")}}" target="_blank" title="Metatrader 5 Mobil" rel="category">Metatrader 5 Android</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -142,7 +145,7 @@
                                 <div class="daphne-nav-megamenu">
                                     <div class="daphne-nav-megamenu-col">
                                         <ul class="daphne-nav-submenulist">
-                                            <li><a href="{{ route('broker') }}" title="Be A Introducing Broker" rel="category">Be A Introducing Broker</a></li>
+                                            <li><a href="{{ route('broker') }}" title="Be An Introducing Broker" rel="category">Be An Introducing Broker</a></li>
                                             <li><a href="{{ route('affiliate') }}" title="Be An Affiliate" rel="category">Be An Affiliate</a></li>
                                         </ul>
                                     </div>
@@ -150,7 +153,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" title="Economic Cal & News" rel="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economic Cal & News</a>
+                            <a class="nav-link" href="#" title="Economic Cal & News" rel="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
                             <div class="daphne-nav-dropdownmenu dropdown-menu">
                                 <div class="daphne-nav-megamenu">
                                     <div class="daphne-nav-megamenu-col">

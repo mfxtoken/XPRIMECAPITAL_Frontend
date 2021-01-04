@@ -17,11 +17,11 @@
                     <h2>Browse The Full Range Of Platforms</h2>
                     <p>Trade hundreds of financial assets in one and single trading platform with almost zero spreads and zero commissions.</p>
                     <div class="platreqbtns">
-                        <a class="btn btn-lg rounded-pill btn-outline-info active" href="#" title="MetaTrader 5 PC" rel="bookmark">MetaTrader 5 PC</a>
+                        <a class="btn btn-lg rounded-pill btn-outline-info active" href="{{ env("MTDESKTOP") }}" title="MetaTrader 5 PC" rel="bookmark">MetaTrader 5 PC</a>
                     </div>
                     <div class="platreqbtns">
-                        <a class="btn btn-lg rounded-pill btn-outline-info" href="#" title="MetaTrader 5 Web" rel="bookmark">MetaTrader 5 Web</a>
-                        <a class="btn btn-lg rounded-pill btn-outline-info" href="#" title="MetaTrader 5 Mobile" rel="bookmark">MetaTrader 5 Mobile</a>
+                        <a class="btn btn-lg rounded-pill btn-outline-info" href="{{ env("MTIOS") }}" title="MetaTrader 5 Web" rel="bookmark">MetaTrader 5 IOS</a>
+                        <a class="btn btn-lg rounded-pill btn-outline-info" href="{{ env("MTANDROID") }}" title="MetaTrader 5 Mobile" rel="bookmark">MetaTrader 5 Android</a>
                     </div>
                 </div>
             </div>

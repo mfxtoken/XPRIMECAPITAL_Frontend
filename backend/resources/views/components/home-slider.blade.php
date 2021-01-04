@@ -25,6 +25,12 @@
                                     <p><strong>XPRIME CAPITAL</strong> is one of the FX brokers in the world with over 10 years of market experience. We are implementing the latest technologies to ensure the transparency, security and rapid execution of the account funding procedure.</p>
                                 </div>
                             </li>
+                            <li>
+                                <div class="headsliderowl-content">
+                                    <h2>Take Your Investing <span class="sitecolorcyan">to the Next Level</span></h2>
+                                    <p><strong>XPRIME CAPITAL</strong> provides clients from all over the globe with the ability to invest worldwide- at the lowest cost. We give clients the tools they need to trade whatever financial products they choose to help them meet their trading and investing goals.</p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div class="headslider-buttons">
