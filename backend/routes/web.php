@@ -12,10 +12,10 @@ Route::post('/trading/account/open-live-account', 'SiteController@handle_live_fo
 Route::post('/trading/account/open-demo-account', 'SiteController@handle_demo_form');
 
 Route::get('/trading/products/forex', 'SiteController@forex')->name('forex');
-Route::get('/trading/products/commodities', 'SiteController@notfound')->name('commodities');
-Route::get('/trading/products/indices', 'SiteController@notfound')->name('indices');
-Route::get('/trading/products/stocks-cfds', 'SiteController@notfound')->name('stocks');
-Route::get('/trading/products/cryptocurrencies', 'SiteController@notfound')->name('cryptocurrencies');
+Route::get('/trading/products/commodities', 'SiteController@commodities')->name('commodities');
+Route::get('/trading/products/indices', 'SiteController@indices')->name('indices');
+Route::get('/trading/products/stocks-cfds', 'SiteController@stocks')->name('stocks');
+Route::get('/trading/products/cryptocurrencies', 'SiteController@crypto')->name('cryptocurrencies');
 
 Route::get('/platforms/meta-trader-4', 'SiteController@notfound')->name('mt4');
 Route::get('/platforms/meta-trader-5', 'SiteController@notfound')->name('mt5');
@@ -28,7 +28,7 @@ Route::get('/analysis', 'SiteController@analysis')->name('analysis');
 Route::get('/education', 'SiteController@education')->name('education');
 
 Route::get('/partnership/introducing-broker', 'SiteController@broker')->name('broker');
-Route::get('/partnership/affiliate', 'SiteController@notfound')->name('affiliate');
+Route::get('/partnership/affiliate', 'SiteController@affiliate')->name('affiliate');
 
 Route::get('/research/economic-calendar', 'SiteController@economic_calendar')->name('economic_calendar');
 Route::get('/research/news', 'SiteController@news')->name('news');

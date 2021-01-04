@@ -1,0 +1,95 @@
+
+.company{
+
+  &-section{
+    padding: 80px 0;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding: 60px 0;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 40px 0;
+    }
+    @include BootstrapMaxWidthResponsive(lg){
+      padding: 20px 0;
+    }
+  }
+
+  &-sitetitle{
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include BootstrapMaxWidthResponsive(1k){
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @include BootstrapMaxWidthResponsive(hd){
+      //padding-bottom: 0;
+    }
+  }
+
+  &-locations{
+    padding: 50px 0;
+
+    .sitetitle-xl{
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      @include BootstrapMaxWidthResponsive(1k){
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      @include BootstrapMaxWidthResponsive(hd){
+      }
+    }
+
+    .officelocations{
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+
+      > li{
+        @include flexbox-flex(0 0 calc(100% / 5));
+        width: calc(100% / 5);
+        min-width: 0;
+        max-width: 100%;
+        padding: 15px;
+        position: relative;
+        text-align: center;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          @include flexbox-flex(0 0 calc(100% / 1));
+          width: calc(100% / 1);
+          max-width: 100%;
+          margin: 15px 0;
+
+          &:first-child{margin-top: 0;}
+          &:last-child{margin-bottom: 0;}
+        }
+      }
+
+      i[class*="icon"]{
+        display: block;
+        margin: 0 auto 1rem;
+
+        @include BootstrapMaxWidthResponsive(xl){
+          margin-bottom: 0.5rem;
+          @include scale(0.9);
+        }
+      }
+
+      h3,h4,h5{
+        color: $site-clr-text-dark-pri;
+        @include responsive-font-size(1.3rem);
+      }
+
+      p{
+        color: $site-clr-text-dark-sec;
+        @include responsive-font-size(1rem);
+        margin-top: 0.25rem;
+      }
+    }
+
+  }
+
+
+}

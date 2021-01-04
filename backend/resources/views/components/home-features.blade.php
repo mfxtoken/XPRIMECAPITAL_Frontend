@@ -16,7 +16,7 @@
                     <div class="sitefeaturesv1-box">
                         <i class="icons-sprite sprite-60-sitefeatures-cyan icons01"></i>
                         <h4>700.000 Client Accounts</h4>
-                        <p>XPRIME CAPITAL has been providing online trading services to clients since 2006 and it currectly based on 4 countries. If you’re looking to trade the foreign exchange market, you’re in the right place!</p>
+                        <p>XPRIME CAPITAL has been providing online trading services to clients since 2006 and it currectly based on 5 countries. If you’re looking to trade the foreign exchange market, you’re in the right place!</p>
                     </div>
                 </li>
                 <li>

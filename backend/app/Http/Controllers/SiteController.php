@@ -47,8 +47,59 @@ class SiteController extends Controller
         return view('pages.partnership.broker');
     }
 
+    public function affiliate(){
+        return view('pages.partnership.affiliate');
+    }
+
     public function forex(){
-        return view('pages.products.forex');
+        $prices = $this->loadPrices('forex', "AUDUSD,EURTRY,EURUSD,GBPUSD,NZDUSD,USDCHF,USDJPY,USDTRY");
+        return view('pages.products.forex', [
+            'prices' => $prices
+        ]);
+    }
+
+    public function commodities(){
+        $prices = $this->loadPrices('commodities', "BRNTOIL,CRDOIL,USSGR,WHEAT,XAGUSD,XAUUSD");
+//        echo "<pre>";
+//        print_r($prices);
+//        echo "</pre>";
+//        exit();
+        return view('pages.products.commodities', [
+            'prices' => $prices
+        ]);
+    }
+
+    public function indices(){
+        $prices = $this->loadPrices('indices', "all");
+//        echo "<pre>";
+//        print_r($prices);
+//        echo "</pre>";
+//        exit();
+        return view('pages.products.indices', [
+        'prices' => $prices
+        ]);
+    }
+
+    public function stocks(){
+        $prices = $this->loadPrices('stocks', "all");
+//        echo "<pre>";
+//        print_r($prices);
+//        echo "</pre>";
+//        exit();
+        return view('pages.products.stocks', [
+            'prices' => $prices
+        ]);
+    }
+
+    public function crypto(){
+        $prices = $this->loadPrices('crypto', "BTCUSDT,ETHUSDT,LTCUSDT,XLMUSDT,XRPUSDT,BCHUSDT,LINKUSDT");
+//        echo "<pre>";
+//        print_r($prices);
+//        echo "</pre>";
+//        exit();
+        return view('pages.products.crypto', [
+            'prices' => $prices
+        ]);
     }
 
     public function education(){
@@ -174,8 +225,38 @@ class SiteController extends Controller
         ]);
     }
 
+    private function loadPrices($market, $symbols = "all"){
+        $request_url = 'http://ziontrader.com/api/price/' . $market . '?symbols=' . $symbols;
 
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Accept: application/json',
+            'x-api-key: kqB32HFostbAWklVxUNGJEQwkRGO4INy'
+        );
 
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $request_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => $headers,
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+
+        if ($err) {
+            abort(500);
+        }
+
+        $responsejson = json_decode($response);
+        return $responsejson;
+    }
 
     private function loadNews($type, $count){
         $request_url = 'http://ziontrader.com/api/news/' . $type . '?language=en&count=' . $count;
