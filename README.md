@@ -1,16 +1,25 @@
 # XPRIMECAPITAL Frontend
 
 #### Web Public Area Frontend List
- - [Home_Page](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Home_Page.html)
- - [Account_Open_Demo](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Demo.html)
- - [Products_Forex](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Forex.html)
- - [Investments_PAMM](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_PAMM.html)
- - [Investments_CopyTrade](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_CopyTrade.html)
- - [Partnership_Affiliate_IB](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Partnership_Affiliate_IB.html)
- - [Research_News](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News.html)
- - [Research_News_Detail](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News_Detail.html)
- - [Research_Economic_Calendar](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Economic_Calendar.html)
- - [Research_Morning](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Morning.html)
+- [Home_Page](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Home_Page.html)
+- [Account_Open_Demo](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Demo.html)
+- [Account_Open_Live](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Open_Live.html)
+- [Account_Types](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Account_Types.html)
+- [Products_Forex](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Forex.html)
+- [Products_Commodities](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Commodities.html)
+- [Products_Indices](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Indices.html)
+- [Products_Stock_CFDs](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Stock_CFDs.html)
+- [Products_Crypto](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Products_Crypto.html)
+- [Investments_PAMM](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_PAMM.html)
+- [Investments_CopyTrade](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Investments_CopyTrade.html)
+- [Partnership_Affiliate_IB](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Partnership_Affiliate_IB.html)
+- [Partnership_Affiliate_Partner](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Partnership_Affiliate_Partner.html)
+- [Research_News](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News.html)
+- [Research_News_Detail](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_News_Detail.html)
+- [Research_Economic_Calendar](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Economic_Calendar.html)
+- [Research_Morning](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Research_Morning.html)
+- [Education](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Education.html)
+- [Company](https://orcunkilicaslan.github.io/XPRIMECAPITAL_Frontend/html/Company.html)
    
 
 # NodeJS Kurulumu
